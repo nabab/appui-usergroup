@@ -1,0 +1,19 @@
+{
+  "name": "bbn/appui-usergroup",
+  "description": "Users and groups management system",
+  "keywords": ["auth","group","user","appui"],
+  "homepage": "https://github.com/nabab/appui-usergroup",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Thomas Nabet",
+      "email": "thomas.nabet@gmail.com",
+      "homepage": "http://bbn.solutions",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=5.5.0",
+    "bbn/bbn": "dev-master"
+  }
+}
