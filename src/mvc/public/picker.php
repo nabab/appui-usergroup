@@ -4,8 +4,8 @@
  *
  **/
 
-/** @var $this \bbn\mvc\controller */
-$this->combo("User Picker", [
-  'groups' => $this->get_model(),
-  'picker' => isset($this->post['picker']) ? $this->post['picker'] : false
+/** @var $ctrl \bbn\mvc\controller */
+$ctrl->combo("User Picker", [
+  'groups' => $ctrl->get_model(),
+  'picker' => isset($ctrl->post['picker']) ? $ctrl->post['picker'] : false
 ]);

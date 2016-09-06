@@ -4,8 +4,8 @@
  *
  **/
 
-/** @var $this \bbn\mvc\model*/
-$manager = new \apst\manager($this->inc->user);
+/** @var $model \bbn\mvc\model*/
+$manager = new \apst\manager($model->inc->user);
 $groups = $manager->groups();
 $res = [];
 $i = 0;

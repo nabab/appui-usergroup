@@ -4,8 +4,8 @@
  *
  **/
 
-/** @var $this \bbn\mvc\model*/
-if ( isset($this->data['id_user']) ){
-  $manager = new \apst\manager($this->inc->user);
-  return $manager->get_user($this->data['id_user']);
+/** @var $model \bbn\mvc\model*/
+if ( isset($model->data['id_user']) ){
+  $manager = new \apst\manager($model->inc->user);
+  return $manager->get_user($model->data['id_user']);
 }

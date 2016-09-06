@@ -4,7 +4,7 @@
  *
  **/
 
-/** @var $this \bbn\mvc\controller */
-if ( isset($this->post['id_user']) ){
-  $this->obj->res = $this->get_model(['id_user' => $this->post['id_user']]);
+/** @var $ctrl \bbn\mvc\controller */
+if ( isset($ctrl->post['id_user']) ){
+  $ctrl->obj->res = $ctrl->get_model(['id_user' => $ctrl->post['id_user']]);
 }
