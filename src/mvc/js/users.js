@@ -93,7 +93,7 @@ if ( data.arch.id && data.arch.email ){
     dataBound: function(e){
       // Initialize button
       $(".appui-user-reset", e.sender.element).click(function(ev){
-        if ( confirm("Êtes-vous sûr de vouloir réïnitialiser le mot de passe de cet utilisateur?") ){
+        appui.fn.confirm("Êtes-vous sûr de vouloir réïnitialiser le mot de passe de cet utilisateur?", function(){
           var dataItem = e.sender.dataItem($(ev.target).closest("tr"));
           appui.fn.post(data.root + "actions/users/init", {id: dataItem.id}, function(d){
             if ( d.success ){
@@ -103,7 +103,7 @@ if ( data.arch.id && data.arch.email ){
               appui.fn.alert(data.lng.impossible_to_reset);
             }
           });
-        }
+        })
       });
       $(".appui-user-permissions", e.sender.element).click(function(ev){
         var tr = $(ev.target).closest("tr"),
@@ -168,15 +168,23 @@ if ( data.arch.id && data.arch.email ){
         },
         destroy: function(o) {
           var grid = $cont.data("kendoGrid");
-          if ( typeof(o.data.id) !== 'undefined' && confirm("Etes vous sur de vouloir supprimer cette entrée?") ){
-            appui.fn.post(data.root + "actions/users/delete", {id: o.data.id}, function(d){
-              if ( d.success ){
-                o.success();
-              }
-              else{
+          if ( typeof(o.data.id) !== 'undefined' ){
+            appui.fn.confirm(
+              "Etes vous sur de vouloir supprimer cette entrée?",
+              function(){
+                appui.fn.post(data.root + "actions/users/delete", {id: o.data.id}, function(d){
+                  if ( d.success ){
+                    o.success();
+                  }
+                  else{
+                    grid.cancelChanges();
+                  }
+                });
+              },
+              function(){
                 grid.cancelChanges();
               }
-            });
+            );
           }
           else{
             grid.cancelChanges();

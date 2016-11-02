@@ -121,18 +121,22 @@ ele.kendoGrid({
       },
       destroy: function(o) {
         var grid = ele.data("kendoGrid");
-        if ( typeof(o.data[data.arch.id]) !== 'undefined' && confirm(data.lng.sure_to_delete_group) ){
-          var dt = {};
-          dt[data.arch.id] = o.data.id;
-          appui.fn.post(data.root + "actions/groups/delete", dt, function(d){
-            if ( d && d.success ){
-              o.success();
-            }
-            else{
-              o.error();
-              grid.cancelChanges();
-            }
-          });
+        if ( typeof(o.data[data.arch.id]) !== 'undefined' ){
+          appui.fn.confirm(data.lng.sure_to_delete_group, function(){
+            var dt = {};
+            dt[data.arch.id] = o.data.id;
+            appui.fn.post(data.root + "actions/groups/delete", dt, function(d){
+              if ( d && d.success ){
+                o.success();
+              }
+              else{
+                o.error();
+                grid.cancelChanges();
+              }
+            });
+          }, function(){
+            grid.cancelChanges();
+          })
         }
         else{
           grid.cancelChanges();

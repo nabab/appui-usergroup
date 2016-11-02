@@ -22,7 +22,7 @@ $tree = $("div.bbn_usergroup_tree", ele).kendoTreeView({
     if ( data.picker ){
       var r = this.dataItem(e.node);
       $(data.picker).val(r.id);
-      appui.fn.closeAlert();
+      appui.fn.closePopup();
     }
   },
   template: function (e) {
