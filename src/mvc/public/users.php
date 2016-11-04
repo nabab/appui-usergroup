@@ -4,7 +4,7 @@
  * @var \bbn\user\manager $mgr
  */
 $mgr = $ctrl->inc->user->get_manager();
-$usr = bbn\user\connection::get_instance();
+$usr = bbn\user::get_instance();
 $ctrl->combo(_("Users' management"), [
   'root' => $ctrl->data['root'],
   'users' => $mgr->get_list(),
