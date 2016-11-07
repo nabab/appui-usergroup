@@ -27,7 +27,7 @@ kendo.bind(ele, {
   themes: [
     {
       "value": "uniform",
-      "text": "Thème par defaut"
+      "text": "Uniform"
     }, {
       "value": "black",
       "text": "Black"
@@ -64,6 +64,9 @@ kendo.bind(ele, {
     }, {
       "value": "moonlight",
       "text": "Moonlight"
+    }, {
+      "value": "nova",
+      "text": "Nova"
     }, {
       "value": "office365",
       "text": "Office 365"
