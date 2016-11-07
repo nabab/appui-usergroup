@@ -9,33 +9,33 @@
         Nom
       </label>
       <div class="appui-form-field">
-        <input class="k-textbox" name="nom" maxlength="35" id="zjB159sxPxR82RHX9">
+        <input class="k-textbox" name="nom" maxlength="35" id="zjB159sxPxR82RHX9" data-bind="value: nom">
       </div>
 
       <label class="appui-form-label" for="ZtDf2jsC0IDl61eot">
         Adresse eMail
       </label>
       <div class="appui-form-field">
-        <input class="k-textbox" name="email" maxlength="100" value="thomas.nabet@gmail.com" id="ZtDf2jsC0IDl61eot" type="email">
+        <input class="k-textbox" name="email" maxlength="100" id="ZtDf2jsC0IDl61eot" type="email" data-bind="value: email">
       </div>
 
       <label class="appui-form-label" for="PvrUPXO5R07i1udL033T76j7">
         Theme
       </label>
       <div class="appui-form-field">
-        <select name="theme" value="black" id="PvrUPXO5R07i1udL033T76j7" data-role="dropdownlist">
+        <input name="theme" value="black" id="PvrUPXO5R07i1udL033T76j7" data-role="dropdownlist" data-bind="source: themes, value: theme" data-text-field="text" data-value-field="value">
       </div>
 
       <label class="appui-form-label" for="OOaX3f111kmT1lm0">Tel.</label>
       <div class="appui-form-field">
-        <input class="k-textbox" maxlength="10" name="tel" id="OOaX3f111kmT1lm0" size="10" type="text">
+        <input class="k-textbox" maxlength="10" name="tel" id="OOaX3f111kmT1lm0" size="10" type="text" data-bind="value: tel">
       </div>
 
       <label class="appui-form-label" for="u01QGWJR9NSgiJc3K26r94YjRZ2OX8">
         Fonction
       </label>
       <div class="appui-form-field">
-        <input class="k-textbox" name="fonction" id="u01QGWJR9NSgiJc3K26r94YjRZ2OX8" type="text">
+        <input class="k-textbox" name="fonction" id="u01QGWJR9NSgiJc3K26r94YjRZ2OX8" type="text" data-bind="value: fonction">
       </div>
 
       <label class="appui-form-label"> </label>
