@@ -1,6 +1,6 @@
 // Javascript Document
 if ( data.arch.id && data.arch.email ){
-  var $cont = $("#apst_users_management_grid", ele),
+  var $cont = $(".appui-users-grid", ele),
       num_session = 0,
       primary_columns = [
         {
@@ -13,7 +13,10 @@ if ( data.arch.id && data.arch.email ){
           field: data.arch.email,
           title: data.lng.email,
           template: function(e){
-            return apst.link_email(e.email);
+            if ( e[data.arch.email] ){
+              return '<a href="mailto: ' + e[data.arch.email] + '">' + e[data.arch.email] + '</a>';
+            }
+            return '-';
           }
         }
       ],
@@ -40,7 +43,10 @@ if ( data.arch.id && data.arch.email ){
         sortable: false,
         template: function (d){
           var st = '';
-          if ( (data.is_admin || (d.id_group !== 1)) && (d.id !== appui.app.apst.userid) ){
+          if (
+            (data.is_admin || (d.id_group !== 1)) &&
+            (d.id !== appui.env.userId)
+          ){
             st += '<a class="k-button k-button-icontext k-grid-edit" href="javascript:;" title="' + data.lng.edit + '"><i class="fa fa-edit"> </i></a>' +
               '<a class="k-button k-button-icontext k-grid-delete" href="javascript:;" title="' + data.lng.deactivate + '"><i class="fa fa-trash"> </i></a>' +
               '<a class="k-button k-button-icontext appui-user-reset" href="javascript:;" title="' + data.lng.reset_password + '"><i class="fa fa-envelope"> </i></a>' +

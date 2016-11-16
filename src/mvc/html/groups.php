@@ -1,4 +1,4 @@
-<div id="apst_usergroups_grid" class="appui-full-height"></div>
+<div class="appui-full-height appui-usergroups-grid"></div>
 <script id="tpl-group_form" type="text/x-kendo-template">
   <input type="hidden" name="id">
   <input type="hidden" name="cfg">

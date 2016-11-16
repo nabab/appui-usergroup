@@ -1,7 +1,7 @@
 /**
  * Created by BBN on 26/10/2016.
  */
-var ele = $("#apst_usergroups_grid"),
+var ele = $(".appui-usergroups-grid", ele),
     duplicateItem = false;
 ele.kendoGrid({
   columns: [
