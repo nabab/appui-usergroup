@@ -166,7 +166,7 @@ ele.kendoGrid({
     $(".appui-group-permissions", e.sender.element).click(function(ev){
       var tr = $(ev.target).closest("tr"),
           id_group = e.sender.dataItem(tr).toJSON()[data.arch.id];
-      appui.fn.window(data.root + '/permissions', "90%", "90%", {id_group: id_group}, function(){
+      appui.fn.window(data.root + 'permissions', "90%", "90%", {id_group: id_group}, function(){
         
       });
     });
