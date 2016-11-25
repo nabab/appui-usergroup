@@ -12,10 +12,10 @@ else if ( !empty($model->data['id_group']) ){
   $id_group = $model->data['id_group'];
 }
 if ( $id_user || $id_group ){
-  $id_perm = $model->inc->options->from_code('bbn_permissions');
-  $pref = \bbn\user\preferences::get_preferences();
+  $perm = $model->inc->perm;
   $manager = $model->inc->user->get_manager();
   $cfg = $model->inc->user->get_class_cfg();
+  $id_perm = $perm->get_option_root();
   if ( $id_user ){
     $item = $manager->get_user($id_user);
     $id_group = $item[$cfg['arch']['users']['id_group']];
@@ -30,7 +30,7 @@ if ( $id_user || $id_group ){
     'title' => _("Permissions de l'utilisateur ".$item[$name]),
     'id_user' => $id_user,
     'id_group' => $id_group,
-    'tree' => $model->inc->options->map(function($r)use($pref, $manager, $id_group, $id_user){
+    'tree' => $model->inc->options->map(function($r)use($perm, $manager, $id_group, $id_user){
       if ( !empty($r['public']) && empty($r['num_children']) ){
         return false;
       }
@@ -42,7 +42,7 @@ if ( $id_user || $id_group ){
           $r['icon'] = 'file';
         }
       }
-      if ( !$id_user || $pref->has_permission($r['id']) ){
+      if ( !$id_user || $perm->has($r['id']) ){
         $o = [
           'id' => $r['id'],
           'text' => $r['text'],
