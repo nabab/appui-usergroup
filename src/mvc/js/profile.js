@@ -1,6 +1,5 @@
 // Javascript document
 /** @var window.appui */
-appui.fn.log
 
 var cont = $(".appui-user-profile", ele).tabNav({
       autoload: false,

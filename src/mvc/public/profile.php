@@ -18,15 +18,15 @@ if ( isset($ctrl->post['current_pass'], $ctrl->post['pass1'], $ctrl->post['pass2
 else if ( isset($ctrl->post['email'], $ctrl->post['nom']) && \bbn\str::is_email($ctrl->post['email']) ){
   $change_theme = $ctrl->post['theme'] !== $ctrl->inc->session->get('info', 'theme');
   if ( $ctrl->obj->res = $ctrl->inc->user->update_info($ctrl->post) ){
-    $ctrl->obj->error = "Modification réussie";
-    $ctrl->obj->errorTitle = "Succès!";
     if ( $change_theme ){
-      $ctrl->add_script(<<<'EOF'
-appui.fn.confirm("Pour que le nouveau thème soit appliqué, il vous faut recharger l'application.\nVouslez-vous la recharger maintenant?", function(){
-  document.location.reload();
-});
-EOF
+      $ctrl->add_script('appui.fn.confirm("'.
+        \bbn\str::escape_dquotes(_("Pour que le nouveau thème soit appliqué, il vous faut recharger l'application.\nVoulez-vous la recharger maintenant?")).
+        '", function(){document.location.reload();});'
       );
+    }
+    else{
+      $ctrl->obj->error = "Modification réussie";
+      $ctrl->obj->errorTitle = "Succès!";
     }
   }
 }
