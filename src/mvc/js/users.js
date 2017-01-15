@@ -25,14 +25,14 @@ if ( data.arch.id && data.arch.email ){
         title: data.lng.group,
         values: data.is_admin ? data.groups : data.groups.slice(1),
         template: function(e){
-          return appui.fn.get_field(data.groups, "value", e.id_group, "text");
+          return bbn.fn.get_field(data.groups, "value", e.id_group, "text");
         }
       },{
         field: "last_activity",
         title: data.lng.last_seen,
         width: 100,
         template: function(d){
-          return appui.fn.fdate(d.last_activity, '<em>Jamais</em>');
+          return bbn.fn.fdate(d.last_activity, '<em>Jamais</em>');
         }
       }],
       action_columns = [{
@@ -45,7 +45,7 @@ if ( data.arch.id && data.arch.email ){
           var st = '';
           if (
             (data.is_admin || (d.id_group !== 1)) &&
-            (d.id !== appui.env.userId)
+            (d.id !== bbn.env.userId)
           ){
             st += '<a class="k-button k-button-icontext k-grid-edit" href="javascript:;" title="' + data.lng.edit + '"><i class="fa fa-edit"> </i></a>' +
               '<a class="k-button k-button-icontext k-grid-delete" href="javascript:;" title="' + data.lng.deactivate + '"><i class="fa fa-trash"> </i></a>' +
@@ -99,14 +99,14 @@ if ( data.arch.id && data.arch.email ){
     dataBound: function(e){
       // Initialize button
       $(".appui-user-reset", e.sender.element).click(function(ev){
-        appui.fn.confirm("Êtes-vous sûr de vouloir réïnitialiser le mot de passe de cet utilisateur?", function(){
+        bbn.fn.confirm("Êtes-vous sûr de vouloir réïnitialiser le mot de passe de cet utilisateur?", function(){
           var dataItem = e.sender.dataItem($(ev.target).closest("tr"));
-          appui.fn.post(data.root + "actions/users/init", {id: dataItem.id}, function(d){
+          bbn.fn.post(data.root + "actions/users/init", {id: dataItem.id}, function(d){
             if ( d.success ){
-              appui.fn.alert(data.lng.email_sent_to + " " + dataItem.email, "Succès");
+              bbn.fn.alert(data.lng.email_sent_to + " " + dataItem.email, "Succès");
             }
             else{
-              appui.fn.alert(data.lng.impossible_to_reset);
+              bbn.fn.alert(data.lng.impossible_to_reset);
             }
           });
         })
@@ -114,7 +114,7 @@ if ( data.arch.id && data.arch.email ){
       $(".appui-user-permissions", e.sender.element).click(function(ev){
         var tr = $(ev.target).closest("tr"),
             id_user = e.sender.dataItem(tr).toJSON().id;
-        appui.fn.window(data.root + 'permissions', "90%", "90%", {id_user: id_user});
+        bbn.fn.window(data.root + 'permissions', "90%", "90%", {id_user: id_user});
       });
       e.sender.element.find("tbody > tr").each(function(){
         if ( !e.sender.dataItem(this).get("num_sessions") ){
@@ -148,7 +148,7 @@ if ( data.arch.id && data.arch.email ){
         },
         create: function(o){
           var grid = $cont.data("kendoGrid");
-          appui.fn.post(data.root + "actions/users/insert", o.data, function(d){
+          bbn.fn.post(data.root + "actions/users/insert", o.data, function(d){
             if ( d.success ){
               // Cas où l'option fait partie des options chargées dans l'application
               o.success(d);
@@ -161,7 +161,7 @@ if ( data.arch.id && data.arch.email ){
         update: function(o){
           var grid = $cont.data("kendoGrid");
           if ( typeof(o.data.id) !== 'undefined' ){
-            appui.fn.post(data.root + "actions/users/update", o.data, function(d){
+            bbn.fn.post(data.root + "actions/users/update", o.data, function(d){
               // Un enregistrement doit être renvoyé dans le tableau d.data
               if ( d.success ){
                 o.success(d);
@@ -175,10 +175,10 @@ if ( data.arch.id && data.arch.email ){
         destroy: function(o) {
           var grid = $cont.data("kendoGrid");
           if ( typeof(o.data.id) !== 'undefined' ){
-            appui.fn.confirm(
+            bbn.fn.confirm(
               "Etes vous sur de vouloir supprimer cette entrée?",
               function(){
-                appui.fn.post(data.root + "actions/users/delete", {id: o.data.id}, function(d){
+                bbn.fn.post(data.root + "actions/users/delete", {id: o.data.id}, function(d){
                   if ( d.success ){
                     o.success();
                   }
@@ -217,14 +217,14 @@ if ( data.arch.id && data.arch.email ){
     },
     edit: function(e){
       num_session = e.model.num;
-      appui.fn.hideUneditable(e);
+      bbn.fn.hideUneditable(e);
       e.container
         .parent()
         .find(".k-window-title:first")
         .html(e.model.id ? "Modification de l'utilisateur" : "Nouvel utilisateur");
     },
     detailInit: function(e){
-      appui.fn.log(e);
+      bbn.fn.log(e);
     }
   });
 }

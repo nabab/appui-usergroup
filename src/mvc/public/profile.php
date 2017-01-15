@@ -19,7 +19,7 @@ else if ( isset($ctrl->post['email'], $ctrl->post['nom']) && \bbn\str::is_email(
   $change_theme = $ctrl->post['theme'] !== $ctrl->inc->session->get('info', 'theme');
   if ( $ctrl->obj->res = $ctrl->inc->user->update_info($ctrl->post) ){
     if ( $change_theme ){
-      $ctrl->add_script('appui.fn.confirm("'.
+      $ctrl->add_script('bbn.fn.confirm("'.
         \bbn\str::escape_dquotes(_("Pour que le nouveau thème soit appliqué, il vous faut recharger l'application.\nVoulez-vous la recharger maintenant?")).
         '", function(){document.location.reload();});'
       );

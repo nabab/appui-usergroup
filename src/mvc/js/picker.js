@@ -23,7 +23,7 @@ $tree = $("div.bbn_usergroup_tree", ele).kendoTreeView({
     if ( data.picker ){
       var r = this.dataItem(e.node);
       $(data.picker).val(r.id).trigger("change");
-      appui.fn.closePopup();
+      bbn.fn.closePopup();
     }
   },
   template: function (e) {
@@ -36,17 +36,17 @@ $("input:first", ele).keyup(function(){
   $li.filter(":hidden").show();
   if ( v.length ){
     $li.filter(function(){
-      var txt = appui.fn.removeAccents($(this).find("span:not(.k-icon):first").text().toLowerCase());
+      var txt = bbn.fn.removeAccents($(this).find("span:not(.k-icon):first").text().toLowerCase());
       return txt.indexOf(v) === -1;
     }).hide();
   }
   /*
   var data = treeDS.data();
   data.forEach(function(a){
-    appui.fn.log(a, this);
+    bbn.fn.log(a, this);
     a.filter({field: "text", operator: "contains", value: $(this).val()});
   })
-  appui.fn.log(treeDS, treeDS.data());
+  bbn.fn.log(treeDS, treeDS.data());
   treeDS.filter({field: "text", operator: "contains", value: $(this).val()});
   Porca putana!
   */

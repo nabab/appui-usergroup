@@ -35,7 +35,7 @@ $tree = $("div.bbn-tree:visible:first", ele).kendoTreeView({
     else if ( data.id_group ){
       d.id_group = data.id_group;
     }
-    appui.fn.post(url, d, function(r){
+    bbn.fn.post(url, d, function(r){
       if ( !r.success ){
         
       }

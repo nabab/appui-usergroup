@@ -93,7 +93,7 @@ ele.kendoGrid({
         if ( duplicateItem ){
           o.data.source_id = duplicateItem.source_id;
         }
-        appui.fn.post(data.root + "actions/groups/insert", o.data, function(d){
+        bbn.fn.post(data.root + "actions/groups/insert", o.data, function(d){
           if ( d && d.success ){
             o.success(d);
           }
@@ -107,7 +107,7 @@ ele.kendoGrid({
         var grid = ele.data("kendoGrid");
         duplicateItem = false;
         if ( typeof(o.data[data.arch.id]) !== 'undefined' ){
-          appui.fn.post(data.root + "actions/groups/update", o.data, function(d){
+          bbn.fn.post(data.root + "actions/groups/update", o.data, function(d){
             // Un enregistrement doit être renvoyé dans le tableau d.data
             if ( d && d.success ){
               o.success(d);
@@ -122,10 +122,10 @@ ele.kendoGrid({
       destroy: function(o) {
         var grid = ele.data("kendoGrid");
         if ( typeof(o.data[data.arch.id]) !== 'undefined' ){
-          appui.fn.confirm(data.lng.sure_to_delete_group, function(){
+          bbn.fn.confirm(data.lng.sure_to_delete_group, function(){
             var dt = {};
             dt[data.arch.id] = o.data.id;
-            appui.fn.post(data.root + "actions/groups/delete", dt, function(d){
+            bbn.fn.post(data.root + "actions/groups/delete", dt, function(d){
               if ( d && d.success ){
                 o.success();
               }
@@ -161,12 +161,12 @@ ele.kendoGrid({
       duplicateItem[data.arch.group] = src[data.arch.group];
       e.sender.addRow();
       var dest = e.sender.dataItem(e.sender.element.find("tbody tr:first"));
-      appui.fn.log(src, dest);
+      bbn.fn.log(src, dest);
     });
     $(".appui-group-permissions", e.sender.element).click(function(ev){
       var tr = $(ev.target).closest("tr"),
           id_group = e.sender.dataItem(tr).toJSON()[data.arch.id];
-      appui.fn.window(data.root + 'permissions', "90%", "90%", {id_group: id_group}, function(){
+      bbn.fn.window(data.root + 'permissions', "90%", "90%", {id_group: id_group}, function(){
         
       });
     });
@@ -177,7 +177,7 @@ ele.kendoGrid({
     duplicateItem = false;
   },
   edit: function(e){
-    appui.fn.hideUneditable(e);
+    bbn.fn.hideUneditable(e);
     if ( duplicateItem ){
       e.container
         .parent()
