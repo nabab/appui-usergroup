@@ -1,6 +1,6 @@
 // Javascript Document
 if ( data.arch.id && data.arch.email ){
-  var $cont = $(".appui-users-grid", ele),
+  var $cont = $(".bbn-users-grid", ele),
       num_session = 0,
       primary_columns = [
         {
@@ -49,8 +49,8 @@ if ( data.arch.id && data.arch.email ){
           ){
             st += '<a class="k-button k-button-icontext k-grid-edit" href="javascript:;" title="' + data.lng.edit + '"><i class="fa fa-edit"> </i></a>' +
               '<a class="k-button k-button-icontext k-grid-delete" href="javascript:;" title="' + data.lng.deactivate + '"><i class="fa fa-trash"> </i></a>' +
-              '<a class="k-button k-button-icontext appui-user-reset" href="javascript:;" title="' + data.lng.reset_password + '"><i class="fa fa-envelope"> </i></a>' +
-              '<a class="k-button k-button-icontext appui-user-permissions" href="javascript:;" title="' + data.lng.manage_user_permissions + '"><i class="fa fa-key"> </i></a>';
+              '<a class="k-button k-button-icontext bbn-user-reset" href="javascript:;" title="' + data.lng.reset_password + '"><i class="fa fa-envelope"> </i></a>' +
+              '<a class="k-button k-button-icontext bbn-user-permissions" href="javascript:;" title="' + data.lng.manage_user_permissions + '"><i class="fa fa-key"> </i></a>';
           }
           return st;
         }
@@ -98,7 +98,7 @@ if ( data.arch.id && data.arch.email ){
     },
     dataBound: function(e){
       // Initialize button
-      $(".appui-user-reset", e.sender.element).click(function(ev){
+      $(".bbn-user-reset", e.sender.element).click(function(ev){
         bbn.fn.confirm("Êtes-vous sûr de vouloir réïnitialiser le mot de passe de cet utilisateur?", function(){
           var dataItem = e.sender.dataItem($(ev.target).closest("tr"));
           bbn.fn.post(data.root + "actions/users/init", {id: dataItem.id}, function(d){
@@ -111,7 +111,7 @@ if ( data.arch.id && data.arch.email ){
           });
         })
       });
-      $(".appui-user-permissions", e.sender.element).click(function(ev){
+      $(".bbn-user-permissions", e.sender.element).click(function(ev){
         var tr = $(ev.target).closest("tr"),
             id_user = e.sender.dataItem(tr).toJSON().id;
         bbn.fn.window(data.root + 'permissions', "90%", "90%", {id_user: id_user});

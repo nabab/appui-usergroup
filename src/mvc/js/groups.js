@@ -1,7 +1,7 @@
 /**
  * Created by BBN on 26/10/2016.
  */
-var ele = $(".appui-usergroups-grid", ele),
+var ele = $(".bbn-usergroups-grid", ele),
     duplicateItem = false;
 ele.kendoGrid({
   columns: [
@@ -29,8 +29,8 @@ ele.kendoGrid({
       sortable: false,
       template: function(d){
         var st = '<a class="k-button k-button-icontext k-grid-edit" href="javascript:;" title="' + data.lng.edit + '"><i class="fa fa-edit"> </i></a>' +
-          '<a class="k-button k-button-icontext appui-group-permissions" href="javascript:;" title="' + data.lng.manage_user_permissions+ '"><i class="fa fa-key"> </i></a>' +
-          '<a class="k-button k-button-icontext appui-group-copy" href="javascript:;" title="' + data.lng.duplicate+ '"><i class="fa fa-copy"> </i></a>';
+          '<a class="k-button k-button-icontext bbn-group-permissions" href="javascript:;" title="' + data.lng.manage_user_permissions+ '"><i class="fa fa-key"> </i></a>' +
+          '<a class="k-button k-button-icontext bbn-group-copy" href="javascript:;" title="' + data.lng.duplicate+ '"><i class="fa fa-copy"> </i></a>';
         if ( !d.num ){
           st += '<a class="k-button k-button-icontext k-grid-delete" href="javascript:;" title="' + data.lng.deactivate + '"><i class="fa fa-trash"> </i></a>';
         }
@@ -153,7 +153,7 @@ ele.kendoGrid({
   },
   dataBound: function(e){
     // Initialize button
-    $(".appui-group-copy", e.sender.element).click(function(ev){
+    $(".bbn-group-copy", e.sender.element).click(function(ev){
       var src = e.sender.dataItem($(ev.target).closest("tr"));
       duplicateItem = {
         source_id: src[data.arch.id]
@@ -163,7 +163,7 @@ ele.kendoGrid({
       var dest = e.sender.dataItem(e.sender.element.find("tbody tr:first"));
       bbn.fn.log(src, dest);
     });
-    $(".appui-group-permissions", e.sender.element).click(function(ev){
+    $(".bbn-group-permissions", e.sender.element).click(function(ev){
       var tr = $(ev.target).closest("tr"),
           id_group = e.sender.dataItem(tr).toJSON()[data.arch.id];
       bbn.fn.window(data.root + 'permissions', "90%", "90%", {id_group: id_group}, function(){

@@ -1,18 +1,18 @@
 // Javascript document
 /** @var window.appui */
 
-var cont = $(".appui-user-profile", ele).tabNav({
+var cont = $(".bbn-user-profile", ele).tabNav({
       autoload: false,
       baseURL: data.root + "profile/",
       list: [{
         url: "infos",
         title: "Informations",
-        content: $("#appui-tpl-user-info", ele).html(),
+        content: $("#bbn-tpl-user-info", ele).html(),
         static: 1
       }, {
         url: "password",
         title: "Mot de passe",
-        content: $("#appui-tpl-user-pass", ele).html(),
+        content: $("#bbn-tpl-user-pass", ele).html(),
         static: 1
       }]
     });
