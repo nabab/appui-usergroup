@@ -197,19 +197,20 @@
                 grid.cancelChanges();
               }
             }
-          },
+          }
         },
         editable: {
           mode:"popup",
+          confirmation: false,
           window: {
             width: 720
           }
         },
-        filterable: {
+        /*filterable: {
           cell: {
             showOperators: false
           }
-        },
+        },*/
         scrollable: true,
         resizable: true,
         sortable: true,
