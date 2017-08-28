@@ -1,4 +1,4 @@
-<div class="bbn-full-height bbn-usergroups-grid"></div>
+<div class="bbn-usergroups-grid" v-bbn-fill-height></div>
 <script id="tpl-group_form" type="text/x-kendo-template">
   <input type="hidden" name="id">
   <input type="hidden" name="cfg">
