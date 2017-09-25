@@ -1,0 +1,4 @@
+// Javascript Document
+(function(){
+  return {};
+})()

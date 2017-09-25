@@ -5,9 +5,14 @@
     methods: {
       checkTheme(res){
         if ( this.$refs.form.originalData.theme !== this.$refs.form.data.theme ){
-          this.getTab().$refs.popup.confirm(bbn._("You have changed the theme. Do you want to reload the application in order to use the new theme?"), () => {document.location.reload()});
+          bbn.fn.log("POPUP YEAH", this.getPopup());
+          this.$nextTick(() => {
+            this.getPopup().confirm(
+              bbn._("You have changed the theme. Do you want to reload the application in order to use the new theme?"),
+              () => {document.location.reload()}
+            );
+          })
         }
-        return false;
       }
     },
     data(){
