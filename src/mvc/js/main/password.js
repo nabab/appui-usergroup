@@ -9,11 +9,6 @@
           pass2: ''
         }
       };
-    },
-    mounted(){
-      this.$nextTick(() => {
-        bbn.fn.analyzeContent(this.getTab().$el, true);
-      })
     }
   };
 })()
