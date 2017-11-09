@@ -1,0 +1,40 @@
+<!-- HTML Document -->
+
+<bbn-table :source="source.root + 'preferences'"
+           class="bbn-full-screen"
+           :showable="true"
+           :sortable="true"
+           :filterable="true"
+           :pageable="true"
+           >
+  <bbn-column field="id"
+              :title="_('UUID')"
+              :hidden="true">
+  </bbn-column>
+  <bbn-column field="public"
+              type="boolean"
+              :width="30"
+              :title="_('Pub')"
+              :ftitle="_('Public')"
+              >
+  </bbn-column>
+  <bbn-column field="option"
+              :title="_('Option')"
+              :render="showOption">
+  </bbn-column>
+  <bbn-column field="text"
+              :title="_('Title')"
+              :render="showText">
+  </bbn-column>
+  <bbn-column field="link"
+              :title="_('Link')"
+              :render="showLink">
+  </bbn-column>
+  <bbn-column :title="_('Actions')"
+              :width="80"
+              :buttons="[
+                {text: _('View'), command: view, icon: 'fa fa-eye', notext: true},
+                {text: _('Delete'), command: del, icon: 'fa fa-trash', notext: true}
+  						]">
+  </bbn-column>
+</bbn-table>
