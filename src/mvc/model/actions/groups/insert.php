@@ -18,7 +18,7 @@ if ( !empty($model->data[$fgroup]) ){
     ];
     $src = $model->data['source_id'] ?: false;
     if ( $src ){
-      $options = $model->db->rselect_all('bbn_user_options', [], ['id_group' => $src]);
+      $options = $model->db->rselect_all('bbn_users_options', [], ['id_group' => $src]);
       foreach ( $options as $o ){
         $model->inc->pref->set(
           $o['id_option'],
