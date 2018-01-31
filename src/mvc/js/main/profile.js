@@ -23,57 +23,7 @@
       return {
         theme: this.source.data.theme,
         data: this.source.data,
-        themes: [
-          {
-            "value": "uniform",
-            "text": "Uniform"
-          }, {
-            "value": "black",
-            "text": "Black"
-          }, {
-            "value": "blueopal",
-            "text": "Blue Opal"
-          }, {
-            "value": "bootstrap",
-            "text": "Bootstrap"
-          }, {
-            "value": "default",
-            "text": "Default"
-          }, {
-            "value": "fiori",
-            "text": "Fiori"
-          }, {
-            "value": "flat",
-            "text": "Flat"
-          }, {
-            "value": "highcontrast",
-            "text": "High Contrast"
-          }, {
-            "value": "material",
-            "text": "Material"
-          }, {
-            "value": "materialblack",
-            "text": "Material Black"
-          }, {
-            "value": "metro",
-            "text": "Metro"
-          }, {
-            "value": "metroblack",
-            "text": "Metro Black"
-          }, {
-            "value": "moonlight",
-            "text": "Moonlight"
-          }, {
-            "value": "nova",
-            "text": "Nova"
-          }, {
-            "value": "office365",
-            "text": "Office 365"
-          }, {
-            "value": "silver",
-            "text": "Silver"
-          }
-        ]
+        themes: appui.themes
       }
   	}
   };
