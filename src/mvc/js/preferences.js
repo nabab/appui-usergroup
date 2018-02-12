@@ -34,7 +34,7 @@
         })
         bbn.fn.log("VIEW", data)
       },
-      delete(data){
+      del(data){
         bbn.fn.log("DELETE", data)
       }
     }

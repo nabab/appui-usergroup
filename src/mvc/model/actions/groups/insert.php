@@ -6,10 +6,10 @@ $cfg = $model->inc->user->get_class_cfg();
 $fid = $cfg['arch']['groups']['id'];
 $fgroup = $cfg['arch']['groups']['group'];
 $fcfg = $cfg['arch']['groups']['cfg'];
-if ( !empty($model->data[$fgroup]) ){
+if ( !empty($model->data[$fgroup]) && (!$model->inc->user->is_dev() || $model->inc->user->is_admin()) ){
   $mgr = $model->inc->user->get_manager();
   if ( $id = $mgr->group_insert([$fgroup => $model->data[$fgroup]]) ){
-    $r['success'] = 1;
+    $r['success'] = true;
     $r['data'] = [
       $fid => $id,
       $fgroup => $model->data[$fgroup],
@@ -24,7 +24,8 @@ if ( !empty($model->data[$fgroup]) ){
           $o['id_option'],
           $o['cfg'] ? json_decode($o['cfg'], 1) : [],
           null,
-          $id);
+          $id
+        );
       }
     }
   }
