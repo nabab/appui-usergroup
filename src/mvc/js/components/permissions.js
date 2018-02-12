@@ -6,9 +6,20 @@
  */
 (() => {
   return {
+    data(){
+      return {
+        disabled: []
+      }
+    },
     computed: {
       id_type(){
-        return 'id_' + this.source.type;
+        return 'id_' + (this.source.id_user !== undefined ? 'user' : 'group');
+      },
+      isUser(){
+        return !!this.source.id_user;
+      },
+      isGroup(){
+        return !!this.source.id_group;
       }
     },
     methods: {
@@ -16,18 +27,10 @@
         n.text += '<span class="appui-usergroup-permissions-list-code">' + n.code + '</span>';
         return n;
       },
-      permissionSelect(n){
-        bbn.fn.post(this.source.opt_url + '/permissions', {
-          id: n.data.id,
-          full: 1
-        }, (d) => {
-          this.selected = d.data || false;
-        });
-      },
       setPerm(idPerm){
-        if ( idPerm && this.source.id ){
-          bbn.fn.post(this.source.opt_url + 'permissions/add', {
-            [this.id_type]: this.source.id,
+        if ( idPerm && this.source[this.id_type] ){
+          bbn.fn.post(this.source.opt_url + '/permissions/add', {
+            [this.id_type]: this.source[this.id_type],
             id_option: idPerm
           }, (d) => {
             if ( d.data.res ){
@@ -40,9 +43,9 @@
         }
       },
       unsetPerm(idPerm){
-        if ( idPerm && this.source.id ){
-          bbn.fn.post(this.source.opt_url + 'permissions/remove', {
-            [this.id_type]: this.source.id,
+        if ( idPerm && this.source[this.id_type] ){
+          bbn.fn.post(this.source.opt_url + '/permissions/remove', {
+            [this.id_type]: this.source[this.id_type],
             id_option: idPerm
           }, (d) => {
             if ( d.data.res ){
@@ -50,6 +53,42 @@
             }
             else {
               appui.error(bbn._('Error!'));
+            }
+          });
+        }
+      },
+      getPerms(d){
+        if ( d.id && this.id_type && this.source[this.id_type] ){
+          bbn.fn.post(this.source.root + 'actions/permissions/get', {
+            id: d.id,
+            [this.id_type]: this.source[this.id_type]
+          }, (p) => {
+            if ( p.data ){
+              $.each(p.data.public, (i, v) => {
+                if ( $.inArray(v, this.$refs.permsList.checked) === -1 ){
+                  this.$refs.permsList.checked.push(v);
+                }
+                if ( $.inArray(v, this.$refs.permsList.disabled) === -1 ){
+                  this.$refs.permsList.disabled.push(v);
+                }
+              });
+              $.each(p.data.group, (i, v) => {
+                if ( this.isUser ){
+                  if ( $.inArray(v, this.$refs.permsList.disabled) === -1 ){
+                    this.$refs.permsList.disabled.push(v);
+                  }
+                }
+                if ( $.inArray(v, this.$refs.permsList.checked) === -1 ){
+                  this.$refs.permsList.checked.push(v);
+                }
+              });
+              if ( this.isUser ){
+                $.each(p.data.user, (i, v) => {
+                  if ( $.inArray(v, this.$refs.permsList.checked) === -1 ){
+                    this.$refs.permsList.checked.push(v);
+                  }
+                });
+              }
             }
           });
         }

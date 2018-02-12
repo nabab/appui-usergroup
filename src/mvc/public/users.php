@@ -6,7 +6,7 @@ $arch = $usr->get_class_cfg()['arch']['users'];
 if ( !empty($arch) ){
   $mgr = $ctrl->inc->user->get_manager();
   $ctrl->combo(_("Users' management"), [
-    'root' => $ctrl->data['root'],
+    'root' => APPUI_USERGROUP_ROOT,
     'users' => $mgr->get_list(),
     'groups' => $mgr->text_value_groups(),
     'arch' => $ctrl->inc->user->get_class_cfg()['arch']['users'],

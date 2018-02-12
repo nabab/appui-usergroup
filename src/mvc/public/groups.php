@@ -10,12 +10,13 @@ $groups = $mgr->groups();
 //$ctrl->data['permissions_groups'] = json_encode(\apst\manager::get_all_permissions());
 //$user_perm = array_keys($ctrl->inc->user->get_permissions());
 $ctrl->combo(_("Groupes d'utilisateurs"), [
-  'root' => $ctrl->data['root'],
+  'root' => APPUI_USERGROUP_ROOT,
   'arch' => $arch,
   'groups' => $groups,
   'is_dev' => $ctrl->inc->user->is_dev(),
   'is_admin' => $ctrl->inc->user->is_admin(),
   'perm_root' => $ctrl->inc->perm->get_option_root(),
+  'opt_url' => $ctrl->plugin_url('appui-options'),
   'lng' => [
     'quality' => _("Quality"),
     'new_user' => _("New user"),

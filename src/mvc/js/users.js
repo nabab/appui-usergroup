@@ -81,8 +81,10 @@
             width: 500,
             component: 'appui-usergroup-permissions',
             source: {
+              root: this.source.root,
               perm_root: this.source.perm_root,
-              opt_url: this.source.opt_url
+              opt_url: this.source.opt_url,
+              id_user: row.id
             }
           });
         }

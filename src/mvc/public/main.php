@@ -5,5 +5,5 @@
  **/
 
 /** @var $ctrl \bbn\mvc\controller */
-$ctrl->obj->url = $ctrl->data['root'] . 'main';
+$ctrl->obj->url = APPUI_USERGROUP_ROOT . 'main';
 $ctrl->combo(_("Profile and settings"));
