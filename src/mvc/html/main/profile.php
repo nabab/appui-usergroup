@@ -4,7 +4,7 @@
           @success="checkTheme"
           ref="form">
   <div class="bbn-grid-fields bbn-padded bbn-c">
-    <label class="bbn-form-label bbn-c" for="zjB159sxPxR82RHX9">
+    <label class="bbn-form-label" for="zjB159sxPxR82RHX9">
       Nom
     </label>
     <div class="bbn-form-field">
@@ -23,6 +23,8 @@
     <div class="bbn-form-field">
       <bbn-dropdown name="theme" id="PvrUPXO5R07i1udL033T76j7" :source="themes" v-model="data.theme"></bbn-dropdown>
     </div>
+    
+    <div class="bbn-grid-full bbn-large bbn-b">Hello</div>
 
     <label class="bbn-form-label" for="OOaX3f111kmT1lm0">Tel.</label>
     <div class="bbn-form-field">

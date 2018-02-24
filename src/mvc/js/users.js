@@ -17,7 +17,7 @@
           notext: true,
           command: this.edit,
           icon: 'fa fa-edit',
-          disabled: !!(this.source.is_dev && !this.source.is_admin)
+          disabled: !!(((row[this.source.arch.admin] || row[this.source.arch.dev]) && !this.source.is_admin) || (this.source.is_dev && !this.source.is_admin))
         }, {
           text: bbn._('Supprimer'),
           notext: true,
@@ -29,7 +29,7 @@
           notext: true,
           command: this.permissions,
           icon: 'fa fa-key',
-          disabled: !this.source.is_admin
+          disabled: !!((this.source.is_dev && !this.source.is_admin) || row[this.source.arch.admin])
         }];
       },
       insert(){
