@@ -39,7 +39,7 @@
   <bbn-column :editable="false"
               :sortable="false"
               :buttons="getButtons"
-              :width="160"
+              :width="170"
               cls="bbn-c"
   ></bbn-column>
 </bbn-table>

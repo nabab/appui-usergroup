@@ -91,7 +91,7 @@
   <bbn-column ftitle="<?=_("Actions")?>"
               :editable="false"
               :sortable="false"
-              :width="120"
+              :width="140"
               :buttons="getButtons"
               cls="bbn-c"
   ></bbn-column>

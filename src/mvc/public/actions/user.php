@@ -23,10 +23,11 @@ if ( isset($ctrl->post['current_pass'], $ctrl->post['pass1'], $ctrl->post['pass2
   }
 }
 else if ( isset($ctrl->post['email'], $ctrl->post['nom']) && \bbn\str::is_email($ctrl->post['email']) ){
-  $change_theme = $ctrl->post['theme'] !== $ctrl->inc->session->get('info', 'theme');
+  $change_theme = $ctrl->post['theme'] !== $ctrl->inc->session->get('theme');
   if ( $ctrl->obj->success = $ctrl->inc->user->update_info($ctrl->post) ){
     if ( $change_theme ){
-       $ctrl->inc->session->set('info', 'theme', $ctrl->post['theme']);
+      $ctrl->inc->user->set_session('theme', $ctrl->post['theme']);
+      //die(\bbn\x::dump("HELLO", $ctrl->inc->session->get('theme'), $ctrl->inc->session->get()));
     }
     else{
       $ctrl->obj->error = "Modification réussie";
