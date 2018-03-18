@@ -5,7 +5,7 @@ $usr = bbn\user::get_instance();
 $arch = $usr->get_class_cfg()['arch']['users'];
 if ( !empty($arch) ){
   $mgr = $ctrl->inc->user->get_manager();
-  $ctrl->combo(_("Users' management"), [
+  $ctrl->combo(_("Gestion des utilisateurs"), [
     'root' => APPUI_USERGROUP_ROOT,
     'users' => $mgr->get_list(),
     'groups' => $mgr->text_value_groups(),

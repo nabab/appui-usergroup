@@ -44,7 +44,7 @@
       },
       save(row){
         if ( !row[this.source.arch.group] ){
-          this.popup().alert(bbn._("Nom is mandatory!"));
+          this.popup().alert(bbn._("Nom est obligatoire!"));
         }
         else {
           bbn.fn.post(this.source.root + 'actions/groups/' + (row[this.source.arch.id] ? 'update' : 'insert'), row, (d) => {
@@ -64,7 +64,7 @@
               appui.success(bbn._('Enregistré'));
             }
             else{
-              appui.error(bbn._('Erreur'));
+              appui.error(bbn._('Erreur!'));
             }
           });
         }
@@ -82,7 +82,7 @@
                 }
               }
               else {
-                appui.error(bbn._('Erreur'));
+                appui.error(bbn._('Erreur!'));
               }
             });
           });
@@ -142,7 +142,7 @@
                 table.editedRow[i] = v;
               });
               e.preventDefault();
-              appui.error(bbn._('Erreur'));
+              appui.error(bbn._('Erreur!'));
             }
           }
         }

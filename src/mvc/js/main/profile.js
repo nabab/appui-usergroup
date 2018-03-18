@@ -7,7 +7,7 @@
         if ( this.theme !== this.$refs.form.source.theme ){
           //bbn.fn.log("POPUP YEAH", this.getPopup());
           this.popup().confirm(
-            bbn._("You have changed the theme. Do you want to reload the application in order to use the new theme?"),
+            bbn._("Vous venez de changer le thème. Voulez-vous rafraîchir l'application afin d'appliquer le nouveau thème?"),
             () => {
               document.location.reload();
               this.theme = this.$refs.form.source.theme;

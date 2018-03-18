@@ -67,7 +67,7 @@
                 }
               }
               else {
-                appui.error(bbn._('Erreur'));
+                appui.error(bbn._('Erreur!'));
               }
             });
           });
@@ -126,7 +126,7 @@
                 table.editedRow[i] = v;
               });
               e.preventDefault();
-              appui.error(bbn._('Erreur'));
+              appui.error(bbn._('Erreur!'));
             }
           }
         }

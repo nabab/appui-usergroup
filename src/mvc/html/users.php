@@ -60,7 +60,7 @@
               type="boolean"
   ></bbn-column>
   <bbn-column title="<i class='fa fa-calendar bbn-xl'></i>"
-              ftitle="<?=_("Last activity from the user")?>"
+              ftitle="<?=_("Dernière activité de l'utilisateur")?>"
               field="last_activity"
               :editable="false"
               :filterable="false"
@@ -74,7 +74,7 @@
               :render="renderTel"
   ></bbn-column>
   <bbn-column title="<i class='fa fa-desktop bbn-large'></i>"
-              ftitle="<?=_("Theme")?>"
+              ftitle="<?=_("Thème")?>"
               :field="source.arch.theme"
               :width="80"
               :source="$root.themes"
@@ -127,7 +127,7 @@
       <bbn-input v-model="source.row[source.data.arch.tel]"
                  maxlength="10"
       ></bbn-input>
-      <div><?=_('Theme')?></div>
+      <div><?=_('Thème')?></div>
       <div>
         <bbn-dropdown :source="themes"
                       v-model="source.row[source.data.arch.theme]"
@@ -141,7 +141,7 @@
                     :value="1"
                     v-model="source.row[source.data.arch.dev]"
       ></bbn-checkbox>
-      <div v-if="source.data.is_admin"><?=_('Administrator')?></div>
+      <div v-if="source.data.is_admin"><?=_('Administrateur')?></div>
       <bbn-checkbox v-if="source.data.is_admin"
                     :novalue="0"
                     :value="1"
