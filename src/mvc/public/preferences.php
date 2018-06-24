@@ -24,6 +24,7 @@ else if ( isset($ctrl->post['id']) ){
   $ctrl->obj->data = $ctrl->inc->pref->get_cfg($ctrl->post['id']);
 }
 else{
+  $ctrl->data['root'] = APPUI_USERGROUP_ROOT;
   $ctrl->data['options_root'] = $ctrl->plugin_url('appui-options').'/';
   $ctrl->combo(_('Mes préférences'), $ctrl->data);
 }

@@ -1,13 +1,13 @@
 <!-- HTML Document -->
 <bbn-tabnav class="bbn-user-profile" :autoload="false">
-  <bbn-tab url="profile"
+  <bbns-tab url="profile"
            title="<?=_("Informations")?>"
            :static="true"
            :load="true"
-  ></bbn-tab>
-  <bbn-tab url="password"
+  ></bbns-tab>
+  <bbns-tab url="password"
            title="<?=_("Mot de passe")?>"
            :static="true"
            :load="true"
-  ></bbn-tab>
+  ></bbns-tab>
 </bbn-tabnav>

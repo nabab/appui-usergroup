@@ -27,59 +27,59 @@
            }]"
            :tr-class="trClass"
 >
-  <bbn-column title="<?=_("ID")?>"
+  <bbns-column title="<?=_("ID")?>"
               :field="source.arch.id"
               :hidden="true"
               :editable="false"
               :width="40"
               :filterable="false"
-  ></bbn-column>
-  <bbn-column title="<i class='fa fa-user bbn-large'></i>"
+  ></bbns-column>
+  <bbns-column title="<i class='fa fa-user bbn-large'></i>"
               ftitle="<?=_("Nom")?>"
               :field="source.arch.username"
               :width="250"
-  ></bbn-column>
-  <bbn-column title="<i class='fa fa-cogs bbn-large'></i>"
+  ></bbns-column>
+  <bbns-column title="<i class='fa fa-cogs bbn-large'></i>"
               ftitle="<?=_("Fonction")?>"
               :field="source.arch.fonction"
               :render="renderFonction"
-  ></bbn-column>
-  <bbn-column title="<i class='fa fa-group bbn-large'></i>"
+  ></bbns-column>
+  <bbns-column title="<i class='fa fa-group bbn-large'></i>"
               ftitle="<?=_("Groupe")?>"
               :field="source.arch.id_group"
               :source="source.groups"
-  ></bbn-column>
-  <bbn-column title="<i class='fa fa-at bbn-large'></i>"
+  ></bbns-column>
+  <bbns-column title="<i class='fa fa-at bbn-large'></i>"
               ftitle="<?=_("eMail")?>"
               :field="source.arch.email"
               type="email"
-  ></bbn-column>
-  <bbn-column title="<?=_("Dev")?>"
+  ></bbns-column>
+  <bbns-column title="<?=_("Dev")?>"
               :field="source.arch.dev"
               :hidden="true"
               type="boolean"
-  ></bbn-column>
-  <bbn-column title="<i class='fa fa-calendar bbn-xl'></i>"
+  ></bbns-column>
+  <bbns-column title="<i class='fa fa-calendar bbn-xl'></i>"
               ftitle="<?=_("Dernière activité de l'utilisateur")?>"
               field="last_activity"
               :editable="false"
               :filterable="false"
               :width="120"
               type="date"
-  ></bbn-column>
-  <bbn-column title="<i class='fa fa-phone bbn-large'></i>"
+  ></bbns-column>
+  <bbns-column title="<i class='fa fa-phone bbn-large'></i>"
               ftitle="<?=_("Téléphone")?>"
               :field="source.arch.tel"
               :width="100"
               :render="renderTel"
-  ></bbn-column>
-  <bbn-column title="<i class='fa fa-desktop bbn-large'></i>"
+  ></bbns-column>
+  <bbns-column title="<i class='fa fa-desktop bbn-large'></i>"
               ftitle="<?=_("Thème")?>"
               :field="source.arch.theme"
               :width="80"
               :source="$root.themes"
-  ></bbn-column>
-  <bbn-column title="<?=_("Actif")?>"
+  ></bbns-column>
+  <bbns-column title="<?=_("Actif")?>"
               :field="source.arch.active"
               type="boolean"
               :editable="false"
@@ -87,14 +87,14 @@
               :showable="false"
               :filterable="false"
               :width="80"
-  ></bbn-column>
-  <bbn-column ftitle="<?=_("Actions")?>"
+  ></bbns-column>
+  <bbns-column ftitle="<?=_("Actions")?>"
               :editable="false"
               :sortable="false"
               :width="140"
               :buttons="getButtons"
               cls="bbn-c"
-  ></bbn-column>
+  ></bbns-column>
 </bbn-table>
 
 <script type="text/x-template" id="appui-usergroup-user-edit-form">

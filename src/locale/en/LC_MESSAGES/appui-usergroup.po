@@ -7,267 +7,218 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2018-03-18 14:04+0100\n"
-"PO-Revision-Date: 2018-03-18 14:04+0100\n"
+"POT-Creation-Date: 2018-04-16 16:07+0200\n"
+"PO-Revision-Date: 2018-04-16 16:07+0200\n"
 "Language: en\n"
 "X-Domain: appui-usergroup\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/html/groups.php:1
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/html/groups.php:1
 msgid "Nouveau groupe"
-msgstr "New group"
+msgstr "Nouveau groupe"
 
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/html/groups.php:1
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/html/users.php:1
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/html/groups.php:1
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/html/users.php:1
 msgid "ID"
 msgstr "ID"
 
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/html/groups.php:1
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/html/users.php:1
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/public/groups.php:1
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/html/groups.php:1
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/html/users.php:1
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/public/groups.php:1
 msgid "Nom"
-msgstr "Name"
+msgstr "Nom"
 
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/html/groups.php:1
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/html/groups.php:1
 msgid "Utilisateurs"
-msgstr "Users"
+msgstr "Utilisateurs"
 
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/html/main.php:1
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/html/main.php:1
 msgid "Informations"
 msgstr "Informations"
 
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/html/main.php:1
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/html/main.php:1
 msgid "Mot de passe"
-msgstr "Password"
+msgstr "Mot de passe"
 
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/html/users.php:1
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/html/users.php:1
 msgid "Nouveau user"
-msgstr "New user"
+msgstr "Nouveau user"
 
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/html/users.php:1
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/html/users.php:1
 msgid "Fonction"
-msgstr "Function"
+msgstr "Fonction"
 
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/html/users.php:1
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/public/groups.php:1
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/html/users.php:1
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/public/groups.php:1
 msgid "Groupe"
-msgstr "Group"
+msgstr "Groupe"
 
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/html/users.php:1
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/html/users.php:1
 msgid "eMail"
 msgstr "eMail"
 
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/html/users.php:1
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/html/users.php:1
 msgid "Dev"
-msgstr "Developer"
+msgstr "Dev"
 
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/html/users.php:1
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/html/users.php:1
 msgid "Dernière activité de l'utilisateur"
-msgstr "Last activity from the user"
+msgstr "Dernière activité de l'utilisateur"
 
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/html/users.php:1
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/html/users.php:1
 msgid "Téléphone"
-msgstr "Phone"
+msgstr "Téléphone"
 
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/html/users.php:1
-msgid "Theme"
-msgstr "Theme"
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/html/users.php:1
+msgid "Thème"
+msgstr "Thème"
 
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/html/users.php:1
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/html/users.php:1
 msgid "Actif"
-msgstr "Active"
+msgstr "Actif"
 
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/html/users.php:1
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/public/groups.php:1
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/html/users.php:1
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/public/groups.php:1
 msgid "Actions"
 msgstr "Actions"
 
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/html/users.php:1
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/html/users.php:1
 msgid "Développeur"
-msgstr "Developer"
+msgstr "Développeur"
 
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/html/users.php:1
-msgid "Administrator"
-msgstr ""
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/html/users.php:1
+msgid "Administrateur"
+msgstr "Administrateur"
 
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/js/groups.js:1
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/js/users.js:1
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/public/groups.php:1
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/js/groups.js:1
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/js/users.js:1
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/public/groups.php:1
 msgid "Modifier"
-msgstr "Edit"
+msgstr "Modifier"
 
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/js/groups.js:1
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/js/users.js:1
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/js/groups.js:1
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/js/users.js:1
 msgid "Supprimer"
-msgstr "Delete"
+msgstr "Supprimer"
 
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/js/groups.js:1
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/js/users.js:1
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/js/groups.js:1
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/js/users.js:1
 msgid "Permissions"
 msgstr "Permissions"
 
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/js/groups.js:1
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/js/groups.js:1
 msgid "Dupliquer"
-msgstr "Duplicate"
+msgstr "Dupliquer"
 
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/js/groups.js:1
-msgid "Nom is mandatory!"
-msgstr ""
-
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/js/groups.js:1
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/js/users.js:1
-msgid "Enregistré"
-msgstr "Saved"
-
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/js/groups.js:1
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/js/users.js:1
-msgid "Erreur"
-msgstr ""
-
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/js/groups.js:1
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/js/users.js:1
-msgid "Etes vous sur de vouloir supprimer cette entrée?"
-msgstr "Are you sure you want to delete this row?"
-
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/js/groups.js:1
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/js/users.js:1
-msgid "Supprimé"
-msgstr "Deleted"
-
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/js/preferences.js:1
-msgid "Preference configuration"
-msgstr ""
-
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/js/users.js:1
-msgid "Création d'un user"
-msgstr "User creation"
-
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/js/users.js:1
-msgid "Modification d'un user"
-msgstr "User modification"
-
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/js/components/permissions.js:1
-msgid "Saved!"
-msgstr ""
-
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/js/components/permissions.js:1
-msgid "Error!"
-msgstr ""
-
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/js/main/profile.js:1
-msgid "You have changed the theme. Do you want to reload the application in order to use the new theme?"
-msgstr ""
-
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/model/permissions.php:1
-msgid "Permissions de l'utilisateur "
-msgstr "User's permissions"
-
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/public/groups.php:1
-msgid "Groupes d'utilisateurs"
-msgstr "Users' groups"
-
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/public/groups.php:1
-msgid "Qualité"
-msgstr "Quality"
-
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/public/groups.php:1
-msgid "Nouvel utilisateur"
-msgstr "New user"
-
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/public/groups.php:1
-msgid "Générer un PDF"
-msgstr "Generate a PDF"
-
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/public/groups.php:1
-msgid "Prénom"
-msgstr "First name"
-
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/public/groups.php:1
-msgid "Adresses eMail"
-msgstr "eMail address"
-
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/public/groups.php:1
-msgid "Vu pour la dernière fois"
-msgstr "Last seen"
-
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/public/groups.php:1
-msgid "Désactiver"
-msgstr "Deactivate"
-
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/public/groups.php:1
-msgid "Réinitialiser le mot de passe"
-msgstr "Reset the password"
-
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/public/groups.php:1
-msgid "Gérer les permissions de l'utilisateur"
-msgstr "Manage user's permissions"
-
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/public/groups.php:1
-msgid "Un eMail vient d#être envoyé à "
-msgstr ""
-
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/public/groups.php:1
-msgid "Impossible de réinitialiser le mnot de passe"
-msgstr "Impossible to reset the password"
-
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/public/main.php:1
-msgid "Profile and settings"
-msgstr ""
-
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/public/preferences.php:1
-msgid "My preferences"
-msgstr ""
-
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/public/users.php:1
-msgid "Users' management"
-msgstr ""
-
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/public/main/profile.php:1
-msgid "Mon profil"
-msgstr "My profile"
-
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/html/users.php:1
-msgid "Administrateur"
-msgstr "Administrator"
-
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/js/groups.js:1
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/js/groups.js:1
 msgid "Nom est obligatoire!"
-msgstr "Name is mandatory!"
+msgstr "Nom est obligatoire!"
 
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/js/groups.js:1
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/js/users.js:1
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/js/components/permissions.js:1
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/js/groups.js:1
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/js/users.js:1
+msgid "Enregistré"
+msgstr "Enregistré"
+
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/js/groups.js:1
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/js/users.js:1
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/js/components/permissions.js:1
 msgid "Erreur!"
-msgstr "Error!"
+msgstr "Erreur!f"
 
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/js/preferences.js:1
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/js/groups.js:1
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/js/users.js:1
+msgid "Etes vous sur de vouloir supprimer cette entrée?"
+msgstr "Etes vous sur de vouloir supprimer cette entrée?"
+
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/js/groups.js:1
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/js/users.js:1
+msgid "Supprimé"
+msgstr "Supprimé"
+
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/js/preferences.js:1
 msgid "Configuration des préférences"
-msgstr "Preferences' configuration"
+msgstr "Configuration des préférences"
 
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/js/components/permissions.js:1
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/js/users.js:1
+msgid "Création d'un user"
+msgstr "Création d'un user"
+
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/js/users.js:1
+msgid "Modification d'un user"
+msgstr "Modification d'un user"
+
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/js/components/permissions.js:1
 msgid "Sauvegardé!"
-msgstr "Saved!"
+msgstr "Sauvegardé!"
 
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/html/users.php:1
-msgid "Thème"
-msgstr "Theme"
-
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/js/main/profile.js:1
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/js/main/profile.js:1
 msgid "Vous venez de changer le thème. Voulez-vous rafraîchir l'application afin d'appliquer le nouveau thème?"
-msgstr "You have just changed the theme. Do you want to refresh the page in order to apply the new theme?"
+msgstr "Vous venez de changer le thème. Voulez-vous rafraîchir l'application afin d'appliquer le nouveau thème?"
 
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/public/groups.php:1
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/model/permissions.php:1
+msgid "Permissions de l'utilisateur "
+msgstr "Permissions de l'utilisateur"
+
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/public/groups.php:1
+msgid "Groupes d'utilisateurs"
+msgstr "Groupes d'utilisateurs"
+
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/public/groups.php:1
+msgid "Qualité"
+msgstr "Qualité"
+
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/public/groups.php:1
+msgid "Nouvel utilisateur"
+msgstr "Nouvel utilisateur"
+
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/public/groups.php:1
+msgid "Générer un PDF"
+msgstr "Générer un PDF"
+
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/public/groups.php:1
+msgid "Prénom"
+msgstr "Prénom"
+
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/public/groups.php:1
+msgid "Adresses eMail"
+msgstr "Adresses eMail"
+
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/public/groups.php:1
+msgid "Vu pour la dernière fois"
+msgstr "Vu pour la dernière fois"
+
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/public/groups.php:1
+msgid "Désactiver"
+msgstr "Désactiver"
+
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/public/groups.php:1
+msgid "Réinitialiser le mot de passe"
+msgstr "Réinitialiser le mot de passe"
+
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/public/groups.php:1
+msgid "Gérer les permissions de l'utilisateur"
+msgstr "Gérer les permissions de l'utilisateur"
+
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/public/groups.php:1
 msgid "Un eMail vient d'être envoyé à "
-msgstr "An eMail has just been sent to"
+msgstr "Un eMail vient d'être envoyé à"
 
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/public/main.php:1
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/public/groups.php:1
+msgid "Impossible de réinitialiser le mnot de passe"
+msgstr "Impossible de réinitialiser le mnot de passe"
+
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/public/main.php:1
 msgid "Profil et préférences"
-msgstr "Profile and settings"
+msgstr "Profil et préférences"
 
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/public/preferences.php:1
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/public/preferences.php:1
 msgid "Mes préférences"
-msgstr "My preferences"
+msgstr "Mes préférences"
 
-#: /home/app2/_appui/vendor/bbn/appui-usergroup/src/mvc/public/users.php:1
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/public/users.php:1
 msgid "Gestion des utilisateurs"
-msgstr "Users' management"
+msgstr "Gestion des utilisateurs"
+
+#: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/public/main/profile.php:1
+msgid "Mon profil"
+msgstr "Mon profil"

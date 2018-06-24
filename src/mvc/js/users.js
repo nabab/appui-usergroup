@@ -90,11 +90,6 @@
         }
       }
     },
-    beforeMount(){
-      bbn.vue.setComponentRule(this.source.root + 'components/', 'appui-usergroup');
-      bbn.vue.addComponent('permissions');
-      bbn.vue.unsetComponentRule();
-    },
     components: {
       'appui-usergroup-user-edit-form': {
         template: '#appui-usergroup-user-edit-form',
