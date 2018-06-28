@@ -8,6 +8,8 @@
   return {
     data(){
       return {
+        root: appui.plugins['appui-usergroup'],
+        opt_root: appui.plugins['appui-options'],
         disabled: []
       }
     },
@@ -29,7 +31,7 @@
       },
       setPerm(idPerm){
         if ( idPerm && this.source[this.id_type] ){
-          bbn.fn.post(this.source.opt_url + '/permissions/add', {
+          bbn.fn.post(this.opt_root + '/permissions/add', {
             [this.id_type]: this.source[this.id_type],
             id_option: idPerm
           }, (d) => {
@@ -44,7 +46,7 @@
       },
       unsetPerm(idPerm){
         if ( idPerm && this.source[this.id_type] ){
-          bbn.fn.post(this.source.opt_url + '/permissions/remove', {
+          bbn.fn.post(this.opt_root + '/permissions/remove', {
             [this.id_type]: this.source[this.id_type],
             id_option: idPerm
           }, (d) => {
@@ -59,7 +61,7 @@
       },
       getPerms(d){
         if ( d.id && this.id_type && this.source[this.id_type] ){
-          bbn.fn.post(this.source.root + 'actions/permissions/get', {
+          bbn.fn.post(this.root + '/actions/permissions/get', {
             id: d.id,
             [this.id_type]: this.source[this.id_type]
           }, (p) => {

@@ -44,7 +44,7 @@
       },
       save(row){
         if ( !row[this.source.arch.group] ){
-          this.popup().alert(bbn._("Nom est obligatoire!"));
+          this.alert(bbn._("Nom est obligatoire!"));
         }
         else {
           bbn.fn.post(this.source.root + 'actions/groups/' + (row[this.source.arch.id] ? 'update' : 'insert'), row, (d) => {
@@ -58,8 +58,9 @@
                   this.source.groups[idx] = row;
                 }
               }
-              this.$refs.table._removeTmp();
+              //this.$refs.table._removeTmp();
               this.$refs.table.editedRow = false;
+              this.$refs.table.editedIndex = false;
               this.$refs.table.updateData();
               appui.success(bbn._('Enregistré'));
             }
@@ -71,7 +72,7 @@
       },
       remove(row){
         if ( row[this.source.arch.id] && (!this.source.is_dev || this.source.is_admin) ){
-          this.$refs.table.getPopup().confirm(bbn._("Etes vous sur de vouloir supprimer cette entrée?"), () => {
+          this.confirm(bbn._("Etes vous sur de vouloir supprimer cette entrée?"), () => {
             bbn.fn.post(this.source.root + "actions/groups/delete", {id: row[this.source.arch.id]}, (d) => {
               if ( d.success ){
                 let idx = bbn.fn.search(this.source.groups, this.source.arch.id, row[this.source.arch.id]);
@@ -90,7 +91,7 @@
       },
       permissions(row){
         if ( this.source.perm_root && row.id ){
-          this.popup().open({
+          this.getPopup().open({
             title: bbn._('Permissions'),
             height: '90%',
             width: 500,
@@ -111,11 +112,6 @@
         newRow.source_id = row.id;
         this.$refs.table.insert(newRow);
       }
-    },
-    beforeMount(){
-      bbn.vue.setComponentRule(this.source.root + 'components/', 'appui-usergroup');
-      bbn.vue.addComponent('permissions');
-      bbn.vue.unsetComponentRule();
     },
     compopnents: {
       'appui-usergroup-group-edit-form': {

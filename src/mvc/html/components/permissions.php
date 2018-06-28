@@ -1,5 +1,5 @@
 <div class="bbn-full-screen appui-usergroup-permissions bbn-padded">
-  <bbn-tree :source="source.opt_url + '/permissions'"
+  <bbn-tree :source="opt_root + '/permissions'"
             uid="id"
             :root="source.perm_root"
             :map="treeMapper"
