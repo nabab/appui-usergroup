@@ -14,6 +14,9 @@
           if ( appui.app.groups && appui.app.users ){
             appui.app.groups.forEach(group => {
               let users = appui.app.users.filter(u => {
+                if ( this.$options.propsData.selfExcluded ){
+                  return ((u.id_group === group.id) && (u.value !== appui.app.user.id));
+                }
                 return u.id_group === group.id;
               });
               users = users.map(u => {
@@ -24,7 +27,7 @@
               });
               def.push({
                 id: group.id,
-                text: group.nom,
+                text: group.nom || group.group,
                 items: bbn.fn.order(users, 'text'),
                 num: users.length,
                 icon: 'fas fa-users'
@@ -37,16 +40,27 @@
       multi: {
         type: Boolean,
         default: false
+      },
+      asArray: {
+        type: Boolean,
+        default: false
+      },
+      selfExcluded: {
+        type: Boolean,
+        default: false
+      },
+      value :{
+        type: [Array, String]
       }
     },
     data(){
       return {
-        sel: []
+        sel: Array.isArray(this.value) ? this.value : []
       }
     },
     computed: {
       selected(){
-        return this.sel.length === 1 ? this.sel[0] : this.sel;
+        return (this.sel.length === 1) && !this.asArray ? this.sel[0] : this.sel;
       }
     },
     methods: {
@@ -100,6 +114,13 @@
     watch: {
       selected(newVal){
         this.$emit('input', newVal);
+      }
+    },
+    mounted(){
+      if ( this.multi && Array.isArray(this.value) && this.value.length ){
+        this.value.forEach(v => {
+          this.$refs.tree.checked.push(v);
+        });
       }
     }
   }
