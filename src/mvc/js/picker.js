@@ -27,7 +27,7 @@ $tree = $("div.bbn_usergroup_tree", ele).kendoTreeView({
     }
   },
   template: function (e) {
-    return '<i class="fa fa-' + (e.item.is_parent ? 'users' : 'user') + '"> </i> ' + e.item.text;
+    return '<i class="fas fa-' + (e.item.is_parent ? 'users' : 'user') + '"> </i> ' + e.item.text;
   }
 }).data("kendoTreeView");
 $li = $("li.k-item li.k-item", $tree.element);

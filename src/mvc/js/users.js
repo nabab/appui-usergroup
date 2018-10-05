@@ -27,19 +27,19 @@
           text: bbn._('Modifier'),
           notext: true,
           command: this.edit,
-          icon: 'fa fa-edit',
+          icon: 'fas fa-edit',
           disabled: !!(((row[this.source.arch.admin] || row[this.source.arch.dev]) && !this.user.isAdmin) || (this.user.isDev && !this.user.isAdmin))
         }, {
           text: bbn._('Supprimer'),
           notext: true,
           command: this.remove,
-          icon: 'fa fa-trash',
+          icon: 'fas fa-trash',
           disabled: !!(row[this.source.arch.admin] || (row[this.source.arch.dev] && !this.user.isAdmin) || (this.user.isDev && !this.user.isAdmin))
         }, {
           text: bbn._('Permissions'),
           notext: true,
           command: this.permissions,
-          icon: 'fa fa-key',
+          icon: 'fas fa-key',
           disabled: !!((this.user.isDev && !this.user.isAdmin) || row[this.source.arch.admin])
         }];
       },

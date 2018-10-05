@@ -9,7 +9,7 @@
            :editor="$options.components['appui-usergroup-user-edit-form']"
            :toolbar="[{
              text: '<?=_('Nouveau user')?>',
-             icon: 'fa fa-user-plus',
+             icon: 'fas fa-user-plus',
              command: insert,
              disabled: !!(user.isDev && !user.isAdmin)
            }]"
@@ -27,7 +27,7 @@
                :width="40"
                :filterable="false"
   ></bbns-column>
-  <bbns-column title="<i class='fa fa-user bbn-large'></i>"
+  <bbns-column title="<i class='fas fa-user bbn-large'></i>"
                ftitle="<?=_("Nom")?>"
                :field="source.arch.username"
                :width="250"
@@ -38,7 +38,7 @@
                :source="source.groups"
                :width="200"
   ></bbns-column>
-  <bbns-column title="<i class='fa fa-cogs bbn-large'></i>"
+  <bbns-column title="<i class='fas fa-cogs bbn-large'></i>"
                ftitle="<?=_("Fonction")?>"
                :field="source.arch.fonction"
                :render="renderFonction"
@@ -50,7 +50,7 @@
                :width="250"
                v-if="source.arch.login !== source.arch.email"
   ></bbns-column>
-  <bbns-column title="<i class='fa fa-at bbn-large'></i>"
+  <bbns-column title="<i class='fas fa-at bbn-large'></i>"
                ftitle="<?=_("eMail")?>"
                :field="source.arch.email"
                type="email"
@@ -65,7 +65,7 @@
                type="date"
                cls="bbn-c"
   ></bbns-column>
-  <bbns-column title="<i class='fa fa-phone bbn-large'></i>"
+  <bbns-column title="<i class='fas fa-phone bbn-large'></i>"
                ftitle="<?=_("Téléphone")?>"
                :field="source.arch.tel"
                :width="120"

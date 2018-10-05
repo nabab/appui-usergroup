@@ -7,7 +7,7 @@
            :editable="true"
            :toolbar="[{
              text: '<?=_('Nouveau groupe')?>',
-             icon: 'fa fa-plus',
+             icon: 'fas fa-plus',
              command: 'insert',
              disabled: !!(source.is_dev && !source.is_admin)
            }]"
@@ -20,7 +20,7 @@
                :hidden="true"
                :editable="false"
   ></bbns-column>
-  <bbns-column title="<i class='fa fa-group bbn-large'></i>"
+  <bbns-column title="<i class='fas fa-users bbn-large'></i>"
                ftitle="<?=_('Nom')?>"
                :field="source.arch.group"
                :required="true"

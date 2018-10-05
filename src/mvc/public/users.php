@@ -12,5 +12,5 @@ if ( !empty($arch) ){
     'list' => $mgr->get_list_fields(),
     'perm_root' => $ctrl->inc->perm->get_option_root(),
   ]);
-  $ctrl->obj->icon = 'fa fa-user';
+  $ctrl->obj->icon = 'fas fa-user';
 }

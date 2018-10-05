@@ -20,25 +20,25 @@
           text: bbn._('Modifier'),
           notext: true,
           command: 'edit',
-          icon: 'fa fa-edit',
+          icon: 'fas fa-edit',
           disabled: !!(this.source.is_dev && !this.source.is_admin)
         }, {
           text: bbn._('Supprimer'),
           notext: true,
           command: this.remove,
-          icon: 'fa fa-trash',
+          icon: 'fas fa-trash',
           disabled: !!(row.num || (this.source.is_dev && !this.source.is_admin))
         }, {
           text: bbn._('Permissions'),
           notext: true,
           command: this.permissions,
-          icon: 'fa fa-key',
+          icon: 'fas fa-key',
           disabled: !!(this.source.is_dev && !this.source.is_admin)
         }, {
           text: bbn._('Dupliquer'),
           notext: true,
           command: this.duplicate,
-          icon: 'fa fa-copy',
+          icon: 'fas fa-copy',
           disabled: !!(this.source.is_dev && !this.source.is_admin)
         }];
       },
