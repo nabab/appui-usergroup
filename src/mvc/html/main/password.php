@@ -4,9 +4,9 @@
     <bbn-form method="post"
               :source="data"
               class="bbn-lg k-widget bbn-middle"
-              :action="source.root + 'actions/user'"
-              :successMessage="_('Your password has been updated successfully')"
-              :validation="(d) => {return d.pass1 === d.pass2}">
+              :action="root + 'actions/user'"
+              :success="success"
+              :validation="validForm">
       <div class="bbn-full-screen bbn-middle">
         <div class="bbn-grid-fields bbn-padded bbn-c">
           <label for="E4TaZKccHws1gctn">
