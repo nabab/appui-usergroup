@@ -9,7 +9,7 @@ $groups = $mgr->groups();
 \bbn\x::sort_by($groups, $arch['group'], 'ASC');
 //$ctrl->data['permissions_groups'] = json_encode(\apst\manager::get_all_permissions());
 //$user_perm = array_keys($ctrl->inc->user->get_permissions());
-$ctrl->combo(_("Groupes d'utilisateurs"), [
+$ctrl->combo(_("User Groups"), [
   'root' => APPUI_USERGROUP_ROOT,
   'arch' => $arch,
   'groups' => $groups,
@@ -18,25 +18,25 @@ $ctrl->combo(_("Groupes d'utilisateurs"), [
   'perm_root' => $ctrl->inc->perm->get_option_root(),
   'opt_url' => $ctrl->plugin_url('appui-options'),
   'lng' => [
-    'quality' => _("Qualité"),
-    'new_user' => _("Nouvel utilisateur"),
-    'generate_pdf' => _("Générer un PDF"),
-    'name' => _("Nom"),
-    'fname' => _("Prénom"),
-    'email' => _("Adresses eMail"),
-    'group' => _("Groupe"),
-    'last_seen' => _("Vu pour la dernière fois"),
+    'quality' => _("Quality"),
+    'new_user' => _("New user"),
+    'generate_pdf' => _("Generate a PDF"),
+    'name' => _("Name"),
+    'fname' => _("First name"),
+    'email' => _("Email addresses"),
+    'group' => _("Group"),
+    'last_seen' => _("Last seen"),
     'actions' => _("Actions"),
-    'edit' => _("Modifier"),
-    'deactivate' => _("Désactiver"),
-    'reset_password' => _("Réinitialiser le mot de passe"),
-    'manage_user_permissions' => _("Gérer les permissions de l'utilisateur"),
-    'email_sent_to' => _("Un eMail vient d'être envoyé à "),
-    'impossible_to_reset' => _("Impossible de réinitialiser le mnot de passe"),
-    'sure_to_delete_group' => "Êtes-vous sûr de vouloir supprimer ce groupe?",
-    'create_a_new_group_based_on' => "Nouveau groupe avec les permissions de",
+    'edit' => _("Edit"),
+    'deactivate' => _("Deactivate"),
+    'reset_password' => _("Reset password"),
+    'manage_user_permissions' => _("Manage user permissions"),
+    'email_sent_to' => _("An email has been sent to"),
+    'impossible_to_reset' => _("Can not reset password"),
+    'sure_to_delete_group' => "Are you sure you want to delete this group?",
+    'create_a_new_group_based_on' => "New group with permissions",
     'edit_group' => "Modification du groupe d'utilisateurs",
-    'new_group' => "Nouveau groupe d'utilisateurs"
+    'new_group' => "New user group"
   ]
 ]);
 $ctrl->obj->icon = 'fas fa-users';

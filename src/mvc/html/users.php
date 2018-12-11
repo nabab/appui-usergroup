@@ -8,7 +8,7 @@
            :editable="true"
            :editor="$options.components['appui-usergroup-user-edit-form']"
            :toolbar="[{
-             text: '<?=_('Nouveau user')?>',
+             text: '<?=_('New user')?>',
              icon: 'fas fa-user-plus',
              command: insert,
              disabled: !!(user.isDev && !user.isAdmin)
@@ -28,18 +28,18 @@
                :filterable="false"
   ></bbns-column>
   <bbns-column title="<i class='fas fa-user bbn-large'></i>"
-               ftitle="<?=_("Nom")?>"
+               ftitle="<?=_("Name")?>"
                :field="source.arch.username"
                :width="250"
   ></bbns-column>
   <bbns-column title="<i class='fas fa-users bbn-large'></i>"
-               ftitle="<?=_("Groupe")?>"
+               ftitle="<?=_("Group")?>"
                :field="source.arch.id_group"
                :source="source.groups"
                :width="200"
   ></bbns-column>
   <bbns-column title="<i class='fas fa-cogs bbn-large'></i>"
-               ftitle="<?=_("Fonction")?>"
+               ftitle="<?=_("Function")?>"
                :field="source.arch.fonction"
                :render="renderFonction"
                :width="200"
@@ -57,7 +57,7 @@
                :width="250"
   ></bbns-column>
   <bbns-column title="<i class='far fa-calendar-alt bbn-xl'></i>"
-               ftitle="<?=_("Dernière activité de l'utilisateur")?>"
+               ftitle="<?=_("Last activity of the user")?>"
                field="last_activity"
                :editable="false"
                :filterable="false"
@@ -66,28 +66,28 @@
                cls="bbn-c"
   ></bbns-column>
   <bbns-column title="<i class='fas fa-phone bbn-large'></i>"
-               ftitle="<?=_("Téléphone")?>"
+               ftitle="<?=_("Phone")?>"
                :field="source.arch.tel"
                :width="120"
                :render="renderTel"
   ></bbns-column>
   <bbns-column title="<i class='fas fa-palette bbn-large'></i>"
-               ftitle="<?=_("Thème")?>"
+               ftitle="<?=_("Theme")?>"
                :field="source.arch.theme"
                :width="120"
                :source="themes"
   ></bbns-column>
-  <bbns-column title="<?=_("Développeur")?>"
+  <bbns-column title="<?=_("Developer")?>"
                :field="source.arch.dev"
                :hidden="true"
                type="boolean"
   ></bbns-column>
-  <bbns-column title="<?=_("Administrateur")?>"
+  <bbns-column title="<?=_("Administrator")?>"
                :field="source.arch.admin"
                :hidden="true"
                type="boolean"
   ></bbns-column>
-  <bbns-column title="<?=_("Actif")?>"
+  <bbns-column title="<?=_("Active")?>"
                :field="source.arch.active"
                type="boolean"
                :editable="false"
@@ -99,7 +99,7 @@
   <bbns-column ftitle="<?=_("Actions")?>"
                :editable="false"
                :sortable="false"
-               :width="130"
+               :width="180"
                :buttons="getButtons"
                cls="bbn-c"
                fixed="right"
@@ -114,15 +114,15 @@
             ref="form"
   >
     <div class="bbn-padded bbn-grid-fields">
-      <label><?=_('Nom')?></label>
+      <label><?=_('Name')?></label>
       <bbn-input v-model="source.row[cp.source.arch.username]"
                  required="required"
       ></bbn-input>
-      <label><?=_('Groupe')?></label>
+      <label><?=_('Group')?></label>
       <bbn-dropdown :source="cp.source.groups"
                     v-model="source.row[cp.source.arch.id_group]"
       ></bbn-dropdown>
-      <label><?=_('Fonction')?></label>
+      <label><?=_('Function')?></label>
       <bbn-input v-model="source.row[cp.source.arch.fonction]"></bbn-input>
       <label v-if="cp.source.arch.login !== cp.source.arch.email"><?=_('Login')?></label>
       <bbn-input v-model="source.row[cp.source.arch.login]"
@@ -134,22 +134,22 @@
                  type="email"
                  required="required"
       ></bbn-input>
-      <label><?=_('Téléphone')?></label>
+      <label><?=_('Phone')?></label>
       <bbn-input v-model="source.row[cp.source.arch.tel]"
                  maxlength="10"
       ></bbn-input>
-      <label><?=_('Thème')?></label>
+      <label><?=_('Theme')?></label>
       <bbn-dropdown :source="cp.themes"
                     v-model="source.row[cp.source.arch.theme]"
                     required="required"
       ></bbn-dropdown>
-      <label v-if="cp.user.isAdmin"><?=_('Développeur')?></label>
+      <label v-if="cp.user.isAdmin"><?=_('Developer')?></label>
       <bbn-checkbox v-if="cp.user.isAdmin"
                     :novalue="0"
                     :value="1"
                     v-model="source.row[cp.source.arch.dev]"
       ></bbn-checkbox>
-      <label v-if="cp.user.isAdmin"><?=_('Administrateur')?></label>
+      <label v-if="cp.user.isAdmin"><?=_('Administrator')?></label>
       <bbn-checkbox v-if="cp.user.isAdmin"
                     :novalue="0"
                     :value="1"

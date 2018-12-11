@@ -27,7 +27,7 @@ if ( $id_user || $id_group ){
   }
   $db =& $model->db;
   return [
-    'title' => _("Permissions de l'utilisateur ".$item[$name]),
+    'title' => _("User permissions".' '.$item[$name]),
     'id_user' => $id_user,
     'id_group' => $id_group,
     'tree' => $model->inc->options->map(function($r)use($perm, $manager, $id_group, $id_user){

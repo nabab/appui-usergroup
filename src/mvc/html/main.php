@@ -6,7 +6,7 @@
            :load="true"
   ></bbns-tab>
   <bbns-tab url="password"
-           title="<?=_("Mot de passe")?>"
+           title="<?=_("Password")?>"
            :static="true"
            :load="true"
   ></bbns-tab>

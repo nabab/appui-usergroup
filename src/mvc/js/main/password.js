@@ -25,7 +25,7 @@
           appui.success(bbn._('Password successfully changed'))
         }
         else{
-          appui.error('Something went wrong')
+          appui.error();
         }
       }
     }

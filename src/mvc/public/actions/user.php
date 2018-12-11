@@ -8,30 +8,32 @@
 if ( isset($ctrl->post['current_pass'], $ctrl->post['pass1'], $ctrl->post['pass2']) ){
   if ( $ctrl->post['pass1'] !== $ctrl->post['pass2'] ){
     $ctrl->obj->success = false;
-    $ctrl->obj->error = "Les mots de passe ne correspondent pas.";
-    $ctrl->obj->errorTitle = "Échec!";
+    $ctrl->obj->error = _("The passwords don't match.");
+    $ctrl->obj->errorTitle = _("Error!");
   }
   else{
     if ( $ctrl->obj->success = $ctrl->inc->user->set_password($ctrl->post['current_pass'], $ctrl->post['pass1']) ){
-      $ctrl->obj->error = "Mot de passe modifié";
-      $ctrl->obj->errorTitle = "Succès!";
+      $ctrl->obj->error = _("Password changed.");
+      $ctrl->obj->errorTitle = _("Success!");
     }
     else{
-      $ctrl->obj->error = "L'ancien mot de passe n'est pas reconnu.";
-      $ctrl->obj->errorTitle = "Échec!";
+      $ctrl->obj->error = _("The old password is not recognized.");
+      $ctrl->obj->errorTitle = _("Error!");
     }
   }
 }
-else if ( isset($ctrl->post['email'], $ctrl->post['nom']) && \bbn\str::is_email($ctrl->post['email']) ){
-  $change_theme = $ctrl->post['theme'] !== $ctrl->inc->session->get('theme');
+else if ( 
+  ($cfg = $ctrl->inc->user->get_class_cfg()) &&
+  isset($ctrl->post[$cfg['arch']['users']['email']], $ctrl->post[$cfg['arch']['users']['username']]) && \bbn\str::is_email($ctrl->post[$cfg['arch']['users']['email']])
+){
+  $change_theme = $ctrl->post[$cfg['arch']['users']['theme']] !== $ctrl->inc->session->get('theme');
   if ( $ctrl->obj->success = $ctrl->inc->user->update_info($ctrl->post) ){
     if ( $change_theme ){
-      $ctrl->inc->user->set_session('theme', $ctrl->post['theme']);
-      //die(\bbn\x::dump("HELLO", $ctrl->inc->session->get('theme'), $ctrl->inc->session->get()));
+      $ctrl->inc->session->set($ctrl->post[$cfg['arch']['users']['theme']], 'theme');
     }
     else{
-      $ctrl->obj->error = "Modification réussie";
-      $ctrl->obj->errorTitle = "Succès!";
+      $ctrl->obj->error = _("Successful modification");
+      $ctrl->obj->errorTitle = _("Success!");
     }
   }
 }

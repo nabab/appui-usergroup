@@ -26,5 +26,5 @@ else if ( isset($ctrl->post['id']) ){
 else{
   $ctrl->data['root'] = APPUI_USERGROUP_ROOT;
   $ctrl->data['options_root'] = $ctrl->plugin_url('appui-options').'/';
-  $ctrl->combo(_('Mes préférences'), $ctrl->data);
+  $ctrl->combo(_('My preferences'), $ctrl->data);
 }

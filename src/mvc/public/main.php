@@ -6,4 +6,4 @@
 
 /** @var $ctrl \bbn\mvc\controller */
 $ctrl->obj->url = APPUI_USERGROUP_ROOT . 'main';
-$ctrl->combo(_("Profil et préférences"));
+$ctrl->combo(_("Profile and preferences"));

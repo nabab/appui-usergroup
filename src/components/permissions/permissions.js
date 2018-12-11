@@ -36,10 +36,10 @@
             id_option: idPerm
           }, (d) => {
             if ( d.data.res ){
-              appui.success(bbn._('Sauvegardé!'));
+              appui.success(bbn._('Saved!'));
             }
             else {
-              appui.error(bbn._('Erreur!'));
+              appui.error(bbn._('Error!'));
             }
           });
         }
@@ -51,10 +51,10 @@
             id_option: idPerm
           }, (d) => {
             if ( d.data.res ){
-              appui.success(bbn._('Sauvegardé!'));
+              appui.success(bbn._('Saved!'));
             }
             else {
-              appui.error(bbn._('Erreur!'));
+              appui.error(bbn._('Error!'));
             }
           });
         }

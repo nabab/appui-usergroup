@@ -9,43 +9,28 @@
               :validation="validForm">
       <div class="bbn-full-screen bbn-middle">
         <div class="bbn-grid-fields bbn-padded bbn-c">
-          <label for="E4TaZKccHws1gctn">
-            Mot de passe actuel
-          </label>
+          <label><?=_('Current password')?></label>
           <div>
-            <bbn-input name="current_pass"
-                       maxlength="35"
-                       id="E4TaZKccHws1gctn"
+            <bbn-input maxlength="35"
                        type="password"
                        v-model="data.current_pass"
-                       >
-            </bbn-input>
+            ></bbn-input>
           </div>
 
-          <label for="qZ9TmHdHa7uV3y0XE">
-            Nouveau mot de passe
-          </label>
+          <label><?=_('New password')?></label>
           <div>
-            <bbn-input name="pass1"
-                       v-model="data.pass1"
+            <bbn-input v-model="data.pass1"
                        maxlength="35"
-                       id="qZ9TmHdHa7uV3y0XE"
                        type="password"
-                       >
-            </bbn-input>
+            ></bbn-input>
           </div>
 
-          <label for="FL1cE8e2uICcfEug44Gemf98g0Z">
-            Confirmer le mot de passe
-          </label>
+          <label><?=_('Confirm password')?></label>
           <div>
-            <bbn-input name="pass2"
-                       v-model="data.pass2"
+            <bbn-input v-model="data.pass2"
                        maxlength="35"
-                       id="FL1cE8e2uICcfEug44Gemf98g0Z"
                        type="password"
-                       >
-            </bbn-input>
+            ></bbn-input>
           </div>
         </div>
       </div>

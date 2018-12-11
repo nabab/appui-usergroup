@@ -5,14 +5,15 @@
            :pageable="true"
            :sortable="true"
            :editable="true"
+           :showable="true"
            :toolbar="[{
-             text: '<?=_('Nouveau groupe')?>',
+             text: '<?=_('New group')?>',
              icon: 'fas fa-plus',
              command: 'insert',
              disabled: !!(source.is_dev && !source.is_admin)
            }]"
            :tr-class="trClass"
-           @saveItem="save"
+           :url="source.root + 'actions/groups'"
            :order="[{field: source.arch.group, dir: 'ASC'}]"
 >
   <bbns-column title="<?=_('ID')?>"
@@ -21,12 +22,12 @@
                :editable="false"
   ></bbns-column>
   <bbns-column title="<i class='fas fa-users bbn-large'></i>"
-               ftitle="<?=_('Nom')?>"
+               ftitle="<?=_('Name')?>"
                :field="source.arch.group"
                :required="true"
   ></bbns-column>
   <bbns-column title="#"
-               ftitle="<?=_('Utilisateurs')?>"
+               ftitle="<?=_('Users')?>"
                field="num"
                :width="50"
                :editable="false"

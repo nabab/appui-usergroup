@@ -24,13 +24,13 @@
       },
       getButtons(row){
         return [{
-          text: bbn._('Modifier'),
+          text: bbn._('Edit'),
           notext: true,
           command: this.edit,
           icon: 'fas fa-edit',
           disabled: !!(((row[this.source.arch.admin] || row[this.source.arch.dev]) && !this.user.isAdmin) || (this.user.isDev && !this.user.isAdmin))
         }, {
-          text: bbn._('Supprimer'),
+          text: bbn._('Delete'),
           notext: true,
           command: this.remove,
           icon: 'fas fa-trash',
@@ -41,12 +41,18 @@
           command: this.permissions,
           icon: 'fas fa-key',
           disabled: !!((this.user.isDev && !this.user.isAdmin) || row[this.source.arch.admin])
+        }, {
+          text: bbn._('Re-initialize'),
+          notext: true,
+          command: this.init,
+          icon: 'far fa-envelope',
+          disabled: !!((this.user.isDev && !this.user.isAdmin) || row[this.source.arch.admin])
         }];
       },
       insert(){
         if ( !this.user.isDev || this.user.isAdmin ){
           this.$refs.table.insert({}, {
-            title: bbn._("Création d'un user"),
+            title: bbn._("New user"),
             width: 450,
             height: 400
           });
@@ -55,7 +61,7 @@
       edit(row){
         if ( (!this.user.isDev || this.user.isAdmin) && (!row[this.source.arch.dev] || this.user.isAdmin) ){
           this.$refs.table.edit(row, {
-            title: bbn._("Modification d'un user"),
+            title: bbn._("User edit"),
             width: 450,
             height: 400
           });
@@ -67,18 +73,18 @@
           (!this.user.isDev || this.user.isAdmin) &&
           (!row[this.source.arch.dev] || this.user.isAdmin)
         ){
-          this.confirm(bbn._("Etes vous sur de vouloir supprimer cette entrée?"), () => {
+          this.confirm(bbn._("Do you sure you want to delete this entry?"), () => {
             bbn.fn.post(this.root + "actions/users/delete", {id: row[this.source.arch.id]}, (d) => {
               if ( d.success ){
-                let idx = bbn.fn.search(this.source.users, 'id', row[this.source.arch.id]);
+                let idx = bbn.fn.search(this.source.users, this.source.arch.id, row[this.source.arch.id]);
                 if ( idx > -1 ){
                   this.source.users.splice(idx, 1);
                   this.$refs.table.updateData();
-                  appui.success(bbn._('Supprimé'));
+                  appui.success(bbn._('Deleted'));
                 }
               }
               else {
-                appui.error(bbn._('Erreur!'));
+                appui.error(bbn._('Error!'));
               }
             });
           });
@@ -95,6 +101,19 @@
               perm_root: this.source.perm_root,
               id_user: row.id
             }
+          });
+        }
+      },
+      init(row){
+        if ( row.id ){
+          this.confirm(bbn._("Do you sure you want to re-initialize this user's password?"), () => {
+            bbn.fn.post(appui.plugins['appui-usergroup'] + '/actions/users/init', {
+              [this.source.arch['id']]: row[this.source.arch['id']]
+            }, d => {
+              if ( d.success ){
+                appui.success(bbn._('An email has sent to the user.'));
+              }
+            });
           });
         }
       }
@@ -120,12 +139,12 @@
                 this.cp.source.users.push(d.data);
               }
               this.cp.$refs.table.updateData();
-              appui.success(bbn._('Enregistré'));
+              appui.success(bbn._('Saved'));
             }
             else {
               this.$refs.form.source = this.$refs.form.originalData;
               e.preventDefault();
-              appui.error(bbn._('Erreur!'));
+              appui.error(bbn._('Error!'));
             }
           }
         }
