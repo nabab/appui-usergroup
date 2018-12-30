@@ -114,41 +114,49 @@
             ref="form"
   >
     <div class="bbn-padded bbn-grid-fields">
+
       <label><?=_('Name')?></label>
       <bbn-input v-model="source.row[cp.source.arch.username]"
                  required="required"
       ></bbn-input>
+
       <label><?=_('Group')?></label>
       <bbn-dropdown :source="cp.source.groups"
                     v-model="source.row[cp.source.arch.id_group]"
       ></bbn-dropdown>
       <label><?=_('Function')?></label>
       <bbn-input v-model="source.row[cp.source.arch.fonction]"></bbn-input>
+
       <label v-if="cp.source.arch.login !== cp.source.arch.email"><?=_('Login')?></label>
       <bbn-input v-model="source.row[cp.source.arch.login]"
                  required="required"
                  v-if="cp.source.arch.login !== cp.source.arch.email"
       ></bbn-input>
+
       <label><?=_('eMail')?></label>
       <bbn-input v-model="source.row[cp.source.arch.email]"
                  type="email"
                  required="required"
       ></bbn-input>
+
       <label><?=_('Phone')?></label>
       <bbn-input v-model="source.row[cp.source.arch.tel]"
                  maxlength="10"
       ></bbn-input>
+
       <label><?=_('Theme')?></label>
       <bbn-dropdown :source="cp.themes"
                     v-model="source.row[cp.source.arch.theme]"
                     required="required"
       ></bbn-dropdown>
+
       <label v-if="cp.user.isAdmin"><?=_('Developer')?></label>
       <bbn-checkbox v-if="cp.user.isAdmin"
                     :novalue="0"
                     :value="1"
                     v-model="source.row[cp.source.arch.dev]"
       ></bbn-checkbox>
+
       <label v-if="cp.user.isAdmin"><?=_('Administrator')?></label>
       <bbn-checkbox v-if="cp.user.isAdmin"
                     :novalue="0"

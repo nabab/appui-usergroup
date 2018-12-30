@@ -9,10 +9,13 @@ $id = $cfg['arch']['users']['id'];
 /** @var string $admin */
 $admin = $cfg['arch']['users']['admin'];
 $dev = $cfg['arch']['users']['dev'];
-if ( isset($model->data[$id_group], $model->data[$email], $model->data[$admin], $model->data[$dev]) &&
-  (!$model->inc->user->is_dev() || $model->inc->user->is_admin()) &&
-  ((empty($model->data[$admin]) && empty($model->data[$dev])) || $model->inc->user->is_admin())
-){
+if ( isset($model->data[$id_group], $model->data[$email]) ){
+  if ( empty($model->data[$admin]) || !$model->inc->user->is_admin() ){
+    $model->data[$admin] = 0;
+  }
+  if ( empty($model->data[$dev]) || !$model->inc->user->is_admin() ){
+    $model->data[$dev] = 0;
+  }
   /** @var \bbn\user\manager $mgr */
   $mgr = $model->inc->user->get_manager();
   if ( $user = $mgr->add($model->data) ){
