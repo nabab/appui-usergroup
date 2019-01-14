@@ -23,7 +23,7 @@
         return row[this.source.arch.fonction] || '-';
       },
       getButtons(row){
-        return [{
+        let btn = [{
           text: bbn._('Edit'),
           notext: true,
           command: this.edit,
@@ -35,19 +35,24 @@
           command: this.remove,
           icon: 'fas fa-trash',
           disabled: !!(row[this.source.arch.admin] || (row[this.source.arch.dev] && !this.user.isAdmin) || (this.user.isDev && !this.user.isAdmin))
-        }, {
-          text: bbn._('Permissions'),
-          notext: true,
-          command: this.permissions,
-          icon: 'fas fa-key',
-          disabled: !!((this.user.isDev && !this.user.isAdmin) || row[this.source.arch.admin])
-        }, {
+        }];
+        if ( this.source.perm_root ){
+          btn.push({
+            text: bbn._('Permissions'),
+            notext: true,
+            command: this.permissions,
+            icon: 'fas fa-key',
+            disabled: !!((this.user.isDev && !this.user.isAdmin) || row[this.source.arch.admin])
+          });
+        }
+        btn.push({
           text: bbn._('Re-initialize'),
           notext: true,
           command: this.init,
           icon: 'far fa-envelope',
           disabled: !!((this.user.isDev && !this.user.isAdmin) || row[this.source.arch.admin])
-        }];
+        });
+        return btn;
       },
       insert(){
         if ( !this.user.isDev || this.user.isAdmin ){
