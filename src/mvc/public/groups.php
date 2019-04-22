@@ -39,4 +39,4 @@ $ctrl->combo(_("User Groups"), [
     'new_group' => "New user group"
   ]
 ]);
-$ctrl->obj->icon = 'fas fa-users';
+$ctrl->obj->icon = 'nf nf-fa-users';

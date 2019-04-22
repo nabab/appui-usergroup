@@ -20,25 +20,25 @@
           text: bbn._('Edit'),
           notext: true,
           command: 'edit',
-          icon: 'fas fa-edit',
+          icon: 'nf nf-fa-edit',
           disabled: !!(this.source.is_dev && !this.source.is_admin)
         }, {
           text: bbn._('Delete'),
           notext: true,
           command: 'delete',
-          icon: 'fas fa-trash',
+          icon: 'nf nf-fa-trash',
           disabled: !!(row.num || (this.source.is_dev && !this.source.is_admin))
         }, {
           text: bbn._('Permissions'),
           notext: true,
           command: this.permissions,
-          icon: 'fas fa-key',
+          icon: 'nf nf-fa-key',
           disabled: !!(this.source.is_dev && !this.source.is_admin)
         }, {
           text: bbn._('Duplicate'),
           notext: true,
           command: this.duplicate,
-          icon: 'fas fa-copy',
+          icon: 'nf nf-fa-copy',
           disabled: !!(this.source.is_dev && !this.source.is_admin)
         }];
       },

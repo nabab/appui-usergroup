@@ -14,7 +14,7 @@
     },
     methods: {
       trClass(row){
-        return 'valignm' + (row[this.source.arch.admin] ? ' w3-black' : '');
+        return 'valignm' + (row[this.source.arch.admin] ? ' bbn-negative' : '');
       },
       renderTel(row){
         return row[this.source.arch.tel] || '-';
@@ -27,13 +27,13 @@
           text: bbn._('Edit'),
           notext: true,
           command: this.edit,
-          icon: 'fas fa-edit',
+          icon: 'nf nf-fa-edit',
           disabled: !!(((row[this.source.arch.admin] || row[this.source.arch.dev]) && !this.user.isAdmin) || (this.user.isDev && !this.user.isAdmin))
         }, {
           text: bbn._('Delete'),
           notext: true,
           command: this.remove,
-          icon: 'fas fa-trash',
+          icon: 'nf nf-fa-trash',
           disabled: !!(row[this.source.arch.admin] || (row[this.source.arch.dev] && !this.user.isAdmin) || (this.user.isDev && !this.user.isAdmin))
         }];
         if ( this.source.perm_root ){
@@ -41,7 +41,7 @@
             text: bbn._('Permissions'),
             notext: true,
             command: this.permissions,
-            icon: 'fas fa-key',
+            icon: 'nf nf-fa-key',
             disabled: !!((this.user.isDev && !this.user.isAdmin) || row[this.source.arch.admin])
           });
         }
@@ -49,7 +49,7 @@
           text: bbn._('Re-initialize'),
           notext: true,
           command: this.init,
-          icon: 'far fa-envelope',
+          icon: 'nf nf-fa-envelope',
           disabled: !!((this.user.isDev && !this.user.isAdmin) || row[this.source.arch.admin])
         });
         return btn;
@@ -129,7 +129,7 @@
         props: ['source'],
         data(){
           return {
-            cp: bbn.vue.closest(this, 'bbns-tab').getComponent(),
+            cp: this.closest('bbn-container').getComponent(),
             adminDisabled: !!this.source.row.admin
           }
         },

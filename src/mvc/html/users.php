@@ -9,7 +9,7 @@
            :editor="$options.components['appui-usergroup-user-edit-form']"
            :toolbar="[{
              text: '<?=_('New user')?>',
-             icon: 'fas fa-user-plus',
+             icon: 'nf nf-fa-user_plus',
              command: insert,
              disabled: !!(user.isDev && !user.isAdmin)
            }]"
@@ -27,36 +27,36 @@
                :width="40"
                :filterable="false"
   ></bbns-column>
-  <bbns-column title="<i class='fas fa-user bbn-large'></i>"
+  <bbns-column title="<i class='nf nf-fa-user bbn-large'></i>"
                ftitle="<?=_("Name")?>"
                :field="source.arch.username"
                :width="250"
   ></bbns-column>
-  <bbns-column title="<i class='fas fa-users bbn-large'></i>"
+  <bbns-column title="<i class='nf nf-fa-users bbn-large'></i>"
                ftitle="<?=_("Group")?>"
                :field="source.arch.id_group"
                :source="source.groups"
                :width="200"
   ></bbns-column>
-  <bbns-column title="<i class='fas fa-cogs bbn-large'></i>"
+  <bbns-column title="<i class='nf nf-fa-cogs bbn-large'></i>"
                ftitle="<?=_("Function")?>"
                :field="source.arch.fonction"
                :render="renderFonction"
                :width="200"
   ></bbns-column>
-  <bbns-column title="<i class='fas fa-sign-in-alt bbn-large'></i>"
+  <bbns-column title="<i class='nf nf-fa-sign_in_alt bbn-large'></i>"
                ftitle="<?=_("Login")?>"
                :field="source.arch.login"
                :width="250"
                v-if="source.arch.login !== source.arch.email"
   ></bbns-column>
-  <bbns-column title="<i class='fas fa-at bbn-large'></i>"
+  <bbns-column title="<i class='nf nf-fa-at bbn-large'></i>"
                ftitle="<?=_("eMail")?>"
                :field="source.arch.email"
                type="email"
                :width="250"
   ></bbns-column>
-  <bbns-column title="<i class='far fa-calendar-alt bbn-xl'></i>"
+  <bbns-column title="<i class='nf nf-fa-calendar_alt bbn-xl'></i>"
                ftitle="<?=_("Last activity of the user")?>"
                field="last_activity"
                :editable="false"
@@ -65,13 +65,13 @@
                type="date"
                cls="bbn-c"
   ></bbns-column>
-  <bbns-column title="<i class='fas fa-phone bbn-large'></i>"
+  <bbns-column title="<i class='nf nf-fa-phone bbn-large'></i>"
                ftitle="<?=_("Phone")?>"
                :field="source.arch.tel"
                :width="120"
                :render="renderTel"
   ></bbns-column>
-  <bbns-column title="<i class='fas fa-palette bbn-large'></i>"
+  <bbns-column title="<i class='nf nf-fa-palette bbn-large'></i>"
                ftitle="<?=_("Theme")?>"
                :field="source.arch.theme"
                :width="120"

@@ -20,7 +20,7 @@
                 return u.id_group === group.id;
               });
               users = users.map(u => {
-                let us = Object.assign({icon: 'fas fa-user'}, u);
+                let us = Object.assign({icon: 'nf nf-fa-user'}, u);
                 us.id = us.value;
                 delete us.value;
                 return us;
@@ -30,7 +30,7 @@
                 text: group.nom || group.group,
                 items: bbn.fn.order(users, 'text'),
                 num: users.length,
-                icon: 'fas fa-users'
+                icon: 'nf nf-fa-users'
               });
             });
           }

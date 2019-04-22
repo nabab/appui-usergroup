@@ -6,6 +6,7 @@
            :sortable="true"
            :filterable="true"
            :pageable="true"
+           ref="table"
            >
   <bbns-column field="id"
               :title="_('UUID')"
@@ -31,10 +32,10 @@
               :render="showLink">
   </bbns-column>
   <bbns-column :title="_('Actions')"
-              :width="80"
+              :width="120"
               :buttons="[
-                {text: _('View'), command: view, icon: 'fas fa-eye', notext: true},
-                {text: _('Delete'), command: del, icon: 'fas fa-trash', notext: true}
+                {text: _('View'), command: view, icon: 'nf nf-fa-eye', notext: true},
+                {text: _('Delete'), command: del, icon: 'nf nf-fa-trash', notext: true}
   						]">
   </bbns-column>
 </bbn-table>

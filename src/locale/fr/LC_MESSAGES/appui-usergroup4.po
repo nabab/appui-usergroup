@@ -7,10 +7,10 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2018-12-26 12:23+0100\n"
-"POT-Revision-Date: 2018-12-26 12:23+0100\n"
+"POT-Creation-Date: 2019-04-18 15:59+0200\n"
+"POT-Revision-Date: 2019-04-18 15:59+0200\n"
 "Language: fr\n"
-"X-Domain: appui-usergroup3\n"
+"X-Domain: appui-usergroup4\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/components/permissions/permissions.js
@@ -127,7 +127,7 @@ msgstr "Adresse eMail"
 
 #: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/html/main/profile.php
 msgid "Tel."
-msgstr ""
+msgstr "Phone"
 
 #: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/js/groups.js
 #: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/js/users.js
@@ -143,7 +143,7 @@ msgstr "Supprimer"
 #: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/js/groups.js
 #: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/js/users.js
 msgid "Permissions"
-msgstr ""
+msgstr "Permissions"
 
 #: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/js/groups.js
 msgid "Duplicate"
@@ -159,11 +159,11 @@ msgstr "Configuration des préférences"
 
 #: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/js/users.js
 msgid "Re-initialize"
-msgstr ""
+msgstr "Réinitialiser"
 
 #: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/js/users.js
 msgid "User edit"
-msgstr ""
+msgstr "Modification de l'utilisateur"
 
 #: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/js/users.js
 msgid "Do you sure you want to delete this entry?"
@@ -272,7 +272,7 @@ msgstr "Succès!"
 
 #: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/public/actions/user.php
 msgid "The old password is not recognized."
-msgstr "L';ancien mot de passe n'est pas reconnu"
+msgstr "L'ancien mot de passe n'est pas reconnu"
 
 #: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/public/actions/user.php
 msgid "Successful modification"
