@@ -107,8 +107,7 @@
 </bbn-table>
 
 <script type="text/x-template" id="appui-usergroup-user-edit-form">
-  <bbn-form class="bbn-full-screen"
-            :action="cp.root + 'actions/users/' + (source.row[cp.source.arch.id] ? 'update' : 'insert')"
+  <bbn-form :action="cp.root + 'actions/users/' + (source.row[cp.source.arch.id] ? 'update' : 'insert')"
             :source="source.row"
             @success="success"
             ref="form"

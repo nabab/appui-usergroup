@@ -1,13 +1,13 @@
 <!-- HTML Document -->
-<div class="bbn-middle bbn-full-screen appui-user-profile-form">
+<div class="bbn-middle bbn-overlay appui-user-profile-form">
   <div style="width: 500px; height: 250px">
     <bbn-form method="post"
               :source="data"
-              class="bbn-lg k-widget bbn-middle"
+              class="bbn-lg bbn-widget"
               :action="root + 'actions/user'"
               :success="success"
               :validation="validForm">
-      <div class="bbn-full-screen bbn-middle">
+      <div class="">
         <div class="bbn-grid-fields bbn-padded bbn-c">
           <label><?=_('Current password')?></label>
           <div>

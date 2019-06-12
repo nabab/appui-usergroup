@@ -17,7 +17,7 @@
           if ( d && d.data ){
             this.getTab().getPopup().open({
               component: {
-                template: '<bbn-json-editor :value="jsonSource" :readonly="true" class="bbn-full-screen"></bbn-json-editor>',
+                template: '<bbn-json-editor :value="jsonSource" :readonly="true" class="bbn-overlay"></bbn-json-editor>',
                 props: ['source'],
                 computed: {
                   jsonSource(){

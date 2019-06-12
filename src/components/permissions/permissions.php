@@ -1,4 +1,4 @@
-<div class="bbn-full-screen appui-usergroup-permissions bbn-padded">
+<div class="bbn-overlay appui-usergroup-permissions bbn-padded">
   <bbn-tree :source="opt_root + '/permissions'"
             uid="id"
             :root="source.perm_root"
