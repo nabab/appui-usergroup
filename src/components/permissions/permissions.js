@@ -66,27 +66,27 @@
             [this.id_type]: this.source[this.id_type]
           }, (p) => {
             if ( p.data ){
-              $.each(p.data.public, (i, v) => {
-                if ( $.inArray(v, this.$refs.permsList.checked) === -1 ){
+              bbn.fn.each(p.data.public, (v, i) => {                
+                if ( !this.$refs.permsList.checked.includes(v) ){  
                   this.$refs.permsList.checked.push(v);
-                }
-                if ( $.inArray(v, this.$refs.permsList.disabled) === -1 ){
+                }                
+                if ( !this.$refs.permsList.disabled.includes(v) ){  
                   this.$refs.permsList.disabled.push(v);
                 }
               });
-              $.each(p.data.group, (i, v) => {
+              bbn.fn.each(p.data.group, (v, i) => {
                 if ( this.isUser ){
-                  if ( $.inArray(v, this.$refs.permsList.disabled) === -1 ){
+                  if ( !this.$refs.permsList.disabled.includes(v) ){
                     this.$refs.permsList.disabled.push(v);
                   }
                 }
-                if ( $.inArray(v, this.$refs.permsList.checked) === -1 ){
+                if ( !this.$refs.permsList.checked.includes(v) ){
                   this.$refs.permsList.checked.push(v);
                 }
               });
               if ( this.isUser ){
-                $.each(p.data.user, (i, v) => {
-                  if ( $.inArray(v, this.$refs.permsList.checked) === -1 ){
+                bbn.fn.each(p.data.user, (v, i) => {
+                  if ( !this.$refs.permsList.checked.includes(v) ){
                     this.$refs.permsList.checked.push(v);
                   }
                 });

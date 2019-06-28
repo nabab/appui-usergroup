@@ -3,7 +3,7 @@
     props: ['source'],
     computed:{
       groupsSource(){
-        return $.map(this.source.groups, (v, i) => {
+        return bbn.fn.map(this.source.groups, (v, i) => {
           return {
             text: v[this.source.arch.group],
             value: v[this.source.arch.id]
@@ -59,7 +59,7 @@
         }
       },
       duplicate(row){
-        let newRow = $.extend({}, row);
+        let newRow = bbn.fn.extend({}, row);
         newRow.id = '';
         newRow.num = '';
         newRow.source_id = row.id;
@@ -86,8 +86,8 @@
             }
             else {
               let table = appui.$refs.tabnav.activeTab.getComponent().$refs.table;
-              this.$refs.form.originalData = $.extend({}, table.originalRow);
-              $.each($.extend({}, table.originalRow), (i, v) => {
+              this.$refs.form.originalData = bbn.fn.extend({}, table.originalRow);
+              bbn.fn.each(bbn.fn.extend({}, table.originalRow), (v, i) => {
                 table.editedRow[i] = v;
               });
               e.preventDefault();
