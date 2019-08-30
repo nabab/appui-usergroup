@@ -5,5 +5,6 @@
           @check="checkItem"
           @uncheck="uncheckItem"
           @select="selectItem"
+          @unselect="unselectItem"
           ref="tree"
 ></bbn-tree>

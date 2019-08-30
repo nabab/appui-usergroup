@@ -7,10 +7,10 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2019-04-18 15:59+0200\n"
-"POT-Revision-Date: 2019-04-18 15:59+0200\n"
+"POT-Creation-Date: 2019-07-16 14:00+0200\n"
+"POT-Revision-Date: 2019-07-16 14:00+0200\n"
 "Language: it\n"
-"X-Domain: appui-usergroup4\n"
+"X-Domain: appui-usergroup7\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/components/permissions/permissions.js
@@ -41,31 +41,31 @@ msgstr ""
 
 #: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/html/groups.php
 msgid "Users"
-msgstr ""
+msgstr "Utenti"
 
 #: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/html/main.php
 msgid "Informations"
-msgstr ""
+msgstr "Informazioni"
 
 #: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/html/main.php
 msgid "Password"
-msgstr ""
+msgstr "Password"
 
 #: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/html/users.php
 #: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/js/users.js
 #: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/public/groups.php
 msgid "New user"
-msgstr ""
+msgstr "Nuovo utente"
 
 #: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/html/users.php
 #: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/public/groups.php
 msgid "Group"
-msgstr ""
+msgstr "Gruppo"
 
 #: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/html/users.php
 #: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/html/main/profile.php
 msgid "Function"
-msgstr ""
+msgstr "Funzione"
 
 #: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/html/users.php
 msgid "Login"
@@ -73,7 +73,7 @@ msgstr ""
 
 #: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/html/users.php
 msgid "eMail"
-msgstr ""
+msgstr "eMail"
 
 #: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/html/users.php
 msgid "Last activity of the user"
@@ -94,7 +94,7 @@ msgstr ""
 
 #: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/html/users.php
 msgid "Administrator"
-msgstr ""
+msgstr "Amministratore"
 
 #: /home/thomas/domains/apstapp2.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/html/users.php
 msgid "Active"

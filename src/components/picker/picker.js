@@ -43,7 +43,9 @@
       },
       asArray: {
         type: Boolean,
-        default: false
+        default(){
+          return !!this.$options.propsData.multi;
+        }
       },
       selfExcluded: {
         type: Boolean,
@@ -53,40 +55,30 @@
         type: [Array, String]
       }
     },
-    data(){
-      return {
-        sel: Array.isArray(this.value) ? this.value : []
-      }
-    },
-    computed: {
-      selected(){
-        return (this.sel.length === 1) && !this.asArray ? this.sel[0] : this.sel;
-      }
-    },
     methods: {
       add(id, check){
-        if ( this.sel.indexOf(id) === -1 ){
-          this.sel.push(id);
-        }
-        if ( check && (this.$refs.tree.checked.indexOf(id) === -1) ){
+        if ( !this.$refs.tree.checked.includes(id) ){
           this.$refs.tree.checked.push(id);
+        }
+        if ( !this.value.includes(id) ){
+          this.value.push(id);
+          this.$emit('input', this.value);
         }
       },
       del(id, check){
-        let idx = this.sel.indexOf(id),
-            idx2 = this.$refs.tree.checked.indexOf(id);
-        if ( idx > -1 ){
-          this.sel.splice(idx, 1);
+        if ( this.$refs.tree.checked.includes(id) ){
+          this.$refs.tree.checked.splice(this.$refs.tree.checked.indexOf(id), 1);
         }
-        if ( check && (idx2 > -1) ){
-          this.$refs.tree.checked.splice(idx2, 1);
+        if ( this.value.includes(id) ){
+          this.value.splice(this.value.indexOf(id), 1);
+          this.$emit('input', this.value);
         }
       },
       checkItem(item){
         let idx = bbn.fn.search(this.source, 'id', item);
         if ( (idx > -1) && this.source[idx].items ){
           this.source[idx].items.forEach(u => {
-            this.add(u.id, true);
+            this.add(u.id);
           });
         }
         else {
@@ -106,22 +98,38 @@
       },
       selectItem(item){
         if ( !this.multi && !item.items.length && item.data.id ){
-          this.$set(this, 'sel', []);
-          this.add(item.data.id);
+          this.$emit('input', this.asArray ? [item.data.id] : item.data.id);
+        }
+      },
+      unselectItem(item){
+        if ( !this.multi && !item.items.length && item.data.id ){
+          this.$emit('input', this.asArray ? [] : '');
+        }
+      },
+      setChecked(){
+        if ( this.multi && Array.isArray(this.value) ){
+          if ( this.value.length ){
+            this.value.forEach(v => {
+              if ( !this.$refs.tree.checked.includes(v) ){
+                this.$refs.tree.checked.push(v);
+              }
+            });
+          }
+          this.$refs.tree.checked.filter(v => {
+            return !this.value.includes(v);
+          }).forEach(v => {
+            this.$refs.tree.checked.splice(this.$refs.tree.checked.indexOf(v), 1);
+          })
         }
       }
     },
     watch: {
-      selected(newVal){
-        this.$emit('input', newVal);
+      value(){
+        this.setChecked();
       }
     },
     mounted(){
-      if ( this.multi && Array.isArray(this.value) && this.value.length ){
-        this.value.forEach(v => {
-          this.$refs.tree.checked.push(v);
-        });
-      }
+      this.setChecked();
     }
   }
 })();
