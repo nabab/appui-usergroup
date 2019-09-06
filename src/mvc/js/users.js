@@ -60,7 +60,7 @@
           command: this.disconnectUser,
           icon: 'nf nf-fa-eject',          
           disabled: !!( 
-            row.connect ||
+            row.session ||
             (
               ((row[this.source.arch.admin] || row[this.source.arch.dev]) && !this.user.isAdmin) || 
               (this.user.isDev && !this.user.isAdmin)
