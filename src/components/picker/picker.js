@@ -53,6 +53,10 @@
       },
       value :{
         type: [Array, String]
+      },
+      scrollable: {
+        type: Boolean,
+        default: true
       }
     },
     methods: {
@@ -79,10 +83,12 @@
         if ( (idx > -1) && this.source[idx].items ){
           this.source[idx].items.forEach(u => {
             this.add(u.id);
+            this.$emit('check', u.id);
           });
         }
         else {
           this.add(item);
+          this.$emit('check', item);
         }
       },
       uncheckItem(item){
@@ -90,9 +96,11 @@
         if ( (idx > -1) && this.source[idx].items ){
           this.source[idx].items.forEach(u => {
             this.del(u.id, true);
+            this.$emit('uncheck', u.id);
           });
         }
         else {
+          this.$emit('uncheck', item);
           this.del(item);
         }
       },
@@ -127,9 +135,6 @@
       value(){
         this.setChecked();
       }
-    },
-    mounted(){
-      this.setChecked();
     }
   }
 })();

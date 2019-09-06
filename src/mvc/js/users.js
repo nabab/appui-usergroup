@@ -1,29 +1,72 @@
 (() => {
   return {
     props: ['source'],
-    computed: {
-      root(){
-        return appui.plugins['appui-usergroup']+'/';
-      },
-      user(){
-        return appui.app.user;
-      },
-      themes(){
-        return appui.themes;
+    data(){
+      return {
+        root: appui.plugins['appui-usergroup'] + '/',
+        user: appui.app.user,        
+        themes: appui.themes,      
+        connection:[{
+          text: bbn._('Connected'),
+          value: true
+        },{
+          text: bbn._('Disconnected'),
+          value: false
+        }]
       }
-    },
+    },    
     methods: {
       trClass(row){
-        return 'valignm' + (row[this.source.arch.admin] ? ' bbn-negative' : '');
+        return 'valignm';
+      },
+      tdClass(row, idx, col){
+        let r = row[this.source.arch.admin] ? 'bbn-background-effect-tertiary' : '';
+        if ( (col.field === 'session') || (col.field === 'last_activity') ){
+          r += ' bbn-c';
+        }
+        return r.trim();
       },
       renderTel(row){
         return row[this.source.arch.tel] || '-';
       },
       renderFonction(row){
         return row[this.source.arch.fonction] || '-';
+      },      
+      renderSession(row){       
+       return `<span class="${row.session ? 'bbn-green' : 'bbn-red'}">${row.session ? bbn._('Connected') : bbn._('Disconnected')}</span>`;
       },
-      getButtons(row){
+      disconnectUser(row){
+        let table = this.$refs.table; 
+        bbn.fn.post(this.root + 'actions/sessions/close', {
+          id: row.id,
+          minutes: 2 
+        }, d => {
+          if ( d.success ){
+            row.session = false;
+            appui.success(bbn._("Disconnected"));
+            this.$nextTick(() => {
+              table.$forceUpdate();
+            });            
+          }
+          else{
+            appui.error(bbn._("No session"));
+          }
+        })
+      }, 
+      getButtons(row){                
         let btn = [{
+          text: bbn._('Disconnect'),
+          notext: true,
+          command: this.disconnectUser,
+          icon: 'nf nf-fa-eject',          
+          disabled: !!( 
+            row.connect ||
+            (
+              ((row[this.source.arch.admin] || row[this.source.arch.dev]) && !this.user.isAdmin) || 
+              (this.user.isDev && !this.user.isAdmin)
+            )
+          )          
+        }, {
           text: bbn._('Edit'),
           notext: true,
           command: this.edit,

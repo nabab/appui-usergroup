@@ -1,10 +1,11 @@
 <bbn-tree :source="source"
           uid="id"
           :checkable="!!multi"
-          class="bbn-overlay"
           @check="checkItem"
+          @ready="setChecked"
           @uncheck="uncheckItem"
           @select="selectItem"
           @unselect="unselectItem"
+          :scrollable="scrollable"
           ref="tree"
 ></bbn-tree>

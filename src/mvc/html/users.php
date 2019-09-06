@@ -19,6 +19,7 @@
              value: 1
            }]"
            :tr-class="trClass"
+           :showable="true"
 >
   <bbns-column title="<?=_("ID")?>"
                :field="source.arch.id"
@@ -26,66 +27,85 @@
                :editable="false"
                :width="40"
                :filterable="false"
+               :cls="tdClass"
   ></bbns-column>
   <bbns-column title="<i class='nf nf-fa-user bbn-large'></i>"
                ftitle="<?=_("Name")?>"
                :field="source.arch.username"
                :width="250"
+               :fixed="true"
+               :cls="tdClass"
+  ></bbns-column>
+  <bbns-column title="<i class='nf nf-fa-link bbn-large'></i>"
+               ftitle="<?=_("Session")?>"
+               :source="connection"
+               field="session"
+               :render="renderSession"               
+               :width="120"               
+               :cls="tdClass"
   ></bbns-column>
   <bbns-column title="<i class='nf nf-fa-users bbn-large'></i>"
                ftitle="<?=_("Group")?>"
                :field="source.arch.id_group"
                :source="source.groups"
                :width="200"
+               :cls="tdClass"
   ></bbns-column>
   <bbns-column title="<i class='nf nf-fa-cogs bbn-large'></i>"
                ftitle="<?=_("Function")?>"
                :field="source.arch.fonction"
                :render="renderFonction"
                :width="200"
+               :cls="tdClass"
   ></bbns-column>
   <bbns-column title="<i class='nf nf-fa-sign_in_alt bbn-large'></i>"
                ftitle="<?=_("Login")?>"
                :field="source.arch.login"
                :width="250"
                v-if="source.arch.login !== source.arch.email"
+               :cls="tdClass"
   ></bbns-column>
   <bbns-column title="<i class='nf nf-fa-at bbn-large'></i>"
                ftitle="<?=_("eMail")?>"
                :field="source.arch.email"
                type="email"
                :width="250"
+               :cls="tdClass"
   ></bbns-column>
-  <bbns-column title="<i class='nf nf-fa-calendar_alt bbn-xl'></i>"
+  <bbns-column title="<i class='nf nf-fa-calendar bbn-xl'></i>"
                ftitle="<?=_("Last activity of the user")?>"
                field="last_activity"
                :editable="false"
                :filterable="false"
                :width="120"
                type="date"
-               cls="bbn-c"
+               :cls="tdClass"
   ></bbns-column>
   <bbns-column title="<i class='nf nf-fa-phone bbn-large'></i>"
                ftitle="<?=_("Phone")?>"
                :field="source.arch.tel"
                :width="120"
                :render="renderTel"
+               :cls="tdClass"
   ></bbns-column>
-  <bbns-column title="<i class='nf nf-fa-palette bbn-large'></i>"
+  <bbns-column title="<i class='nf nf-fae-palette_color bbn-large'></i>"
                ftitle="<?=_("Theme")?>"
                :field="source.arch.theme"
                :width="120"
                :source="themes"
+               :cls="tdClass"
   ></bbns-column>
   <bbns-column title="<?=_("Developer")?>"
                :field="source.arch.dev"
                :hidden="true"
                type="boolean"
+               :cls="tdClass"
   ></bbns-column>
   <bbns-column title="<?=_("Administrator")?>"
                :field="source.arch.admin"
                :hidden="true"
                type="boolean"
+               :cls="tdClass"
   ></bbns-column>
   <bbns-column title="<?=_("Active")?>"
                :field="source.arch.active"
@@ -95,6 +115,7 @@
                :showable="false"
                :filterable="false"
                :width="80"
+               :cls="tdClass"
   ></bbns-column>
   <bbns-column ftitle="<?=_("Actions")?>"
                :editable="false"
@@ -103,6 +124,7 @@
                :buttons="getButtons"
                cls="bbn-c"
                fixed="right"
+               :cls="tdClass"
   ></bbns-column>
 </bbn-table>
 
