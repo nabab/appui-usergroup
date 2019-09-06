@@ -121,8 +121,7 @@
                :editable="false"
                :sortable="false"
                :width="180"
-               :buttons="getButtons"
-               cls="bbn-c"
+               :buttons="getButtons"               
                fixed="right"
                :cls="tdClass"
   ></bbns-column>
