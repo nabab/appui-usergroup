@@ -19,9 +19,9 @@
       trClass(row){
         return 'valignm';
       },
-      tdClass(row, idx, col){
+      tdClass(row, idx, col){       
         let r = row[this.source.arch.admin] ? 'bbn-background-effect-tertiary' : '';
-        if ( (col.field === 'session') || (col.field === 'last_activity') ){
+        if ( (col.field === 'session') || (col.field === 'last_activity') || ((col.field === undefined) && (col.ftitle === 'Actions')) ){
           r += ' bbn-c';
         }
         return r.trim();
@@ -60,7 +60,7 @@
           command: this.disconnectUser,
           icon: 'nf nf-fa-eject',          
           disabled: !!( 
-            row.session ||
+            !row.session ||
             (
               ((row[this.source.arch.admin] || row[this.source.arch.dev]) && !this.user.isAdmin) || 
               (this.user.isDev && !this.user.isAdmin)
