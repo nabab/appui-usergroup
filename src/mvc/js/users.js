@@ -37,7 +37,7 @@
       },
       disconnectUser(row){
         let table = this.$refs.table; 
-        bbn.fn.post(this.root + 'actions/sessions/close', {
+        this.post(this.root + 'actions/sessions/close', {
           id: row.id,
           minutes: 2 
         }, d => {
@@ -122,7 +122,7 @@
           (!row[this.source.arch.dev] || this.user.isAdmin)
         ){
           this.confirm(bbn._("Do you sure you want to delete this entry?"), () => {
-            bbn.fn.post(this.root + "actions/users/delete", {id: row[this.source.arch.id]}, (d) => {
+            this.post(this.root + "actions/users/delete", {id: row[this.source.arch.id]}, (d) => {
               if ( d.success ){
                 let idx = bbn.fn.search(this.source.users, this.source.arch.id, row[this.source.arch.id]);
                 if ( idx > -1 ){
@@ -155,7 +155,7 @@
       init(row){
         if ( row.id ){
           this.confirm(bbn._("Do you sure you want to re-initialize this user's password?"), () => {
-            bbn.fn.post(appui.plugins['appui-usergroup'] + '/actions/users/init', {
+            this.post(appui.plugins['appui-usergroup'] + '/actions/users/init', {
               [this.source.arch['id']]: row[this.source.arch['id']]
             }, d => {
               if ( d.success ){

@@ -31,7 +31,7 @@
       },
       setPerm(idPerm){
         if ( idPerm && this.source[this.id_type] ){
-          bbn.fn.post(this.opt_root + '/permissions/add', {
+          this.post(this.opt_root + '/permissions/add', {
             [this.id_type]: this.source[this.id_type],
             id_option: idPerm
           }, (d) => {
@@ -46,7 +46,7 @@
       },
       unsetPerm(idPerm){
         if ( idPerm && this.source[this.id_type] ){
-          bbn.fn.post(this.opt_root + '/permissions/remove', {
+          this.post(this.opt_root + '/permissions/remove', {
             [this.id_type]: this.source[this.id_type],
             id_option: idPerm
           }, (d) => {
@@ -61,7 +61,7 @@
       },
       getPerms(d){
         if ( d.id && this.id_type && this.source[this.id_type] ){
-          bbn.fn.post(this.root + '/actions/permissions/get', {
+          this.post(this.root + '/actions/permissions/get', {
             id: d.id,
             [this.id_type]: this.source[this.id_type]
           }, (p) => {

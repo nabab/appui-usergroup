@@ -3,6 +3,7 @@
 <bbn-table :source="source.root + 'preferences'"
            class="bbn-overlay"
            :showable="true"
+           :storage="true"
            :sortable="true"
            :filterable="true"
            :pageable="true"
@@ -14,10 +15,21 @@
   </bbns-column>
   <bbns-column field="public"
               type="boolean"
-              :width="30"
+              :width="60"
               :title="_('Pub')"
               :ftitle="_('Public')"
               >
+  </bbns-column>
+  <bbns-column field="permission"
+              type="boolean"
+              :width="60"
+              :title="_('Perm')"
+              :ftitle="_('Permission')"
+              >
+  </bbns-column>
+  <bbns-column field="id_option"
+               :hidden="true"
+               :title="_('ID Option')">
   </bbns-column>
   <bbns-column field="option"
               :title="_('Option')"

@@ -13,9 +13,9 @@
         return data.id_link ? ('<a href="' + this.source.options_root + 'list/' + data.id_link + '">' + data.link + '</a>') : '-';
       },
       view(data){
-        bbn.fn.post(this.source.root + 'preferences', {id: data.id}, (d) => {
+        this.post(this.source.root + 'preferences', {id: data.id}, (d) => {
           if ( d && d.data ){
-            this.getTab().getPopup().open({
+            this.getPopup({
               component: {
                 template: '<bbn-json-editor :value="jsonSource" :readonly="true" class="bbn-overlay"></bbn-json-editor>',
                 props: ['source'],
@@ -34,8 +34,17 @@
         })
         bbn.fn.log("VIEW", data)
       },
-      del(data){
-        bbn.fn.log("DELETE", data)
+      del(data, col, index){
+        bbn.fn.log("DELETE", arguments)
+        this.post(this.source.root + 'actions/preferences/delete', {id: data.id}, d => {
+          if ( d.success ){
+            appui.success();
+            this.getRef('table').delete(index, false);
+          }
+          else{
+            appui.error()
+          }
+        })
       }
     }
   };
