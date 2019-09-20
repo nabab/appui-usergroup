@@ -7,4 +7,5 @@ vendor/
 # composer.lock
 
 [core]
-	filemode = false
+filemode = false
+*.* text eol=lf
