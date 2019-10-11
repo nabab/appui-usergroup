@@ -8,4 +8,4 @@
 $ctrl->add_data([
   'schema' => $ctrl->inc->user->get_class_cfg()['arch']['passwords']
 ]);
-$ctrl->combo(null, true);
+$ctrl->combo(_('Password'), true);

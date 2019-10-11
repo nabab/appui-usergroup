@@ -57,7 +57,7 @@
         let btn = [{
           text: bbn._('Disconnect'),
           notext: true,
-          command: this.disconnectUser,
+          action: this.disconnectUser,
           icon: 'nf nf-fa-eject',          
           disabled: !!( 
             !row.session ||
@@ -69,13 +69,13 @@
         }, {
           text: bbn._('Edit'),
           notext: true,
-          command: this.edit,
+          action: this.edit,
           icon: 'nf nf-fa-edit',
           disabled: !!(((row[this.source.arch.admin] || row[this.source.arch.dev]) && !this.user.isAdmin) || (this.user.isDev && !this.user.isAdmin))
         }, {
           text: bbn._('Delete'),
           notext: true,
-          command: this.remove,
+          action: this.remove,
           icon: 'nf nf-fa-trash',
           disabled: !!(row[this.source.arch.admin] || (row[this.source.arch.dev] && !this.user.isAdmin) || (this.user.isDev && !this.user.isAdmin))
         }];
@@ -83,7 +83,7 @@
           btn.push({
             text: bbn._('Permissions'),
             notext: true,
-            command: this.permissions,
+            action: this.permissions,
             icon: 'nf nf-fa-key',
             disabled: !!((this.user.isDev && !this.user.isAdmin) || row[this.source.arch.admin])
           });
@@ -91,7 +91,7 @@
         btn.push({
           text: bbn._('Re-initialize'),
           notext: true,
-          command: this.init,
+          action: this.init,
           icon: 'nf nf-fa-envelope',
           disabled: !!((this.user.isDev && !this.user.isAdmin) || row[this.source.arch.admin])
         });

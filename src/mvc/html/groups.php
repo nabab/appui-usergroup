@@ -9,7 +9,7 @@
            :toolbar="[{
              text: '<?=_('New group')?>',
              icon: 'nf nf-fa-plus',
-             command: 'insert',
+             action: 'insert',
              disabled: !!(source.is_dev && !source.is_admin)
            }]"
            :tr-class="trClass"

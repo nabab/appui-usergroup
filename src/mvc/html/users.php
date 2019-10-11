@@ -10,7 +10,7 @@
            :toolbar="[{
              text: '<?=_('New user')?>',
              icon: 'nf nf-fa-user_plus',
-             command: insert,
+             action: insert,
              disabled: !!(user.isDev && !user.isAdmin)
            }]"
            :filter="[{
