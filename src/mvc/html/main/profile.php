@@ -7,7 +7,7 @@
             ref="form"
   >
     <div class="bbn-middle">
-      <div class="bbn-grid-fields bbn-padded bbn-c" style="grid-template-columns: auto 300px">
+      <div class="bbn-grid-fields bbn-padded bbn-c bbn-nowrap" style="grid-template-columns: auto 300px">
         <label><?=_('Username')?></label>
         <bbn-input class="bbn-medium" maxlength="35" v-model="data[source.schema.username]"></bbn-input>
 

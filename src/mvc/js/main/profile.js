@@ -5,18 +5,6 @@
     methods: {
       checkTheme(res){
         if ( res.success  ){
-          if ( this.theme !== this.$refs.form.source[this.source.schema.theme] ){
-            this.getPopup().confirm(
-              bbn._("You have changed the theme. Do you want to refresh the application to apply the new theme?"),
-              () => {
-                this.theme = this.$refs.form.source[this.source.schema.theme];
-                document.location.reload();
-              },
-              () => {
-                this.theme = this.$refs.form.source[this.source.schema.theme];
-              },
-            );
-          }
           appui.success(bbn._('Saved'));
         }
         else{
@@ -30,6 +18,35 @@
         data: this.source.data,
         themes: appui.themes
       }
-  	}
+  	},
+    watch: {
+      data: {
+        deep: true,
+        handler(){
+          bbn.fn.log("DIRTY HANDLER", this.theme, this.source.schema.theme, this.$refs.form.source[this.source.schema.theme]);
+          if ( this.theme !== this.$refs.form.source[this.source.schema.theme] ){
+            let lnks = document.head.getElementsByTagName('link');
+            let url = false;
+            bbn.fn.each(lnks, a => {
+            	bbn.fn.log(a.href);
+              if (
+                (a.rel === 'stylesheet')
+                && a.href
+                && a.href.match(this.theme + '.less,01-basic.less,02-background.less')
+              ){
+                bbn.fn.log("CSS FOUND");
+                a.href = bbn.fn.replaceAll(
+                  this.theme + '.less,01-basic.less,02-background.less',
+                  this.$refs.form.source[this.source.schema.theme] + '.less,01-basic.less,02-background.less',
+                  a.href
+                );
+                this.theme = this.$refs.form.source[this.source.schema.theme];
+                return false;
+              }
+            })
+          }
+        }
+      }
+    }
   };
 })();
