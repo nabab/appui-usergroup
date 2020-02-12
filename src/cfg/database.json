@@ -69,7 +69,7 @@
                 "default": "NULL",
                 "maxlength": 100
             },
-            "nom": {
+            "name": {
                 "position": 4,
                 "type": "varchar",
                 "null": 0,
@@ -80,7 +80,7 @@
                 "generation": "",
                 "maxlength": 35
             },
-            "tel": {
+            "phone": {
                 "position": 5,
                 "type": "varchar",
                 "null": 1,
@@ -92,7 +92,7 @@
                 "default": "NULL",
                 "maxlength": 10
             },
-            "fonction": {
+            "title": {
                 "position": 6,
                 "type": "varchar",
                 "null": 1,
@@ -163,7 +163,7 @@
                 "default": 0,
                 "maxlength": 1
             },
-            "bbn_h": {
+            "active": {
                 "position": 12,
                 "type": "tinyint",
                 "null": 0,
@@ -251,7 +251,7 @@
                 "default": "NULL",
                 "maxlength": 16
             },
-            "nom": {
+            "group": {
                 "position": 3,
                 "type": "varchar",
                 "null": 0,
