@@ -5,19 +5,13 @@
                 "columns": [
                     "id"
                 ],
-                "ref_db": null,
-                "ref_table": null,
-                "ref_column": null,
-                "constraint": null,
-                "update": null,
-                "delete": null,
                 "unique": 1
             },
             "id_group": {
                 "columns": [
                     "id_group"
                 ],
-                "ref_db": "apst_app",
+                "ref_db": "xxx",
                 "ref_table": "bbn_users_groups",
                 "ref_column": "id",
                 "constraint": "bbn_users_ibfk_2",
@@ -40,10 +34,7 @@
                 "type": "binary",
                 "null": 0,
                 "key": "PRI",
-                "extra": "",
                 "signed": true,
-                "virtual": false,
-                "generation": "",
                 "maxlength": 16
             },
             "id_group": {
@@ -51,21 +42,14 @@
                 "type": "binary",
                 "null": 0,
                 "key": "MUL",
-                "extra": "",
                 "signed": true,
-                "virtual": false,
-                "generation": "",
                 "maxlength": 16
             },
             "email": {
                 "position": 3,
                 "type": "varchar",
                 "null": 1,
-                "key": null,
-                "extra": "",
                 "signed": true,
-                "virtual": false,
-                "generation": "",
                 "default": "NULL",
                 "maxlength": 100
             },
@@ -73,22 +57,14 @@
                 "position": 4,
                 "type": "varchar",
                 "null": 0,
-                "key": null,
-                "extra": "",
                 "signed": true,
-                "virtual": false,
-                "generation": "",
                 "maxlength": 35
             },
             "phone": {
                 "position": 5,
                 "type": "varchar",
                 "null": 1,
-                "key": null,
-                "extra": "",
                 "signed": true,
-                "virtual": false,
-                "generation": "",
                 "default": "NULL",
                 "maxlength": 10
             },
@@ -96,11 +72,7 @@
                 "position": 6,
                 "type": "varchar",
                 "null": 1,
-                "key": null,
-                "extra": "",
                 "signed": true,
-                "virtual": false,
-                "generation": "",
                 "default": "NULL",
                 "maxlength": 100
             },
@@ -108,11 +80,7 @@
                 "position": 7,
                 "type": "varchar",
                 "null": 0,
-                "key": null,
-                "extra": "",
                 "signed": true,
-                "virtual": false,
-                "generation": "",
                 "default": "uniform",
                 "maxlength": 20
             },
@@ -120,34 +88,22 @@
                 "position": 8,
                 "type": "json",
                 "null": 1,
-                "key": null,
-                "extra": "",
                 "signed": true,
-                "virtual": false,
-                "generation": "",
                 "default": "NULL"
             },
-            "rlink": {
+            "enckey": {
                 "position": 9,
                 "type": "varchar",
                 "null": 1,
-                "key": null,
-                "extra": "",
                 "signed": true,
-                "virtual": false,
-                "generation": "",
                 "default": "NULL",
-                "maxlength": 100
+                "maxlength": 1000
             },
             "admin": {
                 "position": 10,
                 "type": "tinyint",
                 "null": 0,
-                "key": null,
-                "extra": "",
                 "signed": false,
-                "virtual": false,
-                "generation": "",
                 "default": 0,
                 "maxlength": 1
             },
@@ -155,11 +111,7 @@
                 "position": 11,
                 "type": "tinyint",
                 "null": 0,
-                "key": null,
-                "extra": "",
                 "signed": true,
-                "virtual": false,
-                "generation": "",
                 "default": 0,
                 "maxlength": 1
             },
@@ -167,11 +119,7 @@
                 "position": 12,
                 "type": "tinyint",
                 "null": 0,
-                "key": null,
-                "extra": "",
                 "signed": false,
-                "virtual": false,
-                "generation": "",
                 "default": 1,
                 "maxlength": 1
             }
@@ -183,31 +131,19 @@
                 "columns": [
                     "id"
                 ],
-                "ref_db": null,
-                "ref_table": null,
-                "ref_column": null,
-                "constraint": null,
-                "update": null,
-                "delete": null,
                 "unique": 1
             },
             "code": {
                 "columns": [
                     "code"
                 ],
-                "ref_db": null,
-                "ref_table": null,
-                "ref_column": null,
-                "constraint": null,
-                "update": null,
-                "delete": null,
                 "unique": 1
             },
             "id_parent": {
                 "columns": [
                     "id_parent"
                 ],
-                "ref_db": "apst_app",
+                "ref_db": "xxx",
                 "ref_table": "bbn_users_groups",
                 "ref_column": "id",
                 "constraint": "bbn_users_groups_ibfk_2",
@@ -233,10 +169,7 @@
                 "type": "binary",
                 "null": 0,
                 "key": "PRI",
-                "extra": "",
                 "signed": true,
-                "virtual": false,
-                "generation": "",
                 "maxlength": 16
             },
             "id_parent": {
@@ -244,10 +177,7 @@
                 "type": "binary",
                 "null": 1,
                 "key": "MUL",
-                "extra": "",
                 "signed": true,
-                "virtual": false,
-                "generation": "",
                 "default": "NULL",
                 "maxlength": 16
             },
@@ -255,11 +185,7 @@
                 "position": 3,
                 "type": "varchar",
                 "null": 0,
-                "key": null,
-                "extra": "",
                 "signed": true,
-                "virtual": false,
-                "generation": "",
                 "maxlength": 30
             },
             "code": {
@@ -267,10 +193,7 @@
                 "type": "varchar",
                 "null": 1,
                 "key": "UNI",
-                "extra": "",
                 "signed": true,
-                "virtual": false,
-                "generation": "",
                 "default": "NULL",
                 "maxlength": 25
             },
@@ -278,11 +201,7 @@
                 "position": 5,
                 "type": "json",
                 "null": 1,
-                "key": null,
-                "extra": "",
                 "signed": true,
-                "virtual": false,
-                "generation": "",
                 "default": "NULL"
             }
         }
@@ -293,19 +212,13 @@
                 "columns": [
                     "id"
                 ],
-                "ref_db": null,
-                "ref_table": null,
-                "ref_column": null,
-                "constraint": null,
-                "update": null,
-                "delete": null,
                 "unique": 1
             },
             "id_user": {
                 "columns": [
                     "id_user"
                 ],
-                "ref_db": "apst_app",
+                "ref_db": "xxx",
                 "ref_table": "bbn_users",
                 "ref_column": "id",
                 "constraint": "bbn_users_hotlinks_ibfk_2",
@@ -328,21 +241,14 @@
                 "type": "binary",
                 "null": 0,
                 "key": "PRI",
-                "extra": "",
                 "signed": true,
-                "virtual": false,
-                "generation": "",
                 "maxlength": 16
             },
             "hash": {
                 "position": 2,
                 "type": "varchar",
                 "null": 0,
-                "key": null,
-                "extra": "",
                 "signed": true,
-                "virtual": false,
-                "generation": "",
                 "maxlength": 64
             },
             "id_user": {
@@ -350,20 +256,14 @@
                 "type": "binary",
                 "null": 0,
                 "key": "MUL",
-                "extra": "",
                 "signed": true,
-                "virtual": false,
-                "generation": "",
                 "maxlength": 16
             },
             "expire": {
                 "position": 4,
                 "type": "datetime",
                 "null": 0,
-                "key": null,
-                "extra": "",
                 "signed": true,
-                "virtual": false,
                 "generation": ""
             }
         }
@@ -374,12 +274,6 @@
                 "columns": [
                     "id"
                 ],
-                "ref_db": null,
-                "ref_table": null,
-                "ref_column": null,
-                "constraint": null,
-                "update": null,
-                "delete": null,
                 "unique": 1
             },
             "id_option_2": {
@@ -390,12 +284,7 @@
                     "id_link",
                     "id_alias"
                 ],
-                "ref_db": null,
-                "ref_table": null,
-                "ref_column": null,
                 "constraint": "bbn_users_options_ibfk_3",
-                "update": "CASCADE",
-                "delete": "CASCADE",
                 "unique": 1
             },
             "id_option_3": {
@@ -404,19 +293,14 @@
                     "id_user",
                     "id_group"
                 ],
-                "ref_db": null,
-                "ref_table": null,
-                "ref_column": null,
                 "constraint": "bbn_users_options_ibfk_3",
-                "update": "CASCADE",
-                "delete": "CASCADE",
                 "unique": 1
             },
             "id_option": {
                 "columns": [
                     "id_option"
                 ],
-                "ref_db": "apst_app",
+                "ref_db": "xxx",
                 "ref_table": "bbn_options",
                 "ref_column": "id",
                 "constraint": "bbn_users_options_ibfk_3",
@@ -428,7 +312,7 @@
                 "columns": [
                     "id_user"
                 ],
-                "ref_db": "apst_app",
+                "ref_db": "xxx",
                 "ref_table": "bbn_users",
                 "ref_column": "id",
                 "constraint": "bbn_users_options_ibfk_4",
@@ -440,7 +324,7 @@
                 "columns": [
                     "id_group"
                 ],
-                "ref_db": "apst_app",
+                "ref_db": "xxx",
                 "ref_table": "bbn_users_groups",
                 "ref_column": "id",
                 "constraint": "bbn_users_options_ibfk_5",
@@ -452,7 +336,7 @@
                 "columns": [
                     "id_link"
                 ],
-                "ref_db": "apst_app",
+                "ref_db": "xxx",
                 "ref_table": "bbn_options",
                 "ref_column": "id",
                 "constraint": "bbn_users_options_ibfk_2",
@@ -464,7 +348,7 @@
                 "columns": [
                     "id_alias"
                 ],
-                "ref_db": "apst_app",
+                "ref_db": "xxx",
                 "ref_table": "bbn_users_options",
                 "ref_column": "id",
                 "constraint": "bbn_users_options_ibfk_6",
@@ -507,10 +391,7 @@
                 "type": "binary",
                 "null": 0,
                 "key": "PRI",
-                "extra": "",
                 "signed": true,
-                "virtual": false,
-                "generation": "",
                 "maxlength": 16
             },
             "id_option": {
@@ -518,21 +399,14 @@
                 "type": "binary",
                 "null": 0,
                 "key": "MUL",
-                "extra": "",
                 "signed": true,
-                "virtual": false,
-                "generation": "",
                 "maxlength": 16
             },
             "num": {
                 "position": 3,
                 "type": "int",
                 "null": 1,
-                "key": null,
-                "extra": "",
                 "signed": false,
-                "virtual": false,
-                "generation": "",
                 "default": "NULL",
                 "maxlength": 5
             },
@@ -540,11 +414,7 @@
                 "position": 4,
                 "type": "tinyint",
                 "null": 0,
-                "key": null,
-                "extra": "",
                 "signed": false,
-                "virtual": false,
-                "generation": "",
                 "default": 0,
                 "maxlength": 1
             },
@@ -553,10 +423,7 @@
                 "type": "binary",
                 "null": 1,
                 "key": "MUL",
-                "extra": "",
                 "signed": true,
-                "virtual": false,
-                "generation": "",
                 "default": "NULL",
                 "maxlength": 16
             },
@@ -565,10 +432,7 @@
                 "type": "binary",
                 "null": 1,
                 "key": "MUL",
-                "extra": "",
                 "signed": true,
-                "virtual": false,
-                "generation": "",
                 "default": "NULL",
                 "maxlength": 16
             },
@@ -577,10 +441,7 @@
                 "type": "binary",
                 "null": 1,
                 "key": "MUL",
-                "extra": "",
                 "signed": true,
-                "virtual": false,
-                "generation": "",
                 "default": "NULL",
                 "maxlength": 16
             },
@@ -589,10 +450,7 @@
                 "type": "binary",
                 "null": 1,
                 "key": "MUL",
-                "extra": "",
                 "signed": true,
-                "virtual": false,
-                "generation": "",
                 "default": "NULL",
                 "maxlength": 16
             },
@@ -600,11 +458,7 @@
                 "position": 9,
                 "type": "varchar",
                 "null": 1,
-                "key": null,
-                "extra": "",
                 "signed": true,
-                "virtual": false,
-                "generation": "",
                 "default": "NULL",
                 "maxlength": 255
             },
@@ -612,11 +466,7 @@
                 "position": 10,
                 "type": "mediumtext",
                 "null": 1,
-                "key": null,
-                "extra": "",
                 "signed": true,
-                "virtual": false,
-                "generation": "",
                 "default": "NULL"
             }
         }
@@ -627,19 +477,13 @@
                 "columns": [
                     "id"
                 ],
-                "ref_db": null,
-                "ref_table": null,
-                "ref_column": null,
-                "constraint": null,
-                "update": null,
-                "delete": null,
                 "unique": 1
             },
             "id_user_option": {
                 "columns": [
                     "id_user_option"
                 ],
-                "ref_db": "apst_app",
+                "ref_db": "xxx",
                 "ref_table": "bbn_users_options",
                 "ref_column": "id",
                 "constraint": "bbn_users_options_bits_ibfk_1",
@@ -651,7 +495,7 @@
                 "columns": [
                     "id_parent"
                 ],
-                "ref_db": "apst_app",
+                "ref_db": "xxx",
                 "ref_table": "bbn_users_options_bits",
                 "ref_column": "id",
                 "constraint": "bbn_users_options_bits_ibfk_2",
@@ -663,7 +507,7 @@
                 "columns": [
                     "id_option"
                 ],
-                "ref_db": "apst_app",
+                "ref_db": "xxx",
                 "ref_table": "bbn_options",
                 "ref_column": "id",
                 "constraint": "bbn_users_options_bits_ibfk_3",
@@ -692,10 +536,7 @@
                 "type": "binary",
                 "null": 0,
                 "key": "PRI",
-                "extra": "",
                 "signed": true,
-                "virtual": false,
-                "generation": "",
                 "maxlength": 16
             },
             "id_user_option": {
@@ -703,10 +544,7 @@
                 "type": "binary",
                 "null": 0,
                 "key": "MUL",
-                "extra": "",
                 "signed": true,
-                "virtual": false,
-                "generation": "",
                 "maxlength": 16
             },
             "id_parent": {
@@ -714,10 +552,7 @@
                 "type": "binary",
                 "null": 1,
                 "key": "MUL",
-                "extra": "",
                 "signed": true,
-                "virtual": false,
-                "generation": "",
                 "default": "NULL",
                 "maxlength": 16
             },
@@ -726,10 +561,7 @@
                 "type": "binary",
                 "null": 1,
                 "key": "MUL",
-                "extra": "",
                 "signed": true,
-                "virtual": false,
-                "generation": "",
                 "default": "NULL",
                 "maxlength": 16
             },
@@ -737,11 +569,7 @@
                 "position": 5,
                 "type": "int",
                 "null": 1,
-                "key": null,
-                "extra": "",
                 "signed": false,
-                "virtual": false,
-                "generation": "",
                 "default": "NULL",
                 "maxlength": 5
             },
@@ -749,22 +577,14 @@
                 "position": 6,
                 "type": "varchar",
                 "null": 0,
-                "key": null,
-                "extra": "",
                 "signed": true,
-                "virtual": false,
-                "generation": "",
                 "maxlength": 255
             },
             "cfg": {
                 "position": 7,
                 "type": "mediumtext",
                 "null": 1,
-                "key": null,
-                "extra": "",
                 "signed": true,
-                "virtual": false,
-                "generation": "",
                 "default": "NULL"
             }
         }
@@ -775,19 +595,13 @@
                 "columns": [
                     "id"
                 ],
-                "ref_db": null,
-                "ref_table": null,
-                "ref_column": null,
-                "constraint": null,
-                "update": null,
-                "delete": null,
                 "unique": 1
             },
             "id_user": {
                 "columns": [
                     "id_user"
                 ],
-                "ref_db": "apst_app",
+                "ref_db": "xxx",
                 "ref_table": "bbn_users",
                 "ref_column": "id",
                 "constraint": "bbn_users_passwords_ibfk_2",
@@ -810,10 +624,7 @@
                 "type": "binary",
                 "null": 0,
                 "key": "PRI",
-                "extra": "",
                 "signed": true,
-                "virtual": false,
-                "generation": "",
                 "maxlength": 16
             },
             "id_user": {
@@ -821,31 +632,21 @@
                 "type": "binary",
                 "null": 0,
                 "key": "MUL",
-                "extra": "",
                 "signed": true,
-                "virtual": false,
-                "generation": "",
                 "maxlength": 16
             },
             "mdp": {
                 "position": 3,
                 "type": "varchar",
                 "null": 0,
-                "key": null,
-                "extra": "",
                 "signed": true,
-                "virtual": false,
-                "generation": "",
                 "maxlength": 128
             },
             "added": {
                 "position": 4,
                 "type": "datetime",
                 "null": 0,
-                "key": null,
-                "extra": "",
                 "signed": true,
-                "virtual": false,
                 "generation": ""
             }
         }
@@ -856,19 +657,13 @@
                 "columns": [
                     "id"
                 ],
-                "ref_db": null,
-                "ref_table": null,
-                "ref_column": null,
-                "constraint": null,
-                "update": null,
-                "delete": null,
                 "unique": 1
             },
             "id_user": {
                 "columns": [
                     "id_user"
                 ],
-                "ref_db": "apst_app",
+                "ref_db": "xxx",
                 "ref_table": "bbn_users",
                 "ref_column": "id",
                 "constraint": "bbn_users_sessions_ibfk_2",
@@ -891,10 +686,7 @@
                 "type": "binary",
                 "null": 0,
                 "key": "PRI",
-                "extra": "",
                 "signed": true,
-                "virtual": false,
-                "generation": "",
                 "maxlength": 16
             },
             "id_user": {
@@ -902,10 +694,7 @@
                 "type": "binary",
                 "null": 1,
                 "key": "MUL",
-                "extra": "",
                 "signed": true,
-                "virtual": false,
-                "generation": "",
                 "default": "NULL",
                 "maxlength": 16
             },
@@ -913,75 +702,49 @@
                 "position": 3,
                 "type": "varchar",
                 "null": 0,
-                "key": null,
-                "extra": "",
                 "signed": true,
-                "virtual": false,
-                "generation": "",
                 "maxlength": 128
             },
             "ip_address": {
                 "position": 4,
                 "type": "varchar",
                 "null": 0,
-                "key": null,
-                "extra": "",
                 "signed": true,
-                "virtual": false,
-                "generation": "",
                 "maxlength": 15
             },
             "user_agent": {
                 "position": 5,
                 "type": "varchar",
                 "null": 0,
-                "key": null,
-                "extra": "",
                 "signed": true,
-                "virtual": false,
-                "generation": "",
                 "maxlength": 255
             },
             "opened": {
                 "position": 6,
                 "type": "tinyint",
                 "null": 0,
-                "key": null,
-                "extra": "",
                 "signed": false,
-                "virtual": false,
-                "generation": "",
                 "maxlength": 1
             },
             "creation": {
                 "position": 7,
                 "type": "datetime",
                 "null": 0,
-                "key": null,
-                "extra": "",
                 "signed": true,
-                "virtual": false,
                 "generation": ""
             },
             "last_activity": {
                 "position": 8,
                 "type": "datetime",
                 "null": 0,
-                "key": null,
-                "extra": "",
                 "signed": true,
-                "virtual": false,
                 "generation": ""
             },
             "cfg": {
                 "position": 9,
                 "type": "json",
                 "null": 1,
-                "key": null,
-                "extra": "",
                 "signed": true,
-                "virtual": false,
-                "generation": "",
                 "default": "NULL"
             }
         }
@@ -992,19 +755,13 @@
                 "columns": [
                     "id"
                 ],
-                "ref_db": null,
-                "ref_table": null,
-                "ref_column": null,
-                "constraint": null,
-                "update": null,
-                "delete": null,
                 "unique": 1
             },
             "id_session": {
                 "columns": [
                     "id_session"
                 ],
-                "ref_db": "apst_app",
+                "ref_db": "xxx",
                 "ref_table": "bbn_users_sessions",
                 "ref_column": "id",
                 "constraint": "bbn_users_tokens_ibfk_1",
@@ -1016,7 +773,7 @@
                 "columns": [
                     "id_parent"
                 ],
-                "ref_db": "apst_app",
+                "ref_db": "xxx",
                 "ref_table": "bbn_users_tokens",
                 "ref_column": "id",
                 "constraint": "bbn_users_tokens_ibfk_2",
@@ -1028,12 +785,6 @@
                 "columns": [
                     "content"
                 ],
-                "ref_db": null,
-                "ref_table": null,
-                "ref_column": null,
-                "constraint": null,
-                "update": null,
-                "delete": null,
                 "unique": 0
             }
         },
@@ -1057,10 +808,7 @@
                 "type": "binary",
                 "null": 0,
                 "key": "PRI",
-                "extra": "",
                 "signed": true,
-                "virtual": false,
-                "generation": "",
                 "maxlength": 16
             },
             "id_session": {
@@ -1068,10 +816,7 @@
                 "type": "binary",
                 "null": 0,
                 "key": "MUL",
-                "extra": "",
                 "signed": true,
-                "virtual": false,
-                "generation": "",
                 "maxlength": 16
             },
             "content": {
@@ -1079,10 +824,7 @@
                 "type": "varchar",
                 "null": 0,
                 "key": "MUL",
-                "extra": "",
                 "signed": true,
-                "virtual": false,
-                "generation": "",
                 "maxlength": 32
             },
             "id_parent": {
@@ -1090,10 +832,7 @@
                 "type": "binary",
                 "null": 1,
                 "key": "MUL",
-                "extra": "",
                 "signed": true,
-                "virtual": false,
-                "generation": "",
                 "default": "NULL",
                 "maxlength": 16
             },
@@ -1101,11 +840,7 @@
                 "position": 5,
                 "type": "decimal",
                 "null": 0,
-                "key": null,
-                "extra": "",
                 "signed": false,
-                "virtual": false,
-                "generation": "",
                 "maxlength": 14,
                 "decimals": 4
             },
@@ -1113,7 +848,6 @@
                 "position": 6,
                 "type": "datetime",
                 "null": 1,
-                "key": null,
                 "extra": "VIRTUAL GENERATED",
                 "signed": true,
                 "virtual": true,
@@ -1124,11 +858,7 @@
                 "position": 7,
                 "type": "decimal",
                 "null": 0,
-                "key": null,
-                "extra": "",
                 "signed": false,
-                "virtual": false,
-                "generation": "",
                 "maxlength": 14,
                 "decimals": 4
             },
@@ -1136,7 +866,6 @@
                 "position": 8,
                 "type": "datetime",
                 "null": 1,
-                "key": null,
                 "extra": "VIRTUAL GENERATED",
                 "signed": true,
                 "virtual": true,
@@ -1151,19 +880,13 @@
                 "columns": [
                     "id"
                 ],
-                "ref_db": null,
-                "ref_table": null,
-                "ref_column": null,
-                "constraint": null,
-                "update": null,
-                "delete": null,
                 "unique": 1
             },
             "id_group": {
                 "columns": [
                     "id_group"
                 ],
-                "ref_db": "apst_app",
+                "ref_db": "xxx",
                 "ref_table": "bbn_users_groups",
                 "ref_column": "id",
                 "constraint": "bbn_users_usergroups_ibfk_2",
@@ -1175,7 +898,7 @@
                 "columns": [
                     "id_user"
                 ],
-                "ref_db": "apst_app",
+                "ref_db": "xxx",
                 "ref_table": "bbn_users",
                 "ref_column": "id",
                 "constraint": "bbn_users_usergroups_ibfk_3",
@@ -1201,10 +924,7 @@
                 "type": "binary",
                 "null": 0,
                 "key": "PRI",
-                "extra": "",
                 "signed": true,
-                "virtual": false,
-                "generation": "",
                 "maxlength": 16
             },
             "id_group": {
@@ -1212,10 +932,7 @@
                 "type": "binary",
                 "null": 0,
                 "key": "MUL",
-                "extra": "",
                 "signed": true,
-                "virtual": false,
-                "generation": "",
                 "maxlength": 16
             },
             "id_user": {
@@ -1223,10 +940,7 @@
                 "type": "binary",
                 "null": 0,
                 "key": "MUL",
-                "extra": "",
                 "signed": true,
-                "virtual": false,
-                "generation": "",
                 "maxlength": 16
             }
         }
