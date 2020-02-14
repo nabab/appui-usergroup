@@ -635,7 +635,7 @@
                 "signed": true,
                 "maxlength": 16
             },
-            "mdp": {
+            "pass": {
                 "position": 3,
                 "type": "varchar",
                 "null": 0,
