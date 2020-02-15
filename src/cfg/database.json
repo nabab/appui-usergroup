@@ -18,6 +18,12 @@
                 "update": "CASCADE",
                 "delete": "RESTRICT",
                 "unique": 0
+            },
+            "login": {
+                "columns": [
+                    "id_group"
+                ],
+                "unique": 1
             }
         },
         "cols": {
@@ -45,7 +51,7 @@
                 "signed": true,
                 "maxlength": 16
             },
-            "email": {
+            "login": {
                 "position": 3,
                 "type": "varchar",
                 "null": 1,
@@ -53,15 +59,23 @@
                 "default": "NULL",
                 "maxlength": 100
             },
-            "name": {
+            "email": {
                 "position": 4,
+                "type": "varchar",
+                "null": 1,
+                "signed": true,
+                "default": "NULL",
+                "maxlength": 100
+            },
+            "username": {
+                "position": 5,
                 "type": "varchar",
                 "null": 0,
                 "signed": true,
                 "maxlength": 35
             },
             "phone": {
-                "position": 5,
+                "position": 6,
                 "type": "varchar",
                 "null": 1,
                 "signed": true,
@@ -69,7 +83,7 @@
                 "maxlength": 10
             },
             "title": {
-                "position": 6,
+                "position": 7,
                 "type": "varchar",
                 "null": 1,
                 "signed": true,
@@ -77,7 +91,7 @@
                 "maxlength": 100
             },
             "theme": {
-                "position": 7,
+                "position": 8,
                 "type": "varchar",
                 "null": 0,
                 "signed": true,
@@ -85,14 +99,14 @@
                 "maxlength": 20
             },
             "cfg": {
-                "position": 8,
+                "position": 9,
                 "type": "json",
                 "null": 1,
                 "signed": true,
                 "default": "NULL"
             },
             "enckey": {
-                "position": 9,
+                "position": 10,
                 "type": "varchar",
                 "null": 1,
                 "signed": true,
@@ -100,7 +114,7 @@
                 "maxlength": 1000
             },
             "admin": {
-                "position": 10,
+                "position": 11,
                 "type": "tinyint",
                 "null": 0,
                 "signed": false,
@@ -108,7 +122,7 @@
                 "maxlength": 1
             },
             "dev": {
-                "position": 11,
+                "position": 12,
                 "type": "tinyint",
                 "null": 0,
                 "signed": true,
@@ -116,7 +130,7 @@
                 "maxlength": 1
             },
             "active": {
-                "position": 12,
+                "position": 13,
                 "type": "tinyint",
                 "null": 0,
                 "signed": false,
