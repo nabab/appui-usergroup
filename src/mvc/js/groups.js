@@ -73,7 +73,7 @@
         methods:{
           success(d, e){
             if ( d.success && d.data && d.data.id ){
-              let tab = appui.$refs.tabnav.activeTab.getComponent(),
+              let tab = appui.getRef('nav').activeContainer.getComponent(),
                   idx = bbn.fn.search(tab.source.groups, 'id', d.data.id);
               if ( idx > -1 ){
                 tab.source.groups[idx] = d.data;
@@ -85,7 +85,7 @@
               appui.success(bbn._('Save'));
             }
             else {
-              let table = appui.$refs.tabnav.activeTab.getComponent().$refs.table;
+              let table = appui.getRef('nav').activeContainer.getComponent().$refs.table;
               this.$refs.form.originalData = bbn.fn.extend({}, table.originalRow);
               bbn.fn.each(bbn.fn.extend({}, table.originalRow), (v, i) => {
                 table.editedRow[i] = v;

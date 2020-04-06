@@ -1,5 +1,8 @@
 <!-- HTML Document -->
-<bbn-tabnav class="bbn-user-profile" :autoload="false">
+<bbn-router class="bbn-user-profile"
+            :autoload="false"
+            :nav="true"
+>
   <bbns-container url="profile"
            title="<?=_("Informations")?>"
            :static="true"
@@ -10,4 +13,4 @@
            :static="true"
            :load="true"
   ></bbns-container>
-</bbn-tabnav>
+</bbn-router>
