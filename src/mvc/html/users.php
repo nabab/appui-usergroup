@@ -6,13 +6,8 @@
            :sortable="true"
            :filterable="true"
            :editable="true"
-           :editor="$options.components['appui-usergroup-user-edit-form']"
-           :toolbar="[{
-             text: '<?=_('New user')?>',
-             icon: 'nf nf-fa-user_plus',
-             action: insert,
-             disabled: !!(user.isDev && !user.isAdmin)
-           }]"
+           :editor="$options.components.editor"
+           :toolbar="$options.components.toolbar"
            :filter="[{
              field: source.arch.active,
              operator: 'eq',
@@ -40,8 +35,8 @@
                ftitle="<?=_("Session")?>"
                :source="connection"
                field="session"
-               :render="renderSession"               
-               :width="120"               
+               :render="renderSession"
+               :width="120"
                :cls="tdClass"
   ></bbns-column>
   <bbns-column title="<i class='nf nf-fa-users bbn-large'></i>"
@@ -91,6 +86,7 @@
   <bbns-column title="<i class='nf nf-fae-palette_color bbn-large'></i>"
                ftitle="<?=_("Theme")?>"
                :field="source.arch.theme"
+               default="default"
                :width="120"
                :source="themes"
                :cls="tdClass"
@@ -121,7 +117,7 @@
                :editable="false"
                :sortable="false"
                :width="180"
-               :buttons="getButtons"               
+               :buttons="getButtons"
                fixed="right"
                :cls="tdClass"
   ></bbns-column>
@@ -156,7 +152,7 @@
       <label><?=_('eMail')?></label>
       <bbn-input v-model="source.row[cp.source.arch.email]"
                  type="email"
-                 required="required"
+                 :required="isGroupReal"
       ></bbn-input>
 
       <label><?=_('Phone')?></label>

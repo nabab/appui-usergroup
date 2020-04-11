@@ -9,7 +9,7 @@ $id = $cfg['arch']['users']['id'];
 /** @var string $admin */
 $admin = $cfg['arch']['users']['admin'];
 $dev = $cfg['arch']['users']['dev'];
-if ( isset($model->data[$id_group], $model->data[$email]) ){
+if ( isset($model->data[$id_group]) ){
   if ( empty($model->data[$admin]) || !$model->inc->user->is_admin() ){
     $model->data[$admin] = 0;
   }
@@ -19,8 +19,7 @@ if ( isset($model->data[$id_group], $model->data[$email]) ){
   /** @var \bbn\user\manager $mgr */
   $mgr = $model->inc->user->get_manager();
   if ( $user = $mgr->add($model->data) ){
-    $r['success'] = $mgr->set_unique_group($model->data[$id], $model->data[$id_group]);
-    $user[$id_group] = $model->data[$id_group];
+    $r['success'] = true;
     $r['data'] = $user;
   }
 }

@@ -167,13 +167,20 @@
       }
     },
     components: {
-      'appui-usergroup-user-edit-form': {
+      editor: {
         template: '#appui-usergroup-user-edit-form',
         props: ['source'],
         data(){
           return {
             cp: this.closest('bbn-container').getComponent(),
             adminDisabled: !!this.source.row.admin
+          }
+        },
+        computed: {
+          isGroupReal(){
+            let filter = {};
+            filter[this.cp.source.arch_group.id] = this.source.row[this.cp.source.arch.id_group];
+            return bbn.fn.get_field(this.cp.source.groups, filter, 'type') === 'real';
           }
         },
         methods:{
@@ -190,12 +197,58 @@
               appui.success(bbn._('Saved'));
             }
             else {
-              this.$refs.form.source = this.$refs.form.originalData;
+              //this.$refs.form.source = this.$refs.form.originalData;
               e.preventDefault();
               appui.error(bbn._('Error!'));
             }
           }
         }
+      },
+      toolbar: {
+        template: `
+<div class="bbn-w-100">
+	<bbn-button :text="_('New user')"
+              icon="nf nf-fa-user_plus"
+              @click="insert"
+              :disabled="isDisabled">
+  </bbn-button>
+	&nbsp;
+	<bbn-dropdown :source="groupTypes"></bbn-dropdown>
+</div>
+`,
+        data(){
+          return {
+            cp: null,
+            groupTypes: [
+              {
+                text: bbn._('Web'),
+                value: 'web'
+              }, {
+                text: bbn._('API'),
+                value: 'api'
+              }, {
+                text: bbn._('Old'),
+                value: 'old'
+              }
+            ]
+          }
+        },
+        computed: {
+          isDisabled() {
+            if (this.cp) {
+              return !!(this.cp.user.isDev && !this.cp.user.isAdmin)
+            }
+            return true;
+          }
+        },
+        methods: {
+          insert() {
+            this.cp.insert();
+          }
+        },
+        mounted() {
+          this.cp = this.closest('bbn-container').getComponent();
+        },
       }
     }
   }
