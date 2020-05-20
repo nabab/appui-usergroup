@@ -5,7 +5,7 @@
             :map="treeMapper"
             ref="permsList"
             class="appui-usergroup-permissions-list"
-            :checkable="true"
+            :selection="true"
             @check="setPerm"
             @uncheck="unsetPerm"
             @beforeLoad="getPerms"

@@ -1,6 +1,6 @@
 <?php
 $r = ['success' => false];
-if ( 
+if (
   !empty($model->data['action']) &&
   ($cfg = $model->inc->user->get_class_cfg())
 ){
@@ -8,32 +8,27 @@ if (
   $fgroup = $cfg['arch']['groups']['group'];
   $fcfg = $cfg['arch']['groups']['cfg'];
   $mgr = $model->inc->user->get_manager();
-  
+
   switch ( $model->data['action'] ){
     case 'insert':
-      if ( 
-        !empty($model->data[$fgroup]) && 
-        (!$model->inc->user->is_dev() || $model->inc->user->is_admin()) &&
-        ($id = $mgr->group_insert([$fgroup => $model->data[$fgroup]]))
+      if (
+        !empty($model->data[$fgroup]) &&
+        (!$model->inc->user->is_dev() || $model->inc->user->is_admin())
       ){
-        $r['success'] = true;
-        $r['data'] = [
-          $fid => $id,
-          $fgroup => $model->data[$fgroup],
-          $fcfg => '{}',
-          'num' => 0
-        ];
-        $src = $model->data['source_id'] ?: false;
-        if ( $src ){
-          $options = $model->db->rselect_all('bbn_users_options', [], ['id_group' => $src]);
-          foreach ( $options as $o ){
-            $model->inc->pref->set(
-              $o['id_option'],
-              $o['cfg'] ? json_decode($o['cfg'], 1) : [],
-              null,
-              $id
-            );
+        if (!empty($model->data['source_id'])) {
+          if ($id = $mgr->copy('group', $model->data['source_id'], [$fgroup => $model->data[$fgroup]])) {
+            $r['success'] = true;
+            $r['data'] = $mgr->get_group($id);
           }
+        }
+        else if ($id = $mgr->group_insert([$fgroup => $model->data[$fgroup]])) {
+          $r['success'] = true;
+          $r['data'] = [
+            $fid => $id,
+            $fgroup => $model->data[$fgroup],
+            $fcfg => '{}',
+            'num' => 0
+          ];
         }
       }
       break;

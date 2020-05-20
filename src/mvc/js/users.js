@@ -180,7 +180,7 @@
           isGroupReal(){
             let filter = {};
             filter[this.cp.source.arch_group.id] = this.source.row[this.cp.source.arch.id_group];
-            return bbn.fn.get_field(this.cp.source.groups, filter, 'type') === 'real';
+            return bbn.fn.getField(this.cp.source.groups, 'type', filter) === 'real';
           }
         },
         methods:{

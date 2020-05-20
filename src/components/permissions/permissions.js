@@ -66,11 +66,11 @@
             [this.id_type]: this.source[this.id_type]
           }, (p) => {
             if ( p.data ){
-              bbn.fn.each(p.data.public, (v, i) => {                
-                if ( !this.$refs.permsList.checked.includes(v) ){  
+              bbn.fn.each(p.data.public, (v, i) => {
+                if ( !this.$refs.permsList.checked.includes(v) ){
                   this.$refs.permsList.checked.push(v);
-                }                
-                if ( !this.$refs.permsList.disabled.includes(v) ){  
+                }
+                if ( !this.$refs.permsList.disabled.includes(v) ){
                   this.$refs.permsList.disabled.push(v);
                 }
               });

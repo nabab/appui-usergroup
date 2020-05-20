@@ -1,6 +1,6 @@
 <bbn-tree :source="source"
           uid="id"
-          :checkable="!!multi"
+          :selection="!!multi"
           @check="checkItem"
           @ready="setChecked"
           @uncheck="uncheckItem"
