@@ -1,4 +1,85 @@
 {
+    "bbn_users_groups": {
+        "keys": {
+            "PRIMARY": {
+                "columns": [
+                    "id"
+                ],
+                "unique": 1
+            },
+            "code": {
+                "columns": [
+                    "code"
+                ],
+                "unique": 1
+            },
+            "id_parent": {
+                "columns": [
+                    "id_parent"
+                ],
+                "ref_db": "xxx",
+                "ref_table": "bbn_users_groups",
+                "ref_column": "id",
+                "constraint": "bbn_users_groups_ibfk_2",
+                "update": "CASCADE",
+                "delete": "CASCADE",
+                "unique": 0
+            }
+        },
+        "cols": {
+            "id": [
+                "PRIMARY"
+            ],
+            "code": [
+                "code"
+            ],
+            "id_parent": [
+                "id_parent"
+            ]
+        },
+        "fields": {
+            "id": {
+                "position": 1,
+                "type": "binary",
+                "null": 0,
+                "key": "PRI",
+                "signed": true,
+                "maxlength": 16
+            },
+            "id_parent": {
+                "position": 2,
+                "type": "binary",
+                "null": 1,
+                "key": "MUL",
+                "signed": true,
+                "default": "NULL",
+                "maxlength": 16
+            },
+            "group": {
+                "position": 3,
+                "type": "varchar",
+                "null": 0,
+                "signed": true,
+                "maxlength": 30
+            },
+            "code": {
+                "position": 4,
+                "type": "varchar",
+                "null": 1,
+                "key": "UNI",
+                "signed": true,
+                "default": "NULL",
+                "maxlength": 25
+            },
+            "cfg": {
+                "position": 5,
+                "type": "json",
+                "null": 1,
+                "signed": true,
+                "default": "NULL"
+            }
+        }
+    },
     "bbn_users": {
         "keys": {
             "PRIMARY": {
@@ -136,87 +217,6 @@
                 "signed": false,
                 "default": 1,
                 "maxlength": 1
-            }
-        }
-    },
-    "bbn_users_groups": {
-        "keys": {
-            "PRIMARY": {
-                "columns": [
-                    "id"
-                ],
-                "unique": 1
-            },
-            "code": {
-                "columns": [
-                    "code"
-                ],
-                "unique": 1
-            },
-            "id_parent": {
-                "columns": [
-                    "id_parent"
-                ],
-                "ref_db": "xxx",
-                "ref_table": "bbn_users_groups",
-                "ref_column": "id",
-                "constraint": "bbn_users_groups_ibfk_2",
-                "update": "CASCADE",
-                "delete": "CASCADE",
-                "unique": 0
-            }
-        },
-        "cols": {
-            "id": [
-                "PRIMARY"
-            ],
-            "code": [
-                "code"
-            ],
-            "id_parent": [
-                "id_parent"
-            ]
-        },
-        "fields": {
-            "id": {
-                "position": 1,
-                "type": "binary",
-                "null": 0,
-                "key": "PRI",
-                "signed": true,
-                "maxlength": 16
-            },
-            "id_parent": {
-                "position": 2,
-                "type": "binary",
-                "null": 1,
-                "key": "MUL",
-                "signed": true,
-                "default": "NULL",
-                "maxlength": 16
-            },
-            "group": {
-                "position": 3,
-                "type": "varchar",
-                "null": 0,
-                "signed": true,
-                "maxlength": 30
-            },
-            "code": {
-                "position": 4,
-                "type": "varchar",
-                "null": 1,
-                "key": "UNI",
-                "signed": true,
-                "default": "NULL",
-                "maxlength": 25
-            },
-            "cfg": {
-                "position": 5,
-                "type": "json",
-                "null": 1,
-                "signed": true,
-                "default": "NULL"
             }
         }
     },
