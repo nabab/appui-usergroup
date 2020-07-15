@@ -17,7 +17,7 @@
                 "columns": [
                     "id_parent"
                 ],
-                "ref_db": "xxx",
+                "ref_db": null,
                 "ref_table": "bbn_users_groups",
                 "ref_column": "id",
                 "constraint": "bbn_users_groups_ibfk_2",
@@ -55,15 +55,32 @@
                 "default": "NULL",
                 "maxlength": 16
             },
-            "group": {
+            "type": {
                 "position": 3,
+                "type": "enum",
+                "null": 0,
+                "key": null,
+                "extra": "'real','api','old','internal'",
+                "signed": true,
+                "virtual": false,
+                "generation": "",
+                "default": "real",
+                "values": [
+                    "real",
+                    "api",
+                    "old",
+                    "internal"
+                ]
+            },
+            "group": {
+                "position": 4,
                 "type": "varchar",
                 "null": 0,
                 "signed": true,
                 "maxlength": 30
             },
             "code": {
-                "position": 4,
+                "position": 5,
                 "type": "varchar",
                 "null": 1,
                 "key": "UNI",
@@ -72,7 +89,7 @@
                 "maxlength": 25
             },
             "cfg": {
-                "position": 5,
+                "position": 6,
                 "type": "json",
                 "null": 1,
                 "signed": true,
@@ -92,7 +109,7 @@
                 "columns": [
                     "id_group"
                 ],
-                "ref_db": "xxx",
+                "ref_db": null,
                 "ref_table": "bbn_users_groups",
                 "ref_column": "id",
                 "constraint": "bbn_users_ibfk_2",
@@ -232,7 +249,7 @@
                 "columns": [
                     "id_user"
                 ],
-                "ref_db": "xxx",
+                "ref_db": null,
                 "ref_table": "bbn_users",
                 "ref_column": "id",
                 "constraint": "bbn_users_hotlinks_ibfk_2",
@@ -314,7 +331,7 @@
                 "columns": [
                     "id_option"
                 ],
-                "ref_db": "xxx",
+                "ref_db": null,
                 "ref_table": "bbn_options",
                 "ref_column": "id",
                 "constraint": "bbn_users_options_ibfk_3",
@@ -326,7 +343,7 @@
                 "columns": [
                     "id_user"
                 ],
-                "ref_db": "xxx",
+                "ref_db": null,
                 "ref_table": "bbn_users",
                 "ref_column": "id",
                 "constraint": "bbn_users_options_ibfk_4",
@@ -338,7 +355,7 @@
                 "columns": [
                     "id_group"
                 ],
-                "ref_db": "xxx",
+                "ref_db": null,
                 "ref_table": "bbn_users_groups",
                 "ref_column": "id",
                 "constraint": "bbn_users_options_ibfk_5",
@@ -350,7 +367,7 @@
                 "columns": [
                     "id_link"
                 ],
-                "ref_db": "xxx",
+                "ref_db": null,
                 "ref_table": "bbn_options",
                 "ref_column": "id",
                 "constraint": "bbn_users_options_ibfk_2",
@@ -362,7 +379,7 @@
                 "columns": [
                     "id_alias"
                 ],
-                "ref_db": "xxx",
+                "ref_db": null,
                 "ref_table": "bbn_users_options",
                 "ref_column": "id",
                 "constraint": "bbn_users_options_ibfk_6",
@@ -497,7 +514,7 @@
                 "columns": [
                     "id_user_option"
                 ],
-                "ref_db": "xxx",
+                "ref_db": null,
                 "ref_table": "bbn_users_options",
                 "ref_column": "id",
                 "constraint": "bbn_users_options_bits_ibfk_1",
@@ -509,7 +526,7 @@
                 "columns": [
                     "id_parent"
                 ],
-                "ref_db": "xxx",
+                "ref_db": null,
                 "ref_table": "bbn_users_options_bits",
                 "ref_column": "id",
                 "constraint": "bbn_users_options_bits_ibfk_2",
@@ -521,7 +538,7 @@
                 "columns": [
                     "id_option"
                 ],
-                "ref_db": "xxx",
+                "ref_db": null,
                 "ref_table": "bbn_options",
                 "ref_column": "id",
                 "constraint": "bbn_users_options_bits_ibfk_3",
@@ -615,7 +632,7 @@
                 "columns": [
                     "id_user"
                 ],
-                "ref_db": "xxx",
+                "ref_db": null,
                 "ref_table": "bbn_users",
                 "ref_column": "id",
                 "constraint": "bbn_users_passwords_ibfk_2",
@@ -677,7 +694,7 @@
                 "columns": [
                     "id_user"
                 ],
-                "ref_db": "xxx",
+                "ref_db": null,
                 "ref_table": "bbn_users",
                 "ref_column": "id",
                 "constraint": "bbn_users_sessions_ibfk_2",
@@ -775,7 +792,7 @@
                 "columns": [
                     "id_session"
                 ],
-                "ref_db": "xxx",
+                "ref_db": null,
                 "ref_table": "bbn_users_sessions",
                 "ref_column": "id",
                 "constraint": "bbn_users_tokens_ibfk_1",
@@ -787,7 +804,7 @@
                 "columns": [
                     "id_parent"
                 ],
-                "ref_db": "xxx",
+                "ref_db": null,
                 "ref_table": "bbn_users_tokens",
                 "ref_column": "id",
                 "constraint": "bbn_users_tokens_ibfk_2",
@@ -900,7 +917,7 @@
                 "columns": [
                     "id_group"
                 ],
-                "ref_db": "xxx",
+                "ref_db": null,
                 "ref_table": "bbn_users_groups",
                 "ref_column": "id",
                 "constraint": "bbn_users_usergroups_ibfk_2",
@@ -912,7 +929,7 @@
                 "columns": [
                     "id_user"
                 ],
-                "ref_db": "xxx",
+                "ref_db": null,
                 "ref_table": "bbn_users",
                 "ref_column": "id",
                 "constraint": "bbn_users_usergroups_ibfk_3",
