@@ -1,0 +1,19 @@
+{
+  "text": "Users preferences",
+  "code": "prefs",
+  "icon": "nf nf-fa-users",
+  "cfg": {
+      "desc": "Cette section est automatiquement générée et ne devrait en aucun cas être modifiée par un utilisateur",
+      "show_code": 1
+  },
+  "items": [
+      {
+          "text": "Icônes des menus",
+          "code": "ico"
+      },
+      {
+          "text": "Onglets tous affichés",
+          "code": "all_tabs"
+      }
+  ]
+}
