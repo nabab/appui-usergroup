@@ -21,4 +21,11 @@
   "id_alias": ["users","appui-dashboard","plugins","|*appui-usergroup*|/","page","permissions","appui"],
   "value": "{\"cache\":30,\"limit\":10,\"observe\":false,\"closable\":true,\"buttonsLeft\":[],\"buttonsRight\":[],\"itemComponent\":\"appui-usergroup-widget-users\"}",
   "after": 1
+}, {
+  "text": "My last sessions",
+  "code": "sessions",
+  "id_parent": ["default","dashboard","appui"],
+  "id_alias": ["sessions","appui-dashboard","plugins","|*appui-usergroup*|/","page","permissions","appui"],
+  "value": "{\"limit\":0,\"observe\":false,\"options\":{},\"closable\":true,\"component\":\"appui-usergroup-widget-sessions\",\"buttonsLeft\":[],\"buttonsRight\":[]}",
+  "after": 1
 }]

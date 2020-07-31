@@ -8,6 +8,9 @@
     "items": [{
       "text": "Users",
       "code": "users"
+    }, {
+      "text": "My last sessions",
+      "code": "sessions"
     }]
   }]
 }]
