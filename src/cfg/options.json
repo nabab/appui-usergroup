@@ -1,19 +1,24 @@
-{
+[{
   "text": "Users preferences",
   "code": "prefs",
+  "id_parent": "appui",
   "icon": "nf nf-fa-users",
   "cfg": {
       "desc": "This section is automatically generated and should not be modified by any user.",
       "show_code": 1
   },
-  "items": [
-      {
-          "text": "Menu icons",
-          "code": "ico"
-      },
-      {
-          "text": "All displayed tabs",
-          "code": "all_tabs"
-      }
-  ]
-}
+  "items": [{
+    "text": "Menu icons",
+    "code": "ico"
+  }, {
+    "text": "All displayed tabs",
+    "code": "all_tabs"
+  }]
+}, {
+  "text": "Application's users",
+  "code": "users",
+  "id_parent": ["default","dashboard","appui"],
+  "id_alias": ["users","appui-dashboard","plugins","|*appui-usergroup*|/","page","permissions","appui"],
+  "value": "{\"cache\":30,\"limit\":10,\"observe\":false,\"closable\":true,\"buttonsLeft\":[],\"buttonsRight\":[],\"itemComponent\":\"appui-usergroup-widget-users\"}",
+  "after": 1
+}]
