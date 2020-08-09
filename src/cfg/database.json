@@ -119,7 +119,7 @@
             },
             "login": {
                 "columns": [
-                    "id_group"
+                    "login"
                 ],
                 "unique": 1
             }
@@ -275,7 +275,7 @@
                 "signed": true,
                 "maxlength": 16
             },
-            "hash": {
+            "magic": {
                 "position": 2,
                 "type": "varchar",
                 "null": 0,
