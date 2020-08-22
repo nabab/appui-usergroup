@@ -24,9 +24,9 @@ $grid = new \bbn\appui\grid($model->db, $model->data, [
     'dir' => 'DESC'
   ]],
   'filters' => [[
-    'field' => $user_cfg['arch']['sessions']['last_activity'],
-    'operator' => 'gt',
-    'exp' => '(NOW() - INTERVAL 7 DAY)'
+    'field' => $user_cfg['arch']['sessions']['opened'],
+    'operator' => '=',
+    'value' => 1
   ]],
   'group_by' => $user_cfg['tables']['sessions'].'.'.$user_cfg['arch']['sessions']['id_user']
   /*,
