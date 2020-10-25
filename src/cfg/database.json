@@ -153,6 +153,7 @@
                 "position": 3,
                 "type": "varchar",
                 "null": 1,
+                "key": "UNI",
                 "signed": true,
                 "default": "NULL",
                 "maxlength": 100
