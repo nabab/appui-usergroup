@@ -1,21 +1,31 @@
 {
   "text": "Usergroup",
+  "num": 2,
   "icon": "nf nf-fa-users",
-  "items": [{
-    "text": "My profile",
-    "icon": "nf nf-fa-user",
-    "link": "main/profile"
-  }, {
-    "text": "Groups",
-    "icon": "nf nf-fa-group",
-    "link": "groups"
-  }, {
-    "text": "Picker",
-    "icon": "nf nf-fa-crosshairs",
-    "link": "picker"
-  }, {
-    "text": "Users",
-    "icon": "nf nf-fa-users",
-    "link": "users"
-  }]
+  "items": [
+    {
+      "text": "Groups",
+      "num": 1,
+      "icon": "nf nf-fa-group",
+      "link": "groups"
+    },
+    {
+      "text": "Picker",
+      "num": 2,
+      "icon": "nf nf-fa-crosshairs",
+      "link": "picker"
+    },
+    {
+      "text": "Users",
+      "num": 3,
+      "icon": "nf nf-fa-users",
+      "link": "users"
+    },
+    {
+      "text": "Permissions",
+      "num": 4,
+      "icon": "nf nf-fa-key",
+      "link": "permissions"
+    }
+  ]
 }
