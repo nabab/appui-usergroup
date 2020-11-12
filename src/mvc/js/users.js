@@ -206,7 +206,7 @@
       },
       toolbar: {
         template: `
-<div class="bbn-w-100">
+<div class="bbn-w-100 bbn-header bbn-spadded">
 	<bbn-button :text="_('New user')"
               icon="nf nf-fa-user_plus"
               @click="insert"
@@ -219,18 +219,16 @@
         data(){
           return {
             cp: null,
-            groupTypes: [
-              {
-                text: bbn._('Web'),
-                value: 'web'
-              }, {
-                text: bbn._('API'),
-                value: 'api'
-              }, {
-                text: bbn._('Old'),
-                value: 'old'
-              }
-            ]
+            groupTypes: [{
+              text: bbn._('Web'),
+              value: 'web'
+            }, {
+              text: bbn._('API'),
+              value: 'api'
+            }, {
+              text: bbn._('Old'),
+              value: 'old'
+            }]
           }
         },
         computed: {

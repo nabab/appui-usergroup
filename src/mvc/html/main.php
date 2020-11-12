@@ -13,4 +13,11 @@
            :static="true"
            :load="true"
   ></bbns-container>
+  <bbns-container v-if="hasNotifications"
+                  url="notifications"
+                  title="<?=_("Notifications")?>"
+                  :static="true"
+                  :load="true"
+                  component="appui-notifications-settings"
+  ></bbns-container>
 </bbn-router>

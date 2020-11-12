@@ -21,6 +21,15 @@ if ( isset($model->data[$id_group]) ){
   if ( $user = $mgr->add($model->data) ){
     $r['success'] = true;
     $r['data'] = $user;
+    if ($model->has_plugin('appui-notifications')
+      && ($notifications = new \bbn\appui\notifications($model->db))
+    ) {
+      $notifications->create(
+        'users/user_created',
+        'User created',
+        $model->inc->user->get_name().' '._('created a new user').': '.$user[$cfg['show']]
+      );
+    }
   }
 }
 return $r;

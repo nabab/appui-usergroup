@@ -1,4 +1,10 @@
 // Javascript Document
 (function(){
-  return {};
+  return {
+    computed: {
+      hasNotifications(){
+        return appui && appui.plugins && appui.plugins['appui-notifications'];
+      }
+    }
+  };
 })()
