@@ -27,7 +27,11 @@ if ( isset($model->data[$id_group]) ){
       $notifications->create(
         'users/user_created',
         'User created',
-        $model->inc->user->get_name().' '._('created a new user').': '.$user[$cfg['show']]
+        $model->inc->user->get_name().' '._('created a new user').': '.$user[$cfg['show']],
+        true,
+        _('User created'),
+        _('Users'),
+        true
       );
     }
   }

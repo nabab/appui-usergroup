@@ -17,7 +17,11 @@ if ( !empty($model->data[$id_field]) &&
     $notifications->create(
       'users/user_deleted',
       'User deleted',
-      $model->inc->user->get_name().' '._('deleted the user').' '.$user[$cfg['show']]
+      $model->inc->user->get_name().' '._('deleted the user').' '.$user[$cfg['show']],
+      true,
+      _('User deleted'),
+      _('Users'),
+      true
     );
   }
 }
