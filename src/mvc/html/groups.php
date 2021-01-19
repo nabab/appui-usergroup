@@ -14,16 +14,15 @@
            }]"
            :tr-class="trClass"
            :url="source.root + 'actions/groups'"
-           :order="[{field: source.arch.group, dir: 'ASC'}]"
+           :order="[{field: 'group', dir: 'ASC'}]"
 >
   <bbns-column title="<?=_('ID')?>"
-               :field="source.arch.id"
+               field="id"
                :hidden="true"
                :editable="false"
   ></bbns-column>
-  <bbns-column title="<i class='nf nf-fa-users bbn-large'></i>"
-               ftitle="<?=_('Name')?>"
-               :field="source.arch.group"
+  <bbns-column title="<i class='nf nf-fa-users bbn-large'></i> <?=_('Name')?>"
+               field="group"
                :required="true"
   ></bbns-column>
   <bbns-column title="#"
