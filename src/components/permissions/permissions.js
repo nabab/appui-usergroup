@@ -9,7 +9,7 @@
     data(){
       return {
         root: appui.plugins['appui-usergroup'],
-        opt_root: appui.plugins['appui-options'],
+        opt_root: appui.plugins['appui-option'],
         disabled: []
       }
     },

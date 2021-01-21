@@ -21,8 +21,8 @@ if ( isset($model->data[$id_group]) ){
   if ( $user = $mgr->add($model->data) ){
     $r['success'] = true;
     $r['data'] = $user;
-    if ($model->has_plugin('appui-notifications')
-      && ($notifications = new \bbn\appui\notifications($model->db))
+    if ($model->has_plugin('appui-notification')
+      && ($notifications = new \bbn\appui\notification($model->db))
     ) {
       $notifications->create(
         'users/user_created',

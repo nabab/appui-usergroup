@@ -18,6 +18,6 @@
                   title="<?=_("Notifications")?>"
                   :static="true"
                   :load="true"
-                  component="appui-notifications-settings"
+                  component="appui-notification-settings"
   ></bbns-container>
 </bbn-router>

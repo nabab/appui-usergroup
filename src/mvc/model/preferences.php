@@ -89,7 +89,7 @@ MYSQL
   ]);
   if ( $grid->check() ){
     $data = $grid->get_datatable(true);
-    $id_perm = $model->inc->options->from_code('permissions', 'appui');
+    $id_perm = $model->inc->options->from_code('permission', 'appui');
     foreach ( $data['data'] as $i => $d ){
       $data['data'][$i]['permission'] = $model->inc->options->is_parent($d['id_option'], $id_perm);
     }

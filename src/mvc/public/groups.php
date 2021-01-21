@@ -13,6 +13,6 @@ $ctrl->combo(_("User Groups"), [
   'is_dev' => $ctrl->inc->user->is_dev(),
   'is_admin' => $ctrl->inc->user->is_admin(),
   'perm_root' => $ctrl->inc->perm->get_option_root(),
-  'opt_url' => $ctrl->plugin_url('appui-options')
+  'opt_url' => $ctrl->plugin_url('appui-option')
 ]);
 $ctrl->obj->icon = 'nf nf-fa-users';

@@ -11,8 +11,8 @@ if ( !empty($model->data[$id_field]) &&
 ){
   $r['success'] = $mgr->deactivate($model->data[$id_field]);
   $r['data'][$id_field] = $model->data[$id_field];
-  if ($model->has_plugin('appui-notifications')
-    && ($notifications = new \bbn\appui\notifications($model->db))
+  if ($model->has_plugin('appui-notification')
+    && ($notifications = new \bbn\appui\notification($model->db))
   ) {
     $notifications->create(
       'users/user_deleted',

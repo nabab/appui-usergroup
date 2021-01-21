@@ -1,5 +1,5 @@
 <?php
-$dbc = new \bbn\appui\databases($ctrl->db);
+$dbc = new \bbn\appui\database($ctrl->db);
 \bbn\appui\history::disable();
 $vals = $ctrl->db->select_all_by_keys('bbn_emailings', ['id', 'id_note']);
 //var_dump($dbc->table_id('bbn_emails'), $vals);
