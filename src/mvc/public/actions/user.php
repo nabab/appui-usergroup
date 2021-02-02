@@ -4,7 +4,7 @@
  *
  **/
 
-/** @var $this \bbn\mvc\controller */
+/** @var $this \bbn\Mvc\Controller */
 if ( isset($ctrl->post['current_pass'], $ctrl->post['pass1'], $ctrl->post['pass2']) ){
   if ( $ctrl->post['pass1'] !== $ctrl->post['pass2'] ){
     $ctrl->obj->success = false;
@@ -12,7 +12,7 @@ if ( isset($ctrl->post['current_pass'], $ctrl->post['pass1'], $ctrl->post['pass2
     $ctrl->obj->errorTitle = _("Error!");
   }
   else{
-    if ( $ctrl->obj->success = $ctrl->inc->user->set_password($ctrl->post['current_pass'], $ctrl->post['pass1']) ){
+    if ( $ctrl->obj->success = $ctrl->inc->user->setPassword($ctrl->post['current_pass'], $ctrl->post['pass1']) ){
       $ctrl->obj->error = _("Password changed.");
       $ctrl->obj->errorTitle = _("Success!");
     }
@@ -23,11 +23,11 @@ if ( isset($ctrl->post['current_pass'], $ctrl->post['pass1'], $ctrl->post['pass2
   }
 }
 else if ( 
-  ($cfg = $ctrl->inc->user->get_class_cfg()) &&
-  isset($ctrl->post[$cfg['arch']['users']['email']], $ctrl->post[$cfg['arch']['users']['username']]) && \bbn\str::is_email($ctrl->post[$cfg['arch']['users']['email']])
+  ($cfg = $ctrl->inc->user->getClassCfg()) &&
+  isset($ctrl->post[$cfg['arch']['users']['email']], $ctrl->post[$cfg['arch']['users']['username']]) && \bbn\Str::isEmail($ctrl->post[$cfg['arch']['users']['email']])
 ){
   $change_theme = $ctrl->post[$cfg['arch']['users']['theme']] !== $ctrl->inc->session->get('theme');
-  if ( $ctrl->obj->success = $ctrl->inc->user->update_info($ctrl->post) ){
+  if ( $ctrl->obj->success = $ctrl->inc->user->updateInfo($ctrl->post) ){
     if ( $change_theme ){
       $ctrl->inc->session->set($ctrl->post[$cfg['arch']['users']['theme']], 'theme');
     }

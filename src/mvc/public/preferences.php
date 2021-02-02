@@ -4,7 +4,7 @@
  *
  **/
 
-$cur = $ctrl->inc->pref->get_current();
+$cur = $ctrl->inc->pref->getCurrent();
 $tbs = '79d4af90c0c511e78824366237393031';
 /*
 die(var_dump(
@@ -12,19 +12,19 @@ die(var_dump(
   //$ctrl->inc->options->option($cur),
   $ctrl->inc->pref->has($tbs),
   $ctrl->inc->pref->has($cur),
-  $ctrl->inc->pref->get_group(),
-  $ctrl->inc->pref->get_cfg($tbs),
+  $ctrl->inc->pref->getGroup(),
+  $ctrl->inc->pref->getCfg($tbs),
   $ctrl->inc->pref->get($tbs)
 ));
-/** @var $this \bbn\mvc\controller */
+/** @var $this \bbn\Mvc\Controller */
 if ( isset($ctrl->post['limit']) ){
-  $ctrl->obj = $ctrl->get_object_model('', $ctrl->post);
+  $ctrl->obj = $ctrl->getObjectModel('', $ctrl->post);
 }
 else if ( isset($ctrl->post['id']) ){
-  $ctrl->obj->data = $ctrl->inc->pref->get_cfg($ctrl->post['id']);
+  $ctrl->obj->data = $ctrl->inc->pref->getCfg($ctrl->post['id']);
 }
 else{
   $ctrl->data['root'] = APPUI_USERGROUP_ROOT;
-  $ctrl->data['options_root'] = $ctrl->plugin_url('appui-option').'/';
+  $ctrl->data['options_root'] = $ctrl->pluginUrl('appui-option').'/';
   $ctrl->combo(_('My preferences'), $ctrl->data);
 }

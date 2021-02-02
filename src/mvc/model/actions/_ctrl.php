@@ -1,4 +1,4 @@
 <?php
-/** @var \bbn\mvc\controller $ctrl */
+/** @var \bbn\Mvc\Controller $ctrl */
 $ctrl->obj->success = false;
 return 1;

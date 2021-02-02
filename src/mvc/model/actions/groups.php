@@ -2,26 +2,26 @@
 $r = ['success' => false];
 if (
   !empty($model->data['action']) &&
-  ($cfg = $model->inc->user->get_class_cfg())
+  ($cfg = $model->inc->user->getClassCfg())
 ){
   $fid = $cfg['arch']['groups']['id'];
   $fgroup = $cfg['arch']['groups']['group'];
   $fcfg = $cfg['arch']['groups']['cfg'];
-  $mgr = $model->inc->user->get_manager();
+  $mgr = $model->inc->user->getManager();
 
   switch ( $model->data['action'] ){
     case 'insert':
       if (
         !empty($model->data[$fgroup]) &&
-        (!$model->inc->user->is_dev() || $model->inc->user->is_admin())
+        (!$model->inc->user->isDev() || $model->inc->user->isAdmin())
       ){
         if (!empty($model->data['source_id'])) {
           if ($id = $mgr->copy('group', $model->data['source_id'], [$fgroup => $model->data[$fgroup]])) {
             $r['success'] = true;
-            $r['data'] = $mgr->get_group($id);
+            $r['data'] = $mgr->getGroup($id);
           }
         }
-        else if ($id = $mgr->group_insert([$fgroup => $model->data[$fgroup]])) {
+        else if ($id = $mgr->groupInsert([$fgroup => $model->data[$fgroup]])) {
           $r['success'] = true;
           $r['data'] = [
             $fid => $id,
@@ -37,9 +37,9 @@ if (
       if ( 
         !empty($model->data[$fid]) &&
         !empty($model->data[$fgroup]) &&
-        (!$model->inc->user->is_dev() || $model->inc->user->is_admin())
+        (!$model->inc->user->isDev() || $model->inc->user->isAdmin())
       ){
-        $r['success'] = $mgr->group_rename($model->data[$fid], $model->data[$fgroup]);
+        $r['success'] = $mgr->groupRename($model->data[$fid], $model->data[$fgroup]);
         $r['data'][$fid] = $model->data[$fid];
       }
       break;
@@ -47,9 +47,9 @@ if (
     case 'delete':
       if ( 
         !empty($model->data[$fid]) &&
-        (!$model->inc->user->is_dev() || $model->inc->user->is_admin())
+        (!$model->inc->user->isDev() || $model->inc->user->isAdmin())
       ){
-        if ( $r['success'] = $mgr->group_delete($model->data[$fid]) ){
+        if ( $r['success'] = $mgr->groupDelete($model->data[$fid]) ){
           $r['data'][$fid] = $model->data[$fid];
         }
       }

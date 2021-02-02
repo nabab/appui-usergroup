@@ -1,23 +1,23 @@
 <?php
-/** @var \bbn\mvc\controller %ctrl */
+/** @var \bbn\Mvc\Controller %ctrl */
 $ctrl->obj->success = false;
-$mgr = $ctrl->inc->user->get_manager();
+$mgr = $ctrl->inc->user->getManager();
 if ( isset($ctrl->post['action'], $ctrl->post['id_option']) ){
   switch ( $ctrl->post['action'] ){
     case 'insert':
       if ( !empty($ctrl->post['id_user']) ){
-        $ctrl->obj->success = $mgr->user_insert_option($ctrl->post['id_user'], $ctrl->post['id_option']);
+        $ctrl->obj->success = $mgr->userInsertOption($ctrl->post['id_user'], $ctrl->post['id_option']);
       }
       else if ( !empty($ctrl->post['id_group']) ){
-        $ctrl->obj->success = $mgr->group_insert_option($ctrl->post['id_group'], $ctrl->post['id_option']);
+        $ctrl->obj->success = $mgr->groupInsertOption($ctrl->post['id_group'], $ctrl->post['id_option']);
       }
       break;
     case 'delete':
       if ( !empty($ctrl->post['id_user']) ){
-        $ctrl->obj->success = $mgr->user_delete_option($ctrl->post['id_user'], $ctrl->post['id_option']);
+        $ctrl->obj->success = $mgr->userDeleteOption($ctrl->post['id_user'], $ctrl->post['id_option']);
       }
       else if ( !empty($ctrl->post['id_group']) ){
-        $ctrl->obj->success = $mgr->group_delete_option($ctrl->post['id_group'], $ctrl->post['id_option']);
+        $ctrl->obj->success = $mgr->groupDeleteOption($ctrl->post['id_group'], $ctrl->post['id_option']);
       }
       break;
   }

@@ -3,9 +3,9 @@
  * Removes old sessions
  *
  **/
-/** @var $ctrl \bbn\mvc\controller */
+/** @var $ctrl \bbn\Mvc\Controller */
 
-$cfg = $ctrl->inc->user->get_class_cfg();
+$cfg = $ctrl->inc->user->getClassCfg();
 $t   = &$cfg['tables']['sessions'];
 $c   = &$cfg['arch']['sessions'];
 $num = $ctrl->db->update(

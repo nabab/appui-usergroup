@@ -1,5 +1,5 @@
 <?php
-/** @var \bbn\mvc\model $model */
+/** @var \bbn\Mvc\Model $model */
 /** @var array $d Reference to the model's data */
 $d =& $model->data;
 /** @var array $r The result*/
@@ -9,15 +9,15 @@ $r = [
 
 if ( isset($d['id_option']) ){
 
-  /** @var bbn\user\manager $mgr */
-  $mgr = $model->inc->user->get_manager();
+  /** @var bbn\User\Manager $mgr */
+  $mgr = $model->inc->user->getManager();
 
   if ( !empty($d['id_user']) ){
-    $r['success'] = $mgr->user_insert_option($d['id_user'], $d['id_option']);
+    $r['success'] = $mgr->userInsertOption($d['id_user'], $d['id_option']);
   }
 
   else if ( !empty($d['id_group']) ){
-    $r['success'] = $mgr->group_insert_option($d['id_group'], $d['id_option']);
+    $r['success'] = $mgr->groupInsertOption($d['id_group'], $d['id_option']);
   }
 }
 

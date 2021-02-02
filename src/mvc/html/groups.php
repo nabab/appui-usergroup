@@ -14,7 +14,7 @@
            }]"
            :tr-class="trClass"
            :url="source.root + 'actions/groups'"
-           :order="[{field: 'group', dir: 'ASC'}]"
+           :order="[{field: 'group', Dir: 'ASC'}]"
 >
   <bbns-column title="<?=_('ID')?>"
                field="id"

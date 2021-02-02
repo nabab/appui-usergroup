@@ -1,19 +1,19 @@
 <?php
-/** @var \bbn\mvc\controller $ctrl */
-/** @var \bbn\user\manager $mgr */
+/** @var \bbn\Mvc\Controller $ctrl */
+/** @var \bbn\User\Manager $mgr */
 
-$usr = bbn\user::get_instance();
-$arch = $usr->get_class_cfg()['arch']['users'];
-$arch_group = $usr->get_class_cfg()['arch']['groups'];
+$usr = bbn\User::getInstance();
+$arch = $usr->getClassCfg()['arch']['users'];
+$arch_group = $usr->getClassCfg()['arch']['groups'];
 
 if ( !empty($arch) ){
-  $mgr = $ctrl->inc->user->get_manager();
+  $mgr = $ctrl->inc->user->getManager();
   $id_perm = $ctrl->inc->perm->is(APPUI_USERGROUP_ROOT.'permissions');
-  $users = array_filter($mgr->get_list(), function($a)use($ctrl){
-    if ( $ctrl->inc->user->is_admin() ){
+  $users = array_filter($mgr->getList(), function($a)use($ctrl){
+    if ( $ctrl->inc->user->isAdmin() ){
       return true;
     }
-    if ( $ctrl->inc->user->is_dev() /*&& ((defined('BBN_ADMIN_GROUP')) && ($a['id_group'] !== BBN_ADMIN_GROUP))*/ ){
+    if ( $ctrl->inc->user->isDev() /*&& ((defined('BBN_ADMIN_GROUP')) && ($a['id_group'] !== BBN_ADMIN_GROUP))*/ ){
       return true;
     }
     return ((defined('BBN_ADMIN_GROUP')) && ($a['id_group'] !== BBN_ADMIN_GROUP)) && (defined('BBN_DEV_GROUP') && ($a['id_group'] !== BBN_DEV_GROUP));
@@ -31,14 +31,14 @@ if ( !empty($arch) ){
     }
   }
   $ctrl
-    ->set_icon('nf nf-fa-user')
-    ->set_url(APPUI_USERGROUP_ROOT.'users')
+    ->setIcon('nf nf-fa-user')
+    ->setUrl(APPUI_USERGROUP_ROOT.'users')
     ->combo(_("User Management"), [
       'users' => array_values($users),
-      'groups' => $mgr->text_value_groups(),
+      'groups' => $mgr->textValueGroups(),
       'arch' => $arch,
       'arch_group' => $arch_group,
-      'list' => $mgr->get_list_fields(),
-      'perm_root' => $ctrl->inc->perm->get_option_root()
+      'list' => $mgr->getListFields(),
+      'perm_root' => $ctrl->inc->perm->getOptionRoot()
     ]);
 }

@@ -1,8 +1,8 @@
 <?php
-/** @var \bbn\mvc\model $model */
+/** @var \bbn\Mvc\Model $model */
 $r = ['success' => false];
 /** @var array $cfg */
-$cfg = $model->inc->user->get_class_cfg();
+$cfg = $model->inc->user->getClassCfg();
 $id_group = $cfg['arch']['users']['id_group'];
 $email = $cfg['arch']['users']['email'];
 $id = $cfg['arch']['users']['id'];
@@ -10,24 +10,24 @@ $id = $cfg['arch']['users']['id'];
 $admin = $cfg['arch']['users']['admin'];
 $dev = $cfg['arch']['users']['dev'];
 if ( isset($model->data[$id_group]) ){
-  if ( empty($model->data[$admin]) || !$model->inc->user->is_admin() ){
+  if ( empty($model->data[$admin]) || !$model->inc->user->isAdmin() ){
     $model->data[$admin] = 0;
   }
-  if ( empty($model->data[$dev]) || !$model->inc->user->is_admin() ){
+  if ( empty($model->data[$dev]) || !$model->inc->user->isAdmin() ){
     $model->data[$dev] = 0;
   }
-  /** @var \bbn\user\manager $mgr */
-  $mgr = $model->inc->user->get_manager();
+  /** @var \bbn\User\Manager $mgr */
+  $mgr = $model->inc->user->getManager();
   if ( $user = $mgr->add($model->data) ){
     $r['success'] = true;
     $r['data'] = $user;
-    if ($model->has_plugin('appui-notification')
-      && ($notifications = new \bbn\appui\notification($model->db))
+    if ($model->hasPlugin('appui-notification')
+      && ($notifications = new \bbn\Appui\Notification($model->db))
     ) {
       $notifications->create(
         'users/user_created',
         'User created',
-        $model->inc->user->get_name().' '._('created a new user').': '.$user[$cfg['show']],
+        $model->inc->user->getName().' '._('created a new user').': '.$user[$cfg['show']],
         true,
         _('User created'),
         _('Users'),

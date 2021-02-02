@@ -4,8 +4,8 @@
  *
  **/
 
-/** @var $ctrl \bbn\mvc\controller */
-$ctrl->add_data([
-  'schema' => $ctrl->inc->user->get_class_cfg()['arch']['passwords']
+/** @var $ctrl \bbn\Mvc\Controller */
+$ctrl->addData([
+  'schema' => $ctrl->inc->user->getClassCfg()['arch']['passwords']
 ]);
 $ctrl->combo(_('Password'), true);

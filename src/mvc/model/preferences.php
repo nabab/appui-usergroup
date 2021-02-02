@@ -4,9 +4,9 @@
  *
  **/
 
-/** @var $this \bbn\mvc\model*/
+/** @var $this \bbn\Mvc\Model*/
 if ( isset($model->data['limit']) ){
-  $grid = new \bbn\appui\grid($model->db, $model->data, [
+  $grid = new \bbn\Appui\Grid($model->db, $model->data, [
 /*    'count' => <<< MYSQL
 SELECT COUNT(bbn_users_options.id)
 FROM bbn_users_options
@@ -75,11 +75,11 @@ MYSQL
       'conditions' => [[
         'field' => 'bbn_users_options.id_user',
         'operator' => 'eq',
-        'value' => $model->inc->user->get_id()
+        'value' => $model->inc->user->getId()
       ], [
         'field' => 'bbn_users_options.id_group',
         'operator' => 'eq',
-        'value' => $model->inc->user->get_group()
+        'value' => $model->inc->user->getGroup()
       ], [
         'field' => 'bbn_users_options.public',
         'operator' => 'eq',
@@ -88,10 +88,10 @@ MYSQL
     ]
   ]);
   if ( $grid->check() ){
-    $data = $grid->get_datatable(true);
-    $id_perm = $model->inc->options->from_code('permission', 'appui');
+    $data = $grid->getDatatable(true);
+    $id_perm = $model->inc->options->fromCode('permission', 'appui');
     foreach ( $data['data'] as $i => $d ){
-      $data['data'][$i]['permission'] = $model->inc->options->is_parent($d['id_option'], $id_perm);
+      $data['data'][$i]['permission'] = $model->inc->options->isParent($d['id_option'], $id_perm);
     }
     $data['id_perm'] = $id_perm;
     return $data;

@@ -1,9 +1,9 @@
 <?php
-/** @var \bbn\mvc\model $model */
+/** @var \bbn\Mvc\Model $model */
 
-$user_cfg = $model->inc->user->get_class_cfg();
+$user_cfg = $model->inc->user->getClassCfg();
 return [
-  'opened' => $model->db->rselect_all([
+  'opened' => $model->db->rselectAll([
     'table' => $user_cfg['tables']['sessions'],
     'fields' => [
       $user_cfg['arch']['sessions']['creation'],
@@ -24,14 +24,14 @@ return [
     ]],
     'where' => [[
       'field' => $user_cfg['arch']['sessions']['id_user'],
-      'value' => $model->inc->user->get_id()
+      'value' => $model->inc->user->getId()
     ], [
       'field' => $user_cfg['arch']['sessions']['opened'],
       'value' => 1
     ]],
     'limit' => 5
   ]),
-  'closed' => $model->db->rselect_all([
+  'closed' => $model->db->rselectAll([
     'table' => $user_cfg['tables']['sessions'],
     'fields' => [
       $user_cfg['arch']['sessions']['creation'],
@@ -52,7 +52,7 @@ return [
     ]],
     'where' => [[
       'field' => $user_cfg['arch']['sessions']['id_user'],
-      'value' => $model->inc->user->get_id()
+      'value' => $model->inc->user->getId()
     ], [
       'field' => $user_cfg['arch']['sessions']['opened'],
       'value' => 0

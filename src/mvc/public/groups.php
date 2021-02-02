@@ -1,18 +1,18 @@
 <?php
 /**
- * @var \bbn\mvc\controller $ctrl
- * @var \bbn\user\manager $mgr
+ * @var \bbn\Mvc\Controller $ctrl
+ * @var \bbn\User\Manager $mgr
  */
-$mgr = $ctrl->inc->user->get_manager();
+$mgr = $ctrl->inc->user->getManager();
 $groups = $mgr->groups();
 //$ctrl->data['permissions_groups'] = json_encode(\apst\manager::get_all_permissions());
 //$user_perm = array_keys($ctrl->inc->user->get_permissions());
 $ctrl->combo(_("User Groups"), [
   'root' => APPUI_USERGROUP_ROOT,
   'groups' => $groups,
-  'is_dev' => $ctrl->inc->user->is_dev(),
-  'is_admin' => $ctrl->inc->user->is_admin(),
-  'perm_root' => $ctrl->inc->perm->get_option_root(),
-  'opt_url' => $ctrl->plugin_url('appui-option')
+  'is_dev' => $ctrl->inc->user->isDev(),
+  'is_admin' => $ctrl->inc->user->isAdmin(),
+  'perm_root' => $ctrl->inc->perm->getOptionRoot(),
+  'opt_url' => $ctrl->pluginUrl('appui-option')
 ]);
 $ctrl->obj->icon = 'nf nf-fa-users';

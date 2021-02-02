@@ -1,5 +1,5 @@
 <?php
-/** @var \bbn\mvc\model $model */
+/** @var \bbn\Mvc\Model $model */
 /** @var int $id_perm The option root's ID of the permissions */
 
 $id_user = false;
@@ -13,16 +13,16 @@ else if ( !empty($model->data['id_group']) ){
 }
 if ( $id_user || $id_group ){
   $perm = $model->inc->perm;
-  $manager = $model->inc->user->get_manager();
-  $cfg = $model->inc->user->get_class_cfg();
-  $id_perm = $perm->get_option_root();
+  $manager = $model->inc->user->getManager();
+  $cfg = $model->inc->user->getClassCfg();
+  $id_perm = $perm->getOptionRoot();
   if ( $id_user ){
-    $item = $manager->get_user($id_user);
+    $item = $manager->getUser($id_user);
     $id_group = $item[$cfg['arch']['users']['id_group']];
     $name = $cfg['arch']['users']['username'] ?? ( $cfg['arch']['users']['login'] ?? $cfg['arch']['users']['email'] );
   }
   else{
-    $item = $manager->get_group($id_group);
+    $item = $manager->getGroup($id_group);
     $name = $cfg['arch']['groups']['group'];
   }
   $db =& $model->db;
@@ -54,13 +54,13 @@ if ( $id_user || $id_group ){
           $o['checked'] = 1;
           $o['disabled'] = 1;
         }
-        else if ( $manager->group_has_option($id_group, $r['id']) ){
+        else if ( $manager->groupHasOption($id_group, $r['id']) ){
           $o['checked'] = 1;
           if ( $id_user ){
             $o['disabled'] = 1;
           }
         }
-        else if ( $id_user && $manager->user_has_option($id_user, $r['id']) ){
+        else if ( $id_user && $manager->userHasOption($id_user, $r['id']) ){
           $o['checked'] = 1;
         }
         if ( $o['is_parent'] ){

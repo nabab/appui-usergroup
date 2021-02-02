@@ -1,10 +1,10 @@
 <?php
-/** @var \bbn\mvc\model $model */
+/** @var \bbn\Mvc\Model $model */
 
 $model->data['limit'] = isset($model->data['limit']) && is_int($model->data['limit']) ? $model->data['limit'] : 5;
 $model->data['start'] = isset($model->data['start']) && is_int($model->data['start']) ? $model->data['start'] : 0;
-$user_cfg = $model->inc->user->get_class_cfg();
-$grid = new \bbn\appui\grid($model->db, $model->data, [
+$user_cfg = $model->inc->user->getClassCfg();
+$grid = new \bbn\Appui\Grid($model->db, $model->data, [
   'table' => $user_cfg['tables']['sessions'],
   'fields' => [
     'last_connection' => 'MAX('.$user_cfg['tables']['sessions'].'.'.$user_cfg['arch']['sessions']['last_activity']. ')',
@@ -42,7 +42,7 @@ $grid = new \bbn\appui\grid($model->db, $model->data, [
 */
 ]);
 if ($grid->check()) {
-  $res = $grid->get_datatable();
+  $res = $grid->getDatatable();
   $res['data'] = array_map(function($a){
     if ( substr($a['last_connection'], 0, 10) === strftime('%Y-%m-%d') ){
       if ( ( time() - strtotime($a['last_connection']) ) < 1200 ){
@@ -53,7 +53,7 @@ if ($grid->check()) {
       }
     }
     else{
-      $a['last_connection'] = date('d/m', strtotime($a['last_connection']));
+      $a['last_connection'] = date('d/m', Strtotime($a['last_connection']));
     }
     return $a;
   }, $res['data']);
