@@ -53,7 +53,7 @@ if ($grid->check()) {
       }
     }
     else{
-      $a['last_connection'] = date('d/m', Strtotime($a['last_connection']));
+      $a['last_connection'] = date('d/m', strtotime($a['last_connection']));
     }
     return $a;
   }, $res['data']);
