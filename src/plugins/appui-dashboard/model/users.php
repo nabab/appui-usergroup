@@ -23,11 +23,11 @@ $grid = new \bbn\Appui\Grid($model->db, $model->data, [
     'field' => 'last_connection',
     'dir' => 'DESC'
   ]],
-  'filters' => [[
+  /* 'filters' => [[
     'field' => $user_cfg['arch']['sessions']['opened'],
     'operator' => '=',
     'value' => 1
-  ]],
+  ]], */
   'group_by' => $user_cfg['tables']['sessions'].'.'.$user_cfg['arch']['sessions']['id_user']
   /*,
   'observer' => [

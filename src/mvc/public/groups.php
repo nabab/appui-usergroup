@@ -10,6 +10,7 @@ $groups = $mgr->groups();
 $ctrl->combo(_("User Groups"), [
   'root' => APPUI_USERGROUP_ROOT,
   'groups' => $groups,
+  'arch' => $ctrl->inc->user->getClassCfg()['arch'],
   'is_dev' => $ctrl->inc->user->isDev(),
   'is_admin' => $ctrl->inc->user->isAdmin(),
   'perm_root' => $ctrl->inc->perm->getOptionRoot(),

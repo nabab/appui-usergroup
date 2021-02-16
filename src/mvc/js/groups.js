@@ -60,9 +60,9 @@
       },
       duplicate(row){
         let newRow = bbn.fn.extend({}, row);
-        newRow.id = '';
+        newRow[this.source.arch.groups.id] = '';
         newRow.num = '';
-        newRow.source_id = row.id;
+        newRow.source_id = row[this.source.arch.groups.id];
         this.$refs.table.insert(newRow);
       }
     },

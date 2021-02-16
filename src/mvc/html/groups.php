@@ -17,12 +17,12 @@
            :order="[{field: 'group', dir: 'ASC'}]"
 >
   <bbns-column title="<?=_('ID')?>"
-               field="id"
+               :field="source.arch.groups.id"
                :hidden="true"
                :editable="false"
   ></bbns-column>
   <bbns-column title="<i class='nf nf-fa-users bbn-large'></i> <?=_('Name')?>"
-               field="group"
+               :field="source.arch.groups.group"
                :required="true"
   ></bbns-column>
   <bbns-column title="#"

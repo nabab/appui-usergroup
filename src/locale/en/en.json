@@ -1,6 +1,7 @@
 {
-    "components\/permissions\/permissions": {
-        "Saved!": "Saved!"
+    "components\/permissions": {
+        "Saved!": "Saved!",
+        "Error!": "Error!"
     },
     "mvc\/groups": {
         "Error!": "Error!",
