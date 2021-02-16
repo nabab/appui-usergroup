@@ -1,1 +1,43 @@
-{"":{"Saved!":"Sauvegard\u00e9!","Error!":"Erreur!","Delete":"Supprimer","Edit":"Modifier","Permissions":"Permissions","Duplicate":"Dupliquer","Save":"Sauvegarder","Setting preferences":"Configuration des pr\u00e9f\u00e9rences","Connected":"Connect\u00e9","Disconnected":"D\u00e9connect\u00e9","No session":"Pas de session","Disconnect":"D\u00e9connexion","Re-initialize":"R\u00e9initialiser","New user":"Nouvel utilisateur","User edit":"Modification de l'utilisateur","Do you sure you want to delete this entry?":"Voulez-vous vraiment supprimer cette entr\u00e9e?","Deleted":"Supprim\u00e9","Do you sure you want to re-initialize this user's password?":"\u00cates-vous s\u00fbr de vouloir r\u00e9initialiser le mot de passe de cet utilisateur?","An email has sent to the user.":"Un e-mail a \u00e9t\u00e9 envoy\u00e9 \u00e0 l'utilisateur","Saved":"Sauvegard\u00e9","Web":"Web","API":"API","Old":"Ancien","Password successfully changed":"Mot de passe chang\u00e9"}}
+{
+    "components\/permissions\/permissions": {
+        "Saved!": "Sauvegard\u00e9!"
+    },
+    "mvc\/groups": {
+        "Error!": "Erreur!",
+        "Delete": "Supprimer",
+        "Edit": "Modifier",
+        "Permissions": "Permissions",
+        "Duplicate": "Dupliquer",
+        "Save": "Sauvegarder"
+    },
+    "mvc\/users": {
+        "Error!": "Erreur!",
+        "Delete": "Supprimer",
+        "Edit": "Modifier",
+        "Permissions": "Permissions",
+        "Connected": "Connect\u00e9",
+        "Disconnected": "D\u00e9connect\u00e9",
+        "No session": "Pas de session",
+        "Disconnect": "D\u00e9connexion",
+        "Re-initialize": "R\u00e9initialiser",
+        "New user": "Nouvel utilisateur",
+        "User edit": "Modification de l'utilisateur",
+        "Do you sure you want to delete this entry?": "Voulez-vous vraiment supprimer cette entr\u00e9e?",
+        "Deleted": "Supprim\u00e9",
+        "Do you sure you want to re-initialize this user's password?": "\u00cates-vous s\u00fbr de vouloir r\u00e9initialiser le mot de passe de cet utilisateur?",
+        "An email has sent to the user.": "Un e-mail a \u00e9t\u00e9 envoy\u00e9 \u00e0 l'utilisateur",
+        "Saved": "Sauvegard\u00e9",
+        "Web": "Web",
+        "API": "API",
+        "Old": "Ancien"
+    },
+    "mvc\/preferences": {
+        "Setting preferences": "Configuration des pr\u00e9f\u00e9rences"
+    },
+    "mvc\/main\/profile": {
+        "Saved": "Sauvegard\u00e9"
+    },
+    "mvc\/main\/password": {
+        "Password successfully changed": "Mot de passe chang\u00e9"
+    }
+}

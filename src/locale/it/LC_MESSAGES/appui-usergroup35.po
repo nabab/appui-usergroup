@@ -3,13 +3,13 @@ msgstr ""
 "Project-Id-Version: 1\n"
 "Report-Msgid-Bugs-To: info@bbn.so\n"
 "last-Translator: BBN Solutions <support@bbn.solutions>\n"
-"Language-Team: ES <ES@li.org>\n"
+"Language-Team: IT <IT@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-02-15 01:10+0100\n"
-"POT-Revision-Date: 2021-02-15 01:10+0100\n"
-"Language: es\n"
+"POT-Creation-Date: 2021-02-16 05:18+0100\n"
+"POT-Revision-Date: 2021-02-16 05:18+0100\n"
+"Language: it\n"
 "X-Domain: appui-usergroup\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
@@ -19,13 +19,13 @@ msgstr ""
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/components/permissions/permissions.js
 msgid "Saved!"
-msgstr ""
+msgstr "Salvato"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/js/groups.js
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/js/users.js
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/public/actions/user.php
 msgid "Error!"
-msgstr ""
+msgstr "Errore!"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/components/widget/sessions/sessions.php
 msgid "OPENED"
@@ -50,18 +50,18 @@ msgstr ""
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/html/groups.php
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/html/users.php
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/html/groups.php
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/html/users.php
 msgid "Name"
-msgstr ""
+msgstr "Nome"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/html/groups.php
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/model/actions/users/delete.php
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/model/actions/users/insert.php
 msgid "Users"
-msgstr ""
+msgstr "Utenti"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/html/main.php
 msgid "Informations"
@@ -130,11 +130,11 @@ msgstr ""
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/html/users.php
 msgid "Session"
-msgstr ""
+msgstr "Sessione"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/html/users.php
 msgid "Group"
-msgstr ""
+msgstr "Gruppo"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/html/users.php
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-usergroup/src/mvc/html/main/profile.php
