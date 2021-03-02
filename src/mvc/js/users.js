@@ -4,8 +4,8 @@
     data(){
       return {
         root: appui.plugins['appui-usergroup'] + '/',
-        user: appui.app.user,        
-        themes: appui.themes,      
+        user: appui.app.user,
+        themes: appui.themes,
         connection:[{
           text: bbn._('Connected'),
           value: true
@@ -14,58 +14,58 @@
           value: false
         }]
       }
-    },    
+    },
     methods: {
       trClass(row){
         return 'valignm';
       },
-      tdClass(row, idx, col){       
-        let r = row[this.source.arch.admin] ? 'bbn-background-effect-tertiary' : '';
-        if ( (col.field === 'session') || (col.field === 'last_activity') || ((col.field === undefined) && (col.ftitle === 'Actions')) ){
-          r += ' bbn-c';
-        }
-        return r.trim();
+      renderUsername(row){
+        let isAdmin = !!row[this.source.arch.admin];
+        return `<span class="${isAdmin ? 'bbn-b' : ''}">${row[this.source.arch.username]}</span>`;
       },
       renderTel(row){
         return row[this.source.arch.tel] || '-';
       },
       renderFonction(row){
         return row[this.source.arch.fonction] || '-';
-      },      
-      renderSession(row){       
+      },
+      renderSession(row){
        return `<span class="${row.session ? 'bbn-green' : 'bbn-red'}">${row.session ? bbn._('Connected') : bbn._('Disconnected')}</span>`;
       },
+      renderLastActivity(row){
+        return row.last_activity ? moment(row.last_activity).format('DD/MM/YYYY HH:mm') : '';
+      },
       disconnectUser(row){
-        let table = this.$refs.table; 
+        let table = this.$refs.table;
         this.post(this.root + 'actions/sessions/close', {
           id: row.id,
-          minutes: 2 
+          minutes: 2
         }, d => {
           if ( d.success ){
             row.session = false;
             appui.success(bbn._("Disconnected"));
             this.$nextTick(() => {
               table.$forceUpdate();
-            });            
+            });
           }
           else{
             appui.error(bbn._("No session"));
           }
         })
-      }, 
-      getButtons(row){                
+      },
+      getButtons(row){
         let btn = [{
           text: bbn._('Disconnect'),
           notext: true,
           action: this.disconnectUser,
-          icon: 'nf nf-fa-eject',          
+          icon: 'nf nf-fa-eject',
           disabled: !!( 
             !row.session ||
             (
               ((row[this.source.arch.admin] || row[this.source.arch.dev]) && !this.user.isAdmin) || 
               (this.user.isDev && !this.user.isAdmin)
             )
-          )          
+          )
         }, {
           text: bbn._('Edit'),
           notext: true,
@@ -178,9 +178,9 @@
         },
         computed: {
           isGroupReal(){
-            let filter = {};
-            filter[this.cp.source.arch_group.id] = this.source.row[this.cp.source.arch.id_group];
-            return bbn.fn.getField(this.cp.source.groups, 'type', filter) === 'real';
+            return bbn.fn.isVue(this.cp)
+              ? (bbn.fn.getField(this.cp.source.groups, 'type', {value: this.source.row[this.cp.source.arch.id_group]}) === 'real')
+              : false;
           }
         },
         methods:{
@@ -213,7 +213,7 @@
               :disabled="isDisabled">
   </bbn-button>
 	&nbsp;
-	<bbn-dropdown :source="groupTypes"></bbn-dropdown>
+	<bbn-dropdown :source="groupTypes" v-if="cp && (cp.user.isAdmin || cp.user.isDev)"></bbn-dropdown>
 </div>
 `,
         data(){
@@ -228,6 +228,9 @@
             }, {
               text: bbn._('Old'),
               value: 'old'
+            }, {
+              text: bbn._('Internal'),
+              value: 'internal'
             }]
           }
         },
