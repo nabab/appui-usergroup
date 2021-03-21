@@ -213,7 +213,7 @@
               :disabled="isDisabled">
   </bbn-button>
 	&nbsp;
-	<bbn-dropdown :source="groupTypes" v-if="cp && (cp.user.isAdmin || cp.user.isDev)"></bbn-dropdown>
+	<!--<bbn-dropdown :source="groupTypes" v-if="cp && (cp.user.isAdmin || cp.user.isDev)"></bbn-dropdown>-->
 </div>
 `,
         data(){
