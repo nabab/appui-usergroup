@@ -79,7 +79,7 @@
           icon: 'nf nf-fa-trash',
           disabled: !!(row[this.source.arch.admin] || (row[this.source.arch.dev] && !this.user.isAdmin) || (this.user.isDev && !this.user.isAdmin))
         }];
-        if ( this.source.perm_root ){
+        /* if ( this.source.perm_root ){
           btn.push({
             text: bbn._('Permissions'),
             notext: true,
@@ -87,7 +87,7 @@
             icon: 'nf nf-fa-key',
             disabled: !!((this.user.isDev && !this.user.isAdmin) || row[this.source.arch.admin])
           });
-        }
+        } */
         btn.push({
           text: bbn._('Re-initialize'),
           notext: true,
