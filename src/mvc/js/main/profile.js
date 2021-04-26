@@ -23,6 +23,10 @@
       data: {
         deep: true,
         handler(){
+          if (this.source.schema.theme === undefined) {
+            return;
+          }
+
           const st = '.less,01-basic.less,02-background.less';
           bbn.fn.log("DIRTY HANDLER", this.theme, this.source.schema.theme, this.$refs.form.source[this.source.schema.theme]);
           if ( this.theme !== this.$refs.form.source[this.source.schema.theme] ){
