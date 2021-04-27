@@ -34,12 +34,12 @@
         </bbn-dropdown>
 
         <label v-if="source.schema.phone !== undefined">
-          <?=_('Tel.')?>
+          <?=_('Phone')?>
         </label>
         <bbn-input v-if="source.schema.phone !== undefined"
                    maxlength="10"
                    class="bbn-medium"
-                   v-model="data[source.schema.tel]">
+                   v-model="data[source.schema.phone]">
         </bbn-input>
 
         <label v-if="source.schema.function !== undefined">
@@ -47,7 +47,7 @@
         </label>
         <bbn-input v-if="source.schema.function !== undefined"
                    class="bbn-medium"
-                   v-model="data[source.schema.fonction]">
+                   v-model="data[source.schema.function]">
         </bbn-input>
       </div>
 
