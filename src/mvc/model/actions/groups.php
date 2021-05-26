@@ -8,6 +8,7 @@ if (
   $fgroup = $cfg['arch']['groups']['group'];
   $fcfg = $cfg['arch']['groups']['cfg'];
   $mgr = $model->inc->user->getManager();
+  $prefCfg = $model->inc->pref->getClassCfg();
 
   switch ( $model->data['action'] ){
     case 'insert':
@@ -30,6 +31,26 @@ if (
             'num' => 0
           ];
         }
+        if (!empty($id)) {
+          if (!empty($model->data['default_dashboard'])
+            && ($dashDefId = $model->inc->options->fromCode('default', 'dashboard', 'appui'))
+          ) {
+            $model->db->insert($prefCfg['table'], [
+              $prefCfg['arch']['user_options']['id_option'] => $dashDefId,
+              $prefCfg['arch']['user_options']['id_group'] => $id,
+              $prefCfg['arch']['user_options']['id_alias'] => $model->data['default_dashboard']
+            ]);
+          }
+          if (!empty($model->data['default_menu'])
+            && ($menuDefId = $model->inc->options->fromCode('default', 'menu', 'appui'))
+          ) {
+            $model->db->insert($prefCfg['table'], [
+              $prefCfg['arch']['user_options']['id_option'] => $menuDefId,
+              $prefCfg['arch']['user_options']['id_group'] => $id,
+              $prefCfg['arch']['user_options']['id_alias'] => $model->data['default_menu']
+            ]);
+          }
+        }
       }
       break;
     
@@ -41,6 +62,52 @@ if (
       ){
         $r['success'] = $mgr->groupRename($model->data[$fid], $model->data[$fgroup]);
         $r['data'][$fid] = $model->data[$fid];
+        if (!empty($model->data['default_dashboard'])
+          && ($dashDefId = $model->inc->options->fromCode('default', 'dashboard', 'appui'))
+        ) {
+          if ($dashDef = $model->db->selectOne($prefCfg['table'], $prefCfg['arch']['user_options']['id'], [
+            $prefCfg['arch']['user_options']['id_group'] => $model->data[$fid],
+            $prefCfg['arch']['user_options']['id_option'] => $dashDefId
+          ])) {
+            if ($model->db->update($prefCfg['table'], [
+              $prefCfg['arch']['user_options']['id_alias'] => $model->data['default_dashboard']
+            ], [
+              $prefCfg['arch']['user_options']['id'] => $dashDef
+            ])) {
+              $r['success'] = true;
+            }
+          }
+          else if ($model->db->insert($prefCfg['table'], [
+            $prefCfg['arch']['user_options']['id_option'] => $dashDefId,
+            $prefCfg['arch']['user_options']['id_group'] => $model->data[$fid],
+            $prefCfg['arch']['user_options']['id_alias'] => $model->data['default_dashboard']
+          ])) {
+            $r['success'] = true;
+          }
+        }
+        if (!empty($model->data['default_menu'])
+          && ($menuDefId = $model->inc->options->fromCode('default', 'menu', 'appui'))
+        ) {
+          if ($menuDef = $model->db->selectOne($prefCfg['table'], $prefCfg['arch']['user_options']['id'], [
+            $prefCfg['arch']['user_options']['id_group'] => $model->data[$fid],
+            $prefCfg['arch']['user_options']['id_option'] => $menuDefId
+          ])) {
+            if ($model->db->update($prefCfg['table'], [
+              $prefCfg['arch']['user_options']['id_alias'] => $model->data['default_menu']
+            ], [
+              $prefCfg['arch']['user_options']['id'] => $menuDef
+            ])) {
+              $r['success'] = true;
+            }
+          }
+          else if ($model->db->insert($prefCfg['table'], [
+            $prefCfg['arch']['user_options']['id_option'] => $menuDefId,
+            $prefCfg['arch']['user_options']['id_group'] => $model->data[$fid],
+            $prefCfg['arch']['user_options']['id_alias'] => $model->data['default_menu']
+          ])){
+            $r['success'] = true;
+          }
+        }
       }
       break;
     
