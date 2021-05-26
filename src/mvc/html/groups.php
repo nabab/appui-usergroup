@@ -4,7 +4,8 @@
            :info="true"
            :pageable="true"
            :sortable="true"
-           :editable="true"
+           :editable="hasDashboard || hasMenu ? 'popup' : true"
+           :editor="hasDashboard || hasMenu ? $options.components.form : false"
            :showable="true"
            :toolbar="[{
              text: '<?=_('New group')?>',
@@ -20,6 +21,14 @@
                :field="source.arch.groups.id"
                :hidden="true"
                :editable="false"
+  ></bbns-column>
+  <bbns-column field="default_menu"
+               v-if="hasMenu"
+               :hidden="true"
+  ></bbns-column>
+  <bbns-column field="default_dashboard"
+               v-if="hasDashboard"
+               :hidden="true"
   ></bbns-column>
   <bbns-column title="<i class='nf nf-fa-users bbn-large'></i> <?=_('Name')?>"
                :field="source.arch.groups.group"

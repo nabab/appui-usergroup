@@ -9,6 +9,12 @@
             value: v[this.source.arch.id]
           }
         });
+      },
+      hasDashboard(){
+        return !!appui.plugins['appui-dashboard'];
+      },
+      hasMenu(){
+        return !!appui.plugins['appui-menu'];
       }
     },
     methods: {
@@ -66,7 +72,57 @@
         this.$refs.table.insert(newRow);
       }
     },
-    compopnents: {
+    mounted(){
+      appui.register('appui-usergroup-groups', this);
+    },
+    components: {
+      form: {
+        template: `
+          <bbn-form :action="root + 'actions/groups'"
+                    :source="source.row"
+                    :data="extend({action: !!source.row.id ? 'update' : 'insert'}, source.data)"
+                    v-if="groups"
+                    @success="afterSubmit"
+          >
+            <div class="bbn-grid-fields bbn-padded">
+              <label>` + bbn._('Name') + `</label>
+              <bbn-input v-model="source.row[groups.source.arch.groups.group]"/>
+              <label v-if="groups.hasDashboard">` + bbn._('Default dashboard') + `</label>
+              <bbn-dropdown v-if="groups.hasDashboard"
+                            v-model="source.row.default_dashboard"
+                            :source="groups.source.dashboards"/>
+              <label v-if="groups.hasMenu">` + bbn._('Default menu') + `</label>
+              <bbn-dropdown v-if="groups.hasMenu"
+                            v-model="source.row.default_menu"
+                            :source="groups.source.menus"/>
+            </div> 
+          </bbn-form>`,
+        props: {
+          source: {
+            type: Object
+          }
+        },
+        data(){
+          return {
+            root: appui.plugins['appui-usergroup'] + '/',
+            groups: false
+          }
+        },
+        methods: {
+          extend: bbn.fn.extend,
+          afterSubmit(d){
+            if (d.success) {
+              this.closest('bbn-container').reload();
+            }
+            else {
+              appui.error();
+            }
+          }
+        },
+        mounted(){
+          this.groups = appui.getRegistered('appui-usergroup-groups');
+        }
+      },
       'appui-usergroup-group-edit-form': {
         template: '#appui-usergroup-group-edit-form',
         props: ['source'],
