@@ -34,6 +34,12 @@
                :field="source.arch.groups.group"
                :required="true"
   ></bbns-column>
+  <bbns-column title="<?=_('Unique code')?>"
+               :width="150"
+               max-width="40%"
+               :field="source.arch.groups.code"
+               :required="true"
+  ></bbns-column>
   <bbns-column title="#"
                ftitle="<?=_('Users')?>"
                field="num"

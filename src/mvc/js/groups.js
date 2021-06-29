@@ -87,6 +87,8 @@
             <div class="bbn-grid-fields bbn-padded">
               <label>` + bbn._('Name') + `</label>
               <bbn-input v-model="source.row[groups.source.arch.groups.group]"/>
+              <label>` + bbn._('Code') + `</label>
+              <bbn-input v-model="source.row[groups.source.arch.groups.code]"/>
               <label v-if="groups.hasDashboard">` + bbn._('Default dashboard') + `</label>
               <bbn-dropdown v-if="groups.hasDashboard"
                             v-model="source.row.default_dashboard"
