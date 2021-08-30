@@ -31,7 +31,7 @@ else if (
     if ( $change_theme ){
       $ctrl->inc->session->set($ctrl->post[$cfg['arch']['users']['theme']], 'theme');
     }
-    else{
+    else {
       $ctrl->obj->error = _("Successful modification");
       $ctrl->obj->errorTitle = _("Success!");
     }

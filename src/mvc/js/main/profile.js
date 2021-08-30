@@ -3,9 +3,20 @@
 (() => {
   return {
     methods: {
-      checkTheme(res){
+      checkChanges(res){
         if ( res.success  ){
           appui.success(bbn._('Saved'));
+          let lng = this.source.schema.language;
+          if (lng && (lng !== this.originalLanguage)) {
+            let cookie = bbn.fn.getCookie(bbn.env.appName);
+            if (!cookie) {
+              cookie = {};
+            }
+
+            cookie.locale = lng;
+            bbn.fn.setCookie(bbn.env.appName, cookie);
+            this.originalLanguage = lng;
+          }
         }
         else{
           appui.error();
@@ -16,7 +27,8 @@
       return {
         theme: this.source.data[this.source.schema.theme],
         data: this.source.data,
-        themes: appui.themes
+        themes: appui.themes,
+        originalLanguage: this.source.schema && this.source.schema.language ? this.source.schema.language : 'en'
       }
   	},
     watch: {
