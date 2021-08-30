@@ -1,5 +1,5 @@
 <!-- HTML Document -->
-<bbn-router class="bbn-user-profile"
+<bbn-router class="bbn-overlay bbn-user-profile"
             :autoload="false"
             :nav="true"
 >

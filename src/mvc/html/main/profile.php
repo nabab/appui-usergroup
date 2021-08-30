@@ -3,7 +3,7 @@
             style="width: 600px"
             class="bbn-lg bbn-widget "
             :action="source.root + 'actions/user'"
-            @success="checkTheme"
+            @success="checkChanges"
             ref="form"
   >
     <div class="bbn-middle">
@@ -31,6 +31,16 @@
                       class="bbn-medium"
                       :source="themes"
                       v-model="data[source.schema.theme]">
+        </bbn-dropdown>
+
+        <label v-if="source.languages && source.languages.length > 1">
+          <?=_('Language')?>
+        </label>
+        <bbn-dropdown v-if="source.languages && source.languages.length > 1"
+                      class="bbn-medium"
+                      :source="source.languages"
+                      source-value="code"
+                      v-model="data[source.schema.language]">
         </bbn-dropdown>
 
         <label v-if="source.schema.phone !== undefined">
