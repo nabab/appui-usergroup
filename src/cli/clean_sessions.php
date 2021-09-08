@@ -3,9 +3,28 @@
  * Removes old sessions
  *
  **/
-/** @var int $delay */
+use bbn\X;
+ /** @var int $delay */
 $delay = 7*3600*24;
+
 /** @var $ctrl \bbn\Mvc\Controller */
 echo (int)$ctrl->db->delete('bbn_users_sessions', [
-  ['last_activity', '<', Date('Y-m-d H:i:s', Time() - $delay)]
-])." Sessions rows deleted";
+  'id_user' => null,
+  ['last_activity', '<', date('Y-m-d H:i:s', time() - $delay)]
+])." anonymous sessions rows deleted.".PHP_EOL;  
+
+$users = $ctrl->db->rselectAll([
+  'tables' => ['bbn_users_sessions'],
+  'fields' => ['id_user', 'num' => 'COUNT(id)', 'max' => 'MAX(last_activity)'],
+  'where' => ['last_activity', '<', date('Y-m-d H:i:s', time() - $delay)],
+  'group_by' => ['id_user']
+]);
+
+foreach ($users as $u) {
+  if ($u['num'] > 1) {
+    echo (int)$ctrl->db->delete('bbn_users_sessions', [
+      'id_user' => $u['id_user'],
+      'last_activity', '<', $u['max']
+    ])._("Sessions rows deleted for user").' '.$u['id_user'].PHP_EOL;
+  }
+}
