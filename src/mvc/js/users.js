@@ -24,7 +24,7 @@
         return `<span class="${isAdmin ? 'bbn-b' : ''}">${row[this.source.arch.username]}</span>`;
       },
       renderTel(row){
-        return row[this.source.arch.tel] || '-';
+        return row[this.source.arch.phone] || '-';
       },
       renderFonction(row){
         return row[this.source.arch.fonction] || '-';

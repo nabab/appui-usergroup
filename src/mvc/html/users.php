@@ -74,7 +74,7 @@
   ></bbns-column>
   <bbns-column title="<i class='nf nf-fa-phone bbn-large'></i>"
                ftitle="<?=_("Phone")?>"
-               :field="source.arch.tel"
+               :field="source.arch.phone"
                :width="120"
                :render="renderTel"
   ></bbns-column>
@@ -147,7 +147,7 @@
       ></bbn-input>
 
       <label><?=_('Phone')?></label>
-      <bbn-input v-model="source.row[cp.source.arch.tel]"
+      <bbn-input v-model="source.row[cp.source.arch.phone]"
                  maxlength="10"
       ></bbn-input>
 
