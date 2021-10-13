@@ -28,9 +28,13 @@
         theme: this.source.data[this.source.schema.theme],
         data: this.source.data,
         themes: appui.themes,
-        originalLanguage: this.source.schema && this.source.schema.language ? this.source.schema.language : 'en'
+        originalLanguage: this.source.schema && this.source.schema.language ? this.source.schema.language : 'en',
+        ready: false
       }
   	},
+    mounted(){
+      this.ready = true;
+    },
     watch: {
       data: {
         deep: true,
