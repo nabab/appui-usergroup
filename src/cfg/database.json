@@ -62,8 +62,6 @@
                 "key": null,
                 "extra": "'real','api','old','internal'",
                 "signed": true,
-                "virtual": false,
-                "generation": "",
                 "default": "real",
                 "values": [
                     "real",
@@ -216,7 +214,6 @@
                 "position": 11,
                 "type": "tinyint",
                 "null": 0,
-                "signed": false,
                 "default": 0,
                 "maxlength": 1
             },
@@ -232,7 +229,6 @@
                 "position": 13,
                 "type": "tinyint",
                 "null": 0,
-                "signed": false,
                 "default": 1,
                 "maxlength": 1
             }
@@ -438,7 +434,6 @@
                 "position": 3,
                 "type": "int",
                 "null": 1,
-                "signed": false,
                 "default": "NULL",
                 "maxlength": 5
             },
@@ -446,7 +441,6 @@
                 "position": 4,
                 "type": "tinyint",
                 "null": 0,
-                "signed": false,
                 "default": 0,
                 "maxlength": 1
             },
@@ -601,7 +595,6 @@
                 "position": 5,
                 "type": "int",
                 "null": 1,
-                "signed": false,
                 "default": "NULL",
                 "maxlength": 5
             },
@@ -755,7 +748,6 @@
                 "position": 6,
                 "type": "tinyint",
                 "null": 0,
-                "signed": false,
                 "maxlength": 1
             },
             "creation": {
@@ -872,7 +864,6 @@
                 "position": 5,
                 "type": "decimal",
                 "null": 0,
-                "signed": false,
                 "maxlength": 14,
                 "decimals": 4
             },
@@ -890,7 +881,6 @@
                 "position": 7,
                 "type": "decimal",
                 "null": 0,
-                "signed": false,
                 "maxlength": 14,
                 "decimals": 4
             },
