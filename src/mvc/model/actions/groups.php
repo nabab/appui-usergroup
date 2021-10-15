@@ -6,6 +6,7 @@ if (
 ){
   $fid = $cfg['arch']['groups']['id'];
   $fgroup = $cfg['arch']['groups']['group'];
+  $fcode = $cfg['arch']['groups']['code'];
   $fcfg = $cfg['arch']['groups']['cfg'];
   $mgr = $model->inc->user->getManager();
   $prefCfg = $model->inc->pref->getClassCfg();
@@ -22,7 +23,11 @@ if (
             $r['data'] = $mgr->getGroup($id);
           }
         }
-        else if ($id = $mgr->groupInsert([$fgroup => $model->data[$fgroup]])) {
+        else if ($id = $mgr->groupInsert([
+          $fgroup => $model->data[$fgroup],
+          $fcode => $model->data[$fcode] ?? null,
+          $fcfg => $model->data[$fcfg] ?? null,
+        ])) {
           $r['success'] = true;
           $r['data'] = [
             $fid => $id,
@@ -60,7 +65,7 @@ if (
         !empty($model->data[$fgroup]) &&
         (!$model->inc->user->isDev() || $model->inc->user->isAdmin())
       ){
-        $r['success'] = $mgr->groupRename($model->data[$fid], $model->data[$fgroup]);
+        $r['success'] = $mgr->groupEdit($model->data[$fid], $model->data);
         $r['data'][$fid] = $model->data[$fid];
         if (!empty($model->data['default_dashboard'])
           && ($dashDefId = $model->inc->options->fromCode('default', 'dashboard', 'appui'))
