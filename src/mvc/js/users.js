@@ -33,7 +33,7 @@
        return `<span class="${row.session ? 'bbn-green' : 'bbn-red'}">${row.session ? bbn._('Connected') : bbn._('Disconnected')}</span>`;
       },
       renderLastActivity(row){
-        return row.last_activity ? moment(row.last_activity).format('DD/MM/YYYY HH:mm') : '';
+        return row.last_activity ? dayjs(row.last_activity).format('DD/MM/YYYY HH:mm') : '';
       },
       disconnectUser(row){
         let table = this.$refs.table;
@@ -59,10 +59,10 @@
           notext: true,
           action: this.disconnectUser,
           icon: 'nf nf-fa-eject',
-          disabled: !!( 
+          disabled: !!(
             !row.session ||
             (
-              ((row[this.source.arch.admin] || row[this.source.arch.dev]) && !this.user.isAdmin) || 
+              ((row[this.source.arch.admin] || row[this.source.arch.dev]) && !this.user.isAdmin) ||
               (this.user.isDev && !this.user.isAdmin)
             )
           )
