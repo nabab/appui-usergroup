@@ -1,8 +1,4 @@
 <?php
-/*
- * Describe what it does to show you're not that dumb!
- *
- **/
 
 /** @var $this \bbn\Mvc\Controller */
 if ( isset($ctrl->post['current_pass'], $ctrl->post['pass1'], $ctrl->post['pass2']) ){

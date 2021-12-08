@@ -1,8 +1,4 @@
 <?php
-/*
- * Describe what it does to show you're not that dumb!
- *
- **/
 
 $cur = $ctrl->inc->pref->getCurrent();
 $tbs = '79d4af90c0c511e78824366237393031';
