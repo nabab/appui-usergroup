@@ -1,58 +1,52 @@
 {
-  "text": "Users preferences",
-  "code": "prefs",
-  "id_parent": "appui",
-  "icon": "nf nf-fa-users",
   "cfg": {
-      "desc": "This section is automatically generated and should not be modified by any user.",
-      "show_code": 1
+    "show_code": 1,
+    "show_icon": 1,
+    "allow_children": 1,
+    "i18n": "en"
   },
-  "items": [{
-    "text": "Menu icons",
-    "code": "ico"
-  }, {
-    "text": "All displayed tabs",
-    "code": "all_tabs"
-  }, {
-    "text": "Permissions",
-    "code": "permissions",
-    "cfg": {
-      "allow_children": 1
-    },
-    "items": [
-      {
-        "text": "Access",
-        "code": "access"
-      }, {
-        "text": "Options",
-        "code": "options"
-      }, {
-        "text": "Plugins",
-        "code": "plugins",
-        "items": [
-          {
-            "text": "Dashboard",
-            "code": "appui-dashboard",
-            "id_alias": ["list", "dashboard", "appui"],
-            "items": [
-              {
-                "text": "Application's users",
-                "code": "users",
-                "limit":5,
-                "observe":false,
-                "closable":true,
-                "itemComponent":"appui-usergroup-widget-users"
-              }, {
-                "text": "My last sessions",
-                "code": "sessions",
-                "observe":false,
-                "closable":true,
-                "component":"appui-hr-widget-staff-absent"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  }]
+  "id_parent": ["appui"],
+  "text": "User and Group",
+  "code": "usergroup",
+  "plugin": true,
+  "id_alias": ["plugin", "list", "templates", "option", "appui"],
+  "icon": "nf nf-fa-user_circle",
+  "items": [
+    {
+      "text": "Plugins",
+      "code": "plugins",
+      "items": [
+        {
+          "text": "Dashboard",
+          "code": "appui-dashboard",
+          "id_alias": ["dashboard", "appui"],
+          "items": [
+            {
+              "text": "Widgets",
+              "code": "widgets",
+              "id_alias": ["widgets", "dashboard", "appui"],
+              "icon": "nf nf-mdi-widgets",
+              "items": [
+                {
+                  "text": "Application's users",
+                  "code": "users",
+                  "limit":5,
+                  "observe":false,
+                  "closable":true,
+                  "itemComponent":"appui-usergroup-widget-users"
+                },
+                {
+                  "text": "My last sessions",
+                  "code": "sessions",
+                  "observe":false,
+                  "closable":true,
+                  "component":"appui-hr-widget-staff-absent"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }
