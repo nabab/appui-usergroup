@@ -39,7 +39,6 @@
         },
         "fields": {
             "id": {
-                "position": 1,
                 "type": "binary",
                 "null": 0,
                 "key": "PRI",
@@ -47,7 +46,6 @@
                 "maxlength": 16
             },
             "id_parent": {
-                "position": 2,
                 "type": "binary",
                 "null": 1,
                 "key": "MUL",
@@ -56,7 +54,6 @@
                 "maxlength": 16
             },
             "type": {
-                "position": 3,
                 "type": "enum",
                 "null": 0,
                 "key": null,
@@ -71,14 +68,12 @@
                 ]
             },
             "group": {
-                "position": 4,
                 "type": "varchar",
                 "null": 0,
                 "signed": true,
                 "maxlength": 30
             },
             "code": {
-                "position": 5,
                 "type": "varchar",
                 "null": 1,
                 "key": "UNI",
@@ -87,7 +82,6 @@
                 "maxlength": 25
             },
             "cfg": {
-                "position": 6,
                 "type": "json",
                 "null": 1,
                 "signed": true,
@@ -132,7 +126,6 @@
         },
         "fields": {
             "id": {
-                "position": 1,
                 "type": "binary",
                 "null": 0,
                 "key": "PRI",
@@ -140,7 +133,6 @@
                 "maxlength": 16
             },
             "id_group": {
-                "position": 2,
                 "type": "binary",
                 "null": 0,
                 "key": "MUL",
@@ -148,7 +140,6 @@
                 "maxlength": 16
             },
             "login": {
-                "position": 3,
                 "type": "varchar",
                 "null": 1,
                 "key": "UNI",
@@ -157,7 +148,6 @@
                 "maxlength": 100
             },
             "email": {
-                "position": 4,
                 "type": "varchar",
                 "null": 1,
                 "signed": true,
@@ -165,14 +155,12 @@
                 "maxlength": 100
             },
             "username": {
-                "position": 5,
                 "type": "varchar",
                 "null": 0,
                 "signed": true,
                 "maxlength": 35
             },
             "phone": {
-                "position": 6,
                 "type": "varchar",
                 "null": 1,
                 "signed": true,
@@ -180,7 +168,6 @@
                 "maxlength": 10
             },
             "title": {
-                "position": 7,
                 "type": "varchar",
                 "null": 1,
                 "signed": true,
@@ -188,7 +175,6 @@
                 "maxlength": 100
             },
             "theme": {
-                "position": 8,
                 "type": "varchar",
                 "null": 0,
                 "signed": true,
@@ -196,7 +182,6 @@
                 "maxlength": 20
             },
             "cfg": {
-                "position": 9,
                 "type": "json",
                 "null": 1,
                 "signed": true,
@@ -265,7 +250,6 @@
         },
         "fields": {
             "id": {
-                "position": 1,
                 "type": "binary",
                 "null": 0,
                 "key": "PRI",
@@ -273,14 +257,12 @@
                 "maxlength": 16
             },
             "magic": {
-                "position": 2,
                 "type": "varchar",
                 "null": 0,
                 "signed": true,
                 "maxlength": 64
             },
             "id_user": {
-                "position": 3,
                 "type": "binary",
                 "null": 0,
                 "key": "MUL",
@@ -288,7 +270,6 @@
                 "maxlength": 16
             },
             "expire": {
-                "position": 4,
                 "type": "datetime",
                 "null": 0,
                 "signed": true,
@@ -415,7 +396,6 @@
         },
         "fields": {
             "id": {
-                "position": 1,
                 "type": "binary",
                 "null": 0,
                 "key": "PRI",
@@ -423,7 +403,6 @@
                 "maxlength": 16
             },
             "id_option": {
-                "position": 2,
                 "type": "binary",
                 "null": 0,
                 "key": "MUL",
@@ -431,21 +410,18 @@
                 "maxlength": 16
             },
             "num": {
-                "position": 3,
                 "type": "int",
                 "null": 1,
                 "default": "NULL",
                 "maxlength": 5
             },
             "public": {
-                "position": 4,
                 "type": "tinyint",
                 "null": 0,
                 "default": 0,
                 "maxlength": 1
             },
             "id_user": {
-                "position": 5,
                 "type": "binary",
                 "null": 1,
                 "key": "MUL",
@@ -454,7 +430,6 @@
                 "maxlength": 16
             },
             "id_group": {
-                "position": 6,
                 "type": "binary",
                 "null": 1,
                 "key": "MUL",
@@ -463,7 +438,6 @@
                 "maxlength": 16
             },
             "id_link": {
-                "position": 7,
                 "type": "binary",
                 "null": 1,
                 "key": "MUL",
@@ -472,7 +446,6 @@
                 "maxlength": 16
             },
             "id_alias": {
-                "position": 8,
                 "type": "binary",
                 "null": 1,
                 "key": "MUL",
@@ -481,7 +454,6 @@
                 "maxlength": 16
             },
             "text": {
-                "position": 9,
                 "type": "varchar",
                 "null": 1,
                 "signed": true,
@@ -558,7 +530,6 @@
         },
         "fields": {
             "id": {
-                "position": 1,
                 "type": "binary",
                 "null": 0,
                 "key": "PRI",
@@ -566,7 +537,6 @@
                 "maxlength": 16
             },
             "id_user_option": {
-                "position": 2,
                 "type": "binary",
                 "null": 0,
                 "key": "MUL",
@@ -574,7 +544,6 @@
                 "maxlength": 16
             },
             "id_parent": {
-                "position": 3,
                 "type": "binary",
                 "null": 1,
                 "key": "MUL",
@@ -583,7 +552,6 @@
                 "maxlength": 16
             },
             "id_option": {
-                "position": 4,
                 "type": "binary",
                 "null": 1,
                 "key": "MUL",
@@ -592,21 +560,18 @@
                 "maxlength": 16
             },
             "num": {
-                "position": 5,
                 "type": "int",
                 "null": 1,
                 "default": "NULL",
                 "maxlength": 5
             },
             "text": {
-                "position": 6,
                 "type": "varchar",
                 "null": 0,
                 "signed": true,
                 "maxlength": 255
             },
             "cfg": {
-                "position": 7,
                 "type": "mediumtext",
                 "null": 1,
                 "signed": true,
@@ -645,7 +610,6 @@
         },
         "fields": {
             "id": {
-                "position": 1,
                 "type": "binary",
                 "null": 0,
                 "key": "PRI",
@@ -653,7 +617,6 @@
                 "maxlength": 16
             },
             "id_user": {
-                "position": 2,
                 "type": "binary",
                 "null": 0,
                 "key": "MUL",
@@ -661,14 +624,12 @@
                 "maxlength": 16
             },
             "pass": {
-                "position": 3,
                 "type": "varchar",
                 "null": 0,
                 "signed": true,
                 "maxlength": 128
             },
             "added": {
-                "position": 4,
                 "type": "datetime",
                 "null": 0,
                 "signed": true,
@@ -707,7 +668,6 @@
         },
         "fields": {
             "id": {
-                "position": 1,
                 "type": "binary",
                 "null": 0,
                 "key": "PRI",
@@ -715,7 +675,6 @@
                 "maxlength": 16
             },
             "id_user": {
-                "position": 2,
                 "type": "binary",
                 "null": 1,
                 "key": "MUL",
@@ -724,48 +683,41 @@
                 "maxlength": 16
             },
             "sess_id": {
-                "position": 3,
                 "type": "varchar",
                 "null": 0,
                 "signed": true,
                 "maxlength": 128
             },
             "ip_address": {
-                "position": 4,
                 "type": "varchar",
                 "null": 0,
                 "signed": true,
                 "maxlength": 15
             },
             "user_agent": {
-                "position": 5,
                 "type": "varchar",
                 "null": 0,
                 "signed": true,
                 "maxlength": 255
             },
             "opened": {
-                "position": 6,
                 "type": "tinyint",
                 "null": 0,
                 "maxlength": 1
             },
             "creation": {
-                "position": 7,
                 "type": "datetime",
                 "null": 0,
                 "signed": true,
                 "generation": ""
             },
             "last_activity": {
-                "position": 8,
                 "type": "datetime",
                 "null": 0,
                 "signed": true,
                 "generation": ""
             },
             "cfg": {
-                "position": 9,
                 "type": "json",
                 "null": 1,
                 "signed": true,
@@ -828,7 +780,6 @@
         },
         "fields": {
             "id": {
-                "position": 1,
                 "type": "binary",
                 "null": 0,
                 "key": "PRI",
@@ -836,7 +787,6 @@
                 "maxlength": 16
             },
             "id_session": {
-                "position": 2,
                 "type": "binary",
                 "null": 0,
                 "key": "MUL",
@@ -844,7 +794,6 @@
                 "maxlength": 16
             },
             "content": {
-                "position": 3,
                 "type": "varchar",
                 "null": 0,
                 "key": "MUL",
@@ -852,7 +801,6 @@
                 "maxlength": 32
             },
             "id_parent": {
-                "position": 4,
                 "type": "binary",
                 "null": 1,
                 "key": "MUL",
@@ -861,14 +809,12 @@
                 "maxlength": 16
             },
             "creation": {
-                "position": 5,
                 "type": "decimal",
                 "null": 0,
                 "maxlength": 14,
                 "decimals": 4
             },
             "dt_creation": {
-                "position": 6,
                 "type": "datetime",
                 "null": 1,
                 "extra": "VIRTUAL GENERATED",
@@ -878,14 +824,12 @@
                 "default": "NULL"
             },
             "last": {
-                "position": 7,
                 "type": "decimal",
                 "null": 0,
                 "maxlength": 14,
                 "decimals": 4
             },
             "dt_last": {
-                "position": 8,
                 "type": "datetime",
                 "null": 1,
                 "extra": "VIRTUAL GENERATED",
@@ -942,7 +886,6 @@
         },
         "fields": {
             "id": {
-                "position": 1,
                 "type": "binary",
                 "null": 0,
                 "key": "PRI",
@@ -950,7 +893,6 @@
                 "maxlength": 16
             },
             "id_group": {
-                "position": 2,
                 "type": "binary",
                 "null": 0,
                 "key": "MUL",
@@ -958,7 +900,6 @@
                 "maxlength": 16
             },
             "id_user": {
-                "position": 3,
                 "type": "binary",
                 "null": 0,
                 "key": "MUL",
