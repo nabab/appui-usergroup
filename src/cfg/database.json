@@ -50,6 +50,7 @@
                 "key": "MUL",
                 "signed": true,
                 "default": "NULL",
+                "defaultExpression": 1,
                 "maxlength": 16
             },
             "type": {
@@ -78,6 +79,7 @@
                 "key": "UNI",
                 "signed": true,
                 "default": "NULL",
+                "defaultExpression": 1,
                 "maxlength": 25
             },
             "cfg": {
@@ -143,6 +145,7 @@
                 "key": "UNI",
                 "signed": true,
                 "default": "NULL",
+                "defaultExpression": 1,
                 "maxlength": 100
             },
             "email": {
@@ -150,6 +153,7 @@
                 "null": 1,
                 "signed": true,
                 "default": "NULL",
+                "defaultExpression": 1,
                 "maxlength": 100
             },
             "username": {
@@ -163,6 +167,7 @@
                 "null": 1,
                 "signed": true,
                 "default": "NULL",
+                "defaultExpression": 1,
                 "maxlength": 10
             },
             "title": {
@@ -170,6 +175,7 @@
                 "null": 1,
                 "signed": true,
                 "default": "NULL",
+                "defaultExpression": 1,
                 "maxlength": 100
             },
             "theme": {
@@ -191,6 +197,7 @@
                 "null": 1,
                 "signed": true,
                 "default": "NULL",
+                "defaultExpression": 1,
                 "maxlength": 1000
             },
             "admin": {
@@ -405,6 +412,7 @@
                 "type": "int",
                 "null": 1,
                 "default": "NULL",
+                "defaultExpression": 1,
                 "maxlength": 5
             },
             "public": {
@@ -419,6 +427,7 @@
                 "key": "MUL",
                 "signed": true,
                 "default": "NULL",
+                "defaultExpression": 1,
                 "maxlength": 16
             },
             "id_group": {
@@ -427,6 +436,7 @@
                 "key": "MUL",
                 "signed": true,
                 "default": "NULL",
+                "defaultExpression": 1,
                 "maxlength": 16
             },
             "id_link": {
@@ -435,6 +445,7 @@
                 "key": "MUL",
                 "signed": true,
                 "default": "NULL",
+                "defaultExpression": 1,
                 "maxlength": 16
             },
             "id_alias": {
@@ -443,6 +454,7 @@
                 "key": "MUL",
                 "signed": true,
                 "default": "NULL",
+                "defaultExpression": 1,
                 "maxlength": 16
             },
             "text": {
@@ -450,6 +462,7 @@
                 "null": 1,
                 "signed": true,
                 "default": "NULL",
+                "defaultExpression": 1,
                 "maxlength": 255
             },
             "cfg": {
@@ -538,6 +551,7 @@
                 "key": "MUL",
                 "signed": true,
                 "default": "NULL",
+                "defaultExpression": 1,
                 "maxlength": 16
             },
             "id_option": {
@@ -546,12 +560,14 @@
                 "key": "MUL",
                 "signed": true,
                 "default": "NULL",
+                "defaultExpression": 1,
                 "maxlength": 16
             },
             "num": {
                 "type": "int",
                 "null": 1,
                 "default": "NULL",
+                "defaultExpression": 1,
                 "maxlength": 5
             },
             "text": {
@@ -667,6 +683,7 @@
                 "key": "MUL",
                 "signed": true,
                 "default": "NULL",
+                "defaultExpression": 1,
                 "maxlength": 16
             },
             "sess_id": {
@@ -791,6 +808,7 @@
                 "key": "MUL",
                 "signed": true,
                 "default": "NULL",
+                "defaultExpression": 1,
                 "maxlength": 16
             },
             "creation": {
