@@ -56,8 +56,7 @@
             "type": {
                 "type": "enum",
                 "null": 0,
-                "key": null,
-                "extra": "'real','api','old','internal'",
+                        "extra": "'real','api','old','internal'",
                 "signed": true,
                 "default": "real",
                 "values": [
@@ -86,7 +85,8 @@
                 "type": "json",
                 "null": 1,
                 "signed": true,
-                "default": "NULL"
+                "default": "NULL",
+                "defaultExpression": 1
             }
         }
     },
@@ -189,7 +189,8 @@
                 "type": "json",
                 "null": 1,
                 "signed": true,
-                "default": "NULL"
+                "default": "NULL",
+                "defaultExpression": 1
             },
             "enckey": {
                 "position": 10,
@@ -470,7 +471,8 @@
                 "type": "mediumtext",
                 "null": 1,
                 "signed": true,
-                "default": "NULL"
+                "default": "NULL",
+                "defaultExpression": 1
             }
         }
     },
@@ -580,7 +582,8 @@
                 "type": "mediumtext",
                 "null": 1,
                 "signed": true,
-                "default": "NULL"
+                "default": "NULL",
+                "defaultExpression": 1
             }
         }
     },
@@ -725,7 +728,8 @@
                 "type": "json",
                 "null": 1,
                 "signed": true,
-                "default": "NULL"
+                "default": "NULL",
+                "defaultExpression": 1
             }
         }
     },
@@ -824,7 +828,8 @@
                 "signed": true,
                 "virtual": true,
                 "generation": "from_unixtime(`creation`)",
-                "default": "NULL"
+                "default": "NULL",
+                "defaultExpression": 1
             },
             "last": {
                 "type": "decimal",
@@ -839,7 +844,8 @@
                 "signed": true,
                 "virtual": true,
                 "generation": "from_unixtime(`last`)",
-                "default": "NULL"
+                "default": "NULL",
+                "defaultExpression": 1
             }
         }
     },
