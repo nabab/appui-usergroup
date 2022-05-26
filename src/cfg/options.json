@@ -30,17 +30,17 @@
                 {
                   "text": "Application's users",
                   "code": "users",
-                  "limit":5,
-                  "observe":false,
-                  "closable":true,
-                  "itemComponent":"appui-usergroup-widget-users"
+                  "limit": 5,
+                  "observe": false,
+                  "closable": true,
+                  "itemComponent": "appui-usergroup-widget-users"
                 },
                 {
                   "text": "My last sessions",
                   "code": "sessions",
-                  "observe":false,
-                  "closable":true,
-                  "component":"appui-hr-widget-staff-absent"
+                  "observe": false,
+                  "closable": true,
+                  "component": "appui-usergroup-widget-sessions"
                 }
               ]
             }
