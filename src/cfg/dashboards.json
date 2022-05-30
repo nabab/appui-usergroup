@@ -1,0 +1,17 @@
+[
+  {
+    "text": "Plugins dashboard",
+    "code": "plugins",
+    "id_option": ["list", "dashboard", "appui"],
+    "items": [
+      {
+        "code": "users",
+        "id_option": ["users", "widgets", "appui-dashboard", "plugins", "usergroup", "appui"]
+      },
+      {
+        "code": "sessions",
+        "id_option": ["users", "widgets", "appui-dashboard", "plugins", "usergroup", "appui"]
+      }
+    ]
+  }
+]
