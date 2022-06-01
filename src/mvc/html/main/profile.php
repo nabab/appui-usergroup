@@ -17,17 +17,6 @@
                    ref="inputt">
         </bbn-input>
 
-        <bbn-portal v-if="$refs.inputt">
-          <bbn-floater mode="free"
-                       :auto-hide="true"
-                       ref="floater"
-                       :element="$refs.inputt.$el">
-            <h1 class="bbn-bg-blue bbn-white">
-              Hello {{data[source.schema.username]}}
-            </h1>
-          </bbn-floater>
-        </bbn-portal>
-
         <label>
           <?=_('eMail address')?>
         </label>
