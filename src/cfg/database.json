@@ -392,8 +392,7 @@
             "public": {
                 "type": "tinyint",
                 "null": 0,
-                "default": 0,
-                "defaultExpression": 1,
+                "default": "0",
                 "maxlength": 1
             },
             "id_user": {
