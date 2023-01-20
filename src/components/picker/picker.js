@@ -57,9 +57,23 @@
       scrollable: {
         type: Boolean,
         default: true
+      },
+      filterable: {
+        type: Boolean,
+        default: false
+      },
+      selectedPanel: {
+        type: Boolean,
+        default: false
+      }
+    },
+    data(){
+      return {
+        currentSearch: ''
       }
     },
     methods: {
+      getUserName: appui.app.getUserName,
       add(id, check){
         if ( !this.$refs.tree.checked.includes(id) ){
           this.$refs.tree.checked.push(id);
@@ -129,11 +143,39 @@
             this.$refs.tree.checked.splice(this.$refs.tree.checked.indexOf(v), 1);
           })
         }
+      },
+      clearSearch(){
+        if (this.currentSearch.length) {
+          this.currentSearch = '';
+        }
       }
     },
     watch: {
       value(){
         this.setChecked();
+      },
+      currentSearch(newVal){
+        return
+        let tree = this.getRef('tree');
+        if (bbn.fn.isVue(tree)) {
+          let idx = bbn.fn.search(tree.filters.conditions, 'field', 'text');
+          if (!!newVal && newVal.length) {
+            let obj = {
+              field: 'text',
+              operator: 'contains',
+              value: newVal
+            };
+            if (idx > -1) {
+              tree.filters.conditions.splice(idx, 1, obj);
+            }
+            else {
+              tree.filters.conditions.push(obj);
+            }
+          }
+          else if (idx > -1) {
+            tree.filters.conditions.splice(idx, 1);
+          }
+        }
       }
     }
   }
