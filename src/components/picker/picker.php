@@ -5,8 +5,8 @@
          v-text="_('Current selected')"/>
     <div class="bbn-radius bbn-flex"
          style="flex-wrap: wrap !important">
-      <span v-for="(v, i) in value"
-            :class="['bbn-vmiddle', 'bbn-right-spadded', 'bbn-radius', 'bbn-background', 'bbn-bottom-sspace', {'bbn-right-space': !!value[i+1]}]">
+      <span v-for="(v, i) in currentSelected"
+            :class="['bbn-vmiddle', 'bbn-right-spadded', 'bbn-radius', 'bbn-background', 'bbn-bottom-sspace', {'bbn-right-space': !!currentSelected[i+1]}]">
         <bbn-initial :user-name="getUserName(v)"
                       width="1.2rem"
                       height="1.2rem"

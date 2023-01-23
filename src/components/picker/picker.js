@@ -65,11 +65,24 @@
       selectedPanel: {
         type: Boolean,
         default: false
+      },
+      showOnlyNew: {
+        type: Boolean,
+        default: false
       }
     },
     data(){
       return {
-        currentSearch: ''
+        currentSearch: '',
+        originalValue: bbn.fn.extend(true, [], this.value)
+      }
+    },
+    computed: {
+      currentSelected(){
+        if (!this.showOnlyNew) {
+          return this.value;
+        }
+        return bbn.fn.filter(this.value, v => !this.originalValue.includes(v));
       }
     },
     methods: {
