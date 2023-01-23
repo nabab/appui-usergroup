@@ -121,7 +121,7 @@
           (!this.user.isDev || this.user.isAdmin) &&
           (!row[this.source.arch.dev] || this.user.isAdmin)
         ){
-          this.confirm(bbn._("Do you sure you want to delete this entry?"), () => {
+          this.confirm(bbn._("Are you sure you want to delete this user?"), () => {
             this.post(this.root + "actions/users/delete", {id: row[this.source.arch.id]}, (d) => {
               if ( d.success ){
                 let idx = bbn.fn.search(this.source.users, this.source.arch.id, row[this.source.arch.id]);
@@ -154,7 +154,7 @@
       },
       init(row){
         if ( row.id ){
-          this.confirm(bbn._("Do you sure you want to re-initialize this user's password?"), () => {
+          this.confirm(bbn._("Are you sure you want to re-initialize this user's password?"), () => {
             this.post(appui.plugins['appui-usergroup'] + '/actions/users/init', {
               [this.source.arch['id']]: row[this.source.arch['id']]
             }, d => {
