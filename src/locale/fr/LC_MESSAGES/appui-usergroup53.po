@@ -7,10 +7,10 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-02-10 15:14+0100\n"
-"POT-Revision-Date: 2023-02-10 15:14+0100\n"
+"POT-Creation-Date: 2023-02-10 18:46+0100\n"
+"POT-Revision-Date: 2023-02-10 18:46+0100\n"
 "Language: fr\n"
-"X-Domain: appui-usergroup52\n"
+"X-Domain: appui-usergroup53\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-usergroup/src/cli/clean_sessions.php
