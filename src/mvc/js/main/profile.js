@@ -43,10 +43,8 @@
             return;
           }
 
-          const st = '.less,01-basic.less,02-background.less';
-          bbn.fn.log("DIRTY HANDLER", this.theme, this.source.schema.theme, this.$refs.form.source[this.source.schema.theme]);
+          const st = '.less,nerd-fonts.css,01-basic.less,02-background.less';
           if ( this.theme !== this.$refs.form.source[this.source.schema.theme] ){
-            bbn.fn.log("YEAD");
             let lnks = document.head.getElementsByTagName('link');
             let url = false;
             bbn.fn.each(lnks, a => {
@@ -55,7 +53,6 @@
                 && a.href
                 && a.href.match(this.theme + st)
               ){
-                bbn.fn.log("CSS FOUND");
                 a.href = bbn.fn.replaceAll(
                   this.theme + st,
                   this.$refs.form.source[this.source.schema.theme] + st,
