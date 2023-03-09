@@ -1,6 +1,7 @@
 <div class="bbn-overlay appui-usergroup-permissions bbn-padded">
-  <bbn-tree :source="opt_root + '/permissions'"
+  <bbn-tree :source="opt_root + '/permissions/tree'"
             uid="id"
+            :data="{id: source.id_group, mode: source.mode || 'access'}"
             :root="source.perm_root"
             :map="treeMapper"
             ref="permsList"

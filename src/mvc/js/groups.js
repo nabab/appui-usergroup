@@ -34,13 +34,19 @@
           action: 'delete',
           icon: 'nf nf-fa-trash',
           disabled: !!(row.num || (this.source.is_dev && !this.source.is_admin))
-        }, {
-          text: bbn._('Permissions'),
+        /*}, {
+          text: bbn._('Set up access permissions'),
           notext: true,
-          action: this.permissions,
+          action: this.openPermissions,
           icon: 'nf nf-fa-key',
           disabled: !!(this.source.is_dev && !this.source.is_admin)
         }, {
+          text: bbn._('Set up options permissions'),
+          notext: true,
+          action: this.openOptions,
+          icon: 'nf nf-fa-cogs',
+          disabled: !!(this.source.is_dev && !this.source.is_admin)
+        */}, {
           text: bbn._('Duplicate'),
           notext: true,
           action: this.duplicate,
@@ -48,7 +54,7 @@
           disabled: !!(this.source.is_dev && !this.source.is_admin)
         }];
       },
-      permissions(row){
+      openPermissions(row){
         if ( this.source.perm_root && row.id ){
           this.getPopup().open({
             title: bbn._('Permissions'),
@@ -59,7 +65,25 @@
               root: this.source.root,
               perm_root: this.source.perm_root,
               opt_url: this.source.opt_url,
-              id_group: row.id
+              id_group: row.id,
+              mode: 'access'
+            }
+          });
+        }
+      },
+      openOptions(row){
+        if ( this.source.perm_root && row.id ){
+          this.getPopup().open({
+            title: bbn._('Permissions'),
+            height: '90%',
+            width: 500,
+            component: 'appui-usergroup-permissions',
+            source: {
+              root: this.source.root,
+              perm_root: this.source.perm_root,
+              opt_url: this.source.opt_url,
+              id_group: row.id,
+              mode: 'options'
             }
           });
         }
