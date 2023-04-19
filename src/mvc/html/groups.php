@@ -11,11 +11,11 @@
              text: '<?=_('New group')?>',
              icon: 'nf nf-fa-plus',
              action: 'insert',
-             disabled: !!(source.is_dev && !source.is_admin)
+             disabled: !source.permissions.insert
            }]"
            :tr-class="trClass"
            :url="source.root + 'actions/groups'"
-           :order="[{field: 'group', dir: 'ASC'}]"
+           :order="[{field: source.arch.groups.group, dir: 'ASC'}]"
 >
   <bbns-column title="<?=_('ID')?>"
                :field="source.arch.groups.id"

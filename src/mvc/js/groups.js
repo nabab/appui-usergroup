@@ -27,73 +27,52 @@
           notext: true,
           action: 'edit',
           icon: 'nf nf-fa-edit',
-          disabled: !!(this.source.is_dev && !this.source.is_admin)
+          disabled: !this.source.permissions.update
         }, {
           text: bbn._('Delete'),
           notext: true,
           action: 'delete',
           icon: 'nf nf-fa-trash',
-          disabled: !!(row.num || (this.source.is_dev && !this.source.is_admin))
-        /*}, {
-          text: bbn._('Set up access permissions'),
+          disabled: !!(row.num || !this.source.permissions.delete)
+        }, {
+          text: bbn._('Permissions'),
           notext: true,
           action: this.openPermissions,
           icon: 'nf nf-fa-key',
-          disabled: !!(this.source.is_dev && !this.source.is_admin)
+          disabled: !this.source.permissions.permissions
         }, {
-          text: bbn._('Set up options permissions'),
-          notext: true,
-          action: this.openOptions,
-          icon: 'nf nf-fa-cogs',
-          disabled: !!(this.source.is_dev && !this.source.is_admin)
-        */}, {
           text: bbn._('Duplicate'),
           notext: true,
           action: this.duplicate,
           icon: 'nf nf-fa-copy',
-          disabled: !!(this.source.is_dev && !this.source.is_admin)
+          disabled: !this.source.permissions.insert
         }];
       },
       openPermissions(row){
         if ( this.source.perm_root && row.id ){
           this.getPopup().open({
-            title: bbn._('Permissions'),
+            title: row[this.source.arch.groups.group] + ' - ' + bbn._('Permissions'),
             height: '90%',
             width: 500,
             component: 'appui-usergroup-permissions',
             source: {
-              root: this.source.root,
               perm_root: this.source.perm_root,
-              opt_url: this.source.opt_url,
               id_group: row.id,
-              mode: 'access'
-            }
-          });
-        }
-      },
-      openOptions(row){
-        if ( this.source.perm_root && row.id ){
-          this.getPopup().open({
-            title: bbn._('Permissions'),
-            height: '90%',
-            width: 500,
-            component: 'appui-usergroup-permissions',
-            source: {
-              root: this.source.root,
-              perm_root: this.source.perm_root,
-              opt_url: this.source.opt_url,
-              id_group: row.id,
-              mode: 'options'
+              sources: this.source.permissionsSources,
+              rootAccess: this.source.permissionsAccess,
+              rootOptions: this.source.permissionsOptions
             }
           });
         }
       },
       duplicate(row){
-        let newRow = bbn.fn.extend({}, row);
-        newRow[this.source.arch.groups.id] = '';
-        newRow.num = '';
-        newRow.source_id = row[this.source.arch.groups.id];
-        this.$refs.table.insert(newRow);
+        if (!!this.source.permissions.insert) {
+          let newRow = bbn.fn.extend({}, row);
+          newRow[this.source.arch.groups.id] = '';
+          newRow.num = '';
+          newRow.source_id = row[this.source.arch.groups.id];
+          this.$refs.table.insert(newRow);
+        }
       }
     },
     mounted(){

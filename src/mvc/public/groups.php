@@ -32,6 +32,9 @@ foreach ($groups as $i => $g) {
     ]);
   }
 }
+$pluginUrl = $ctrl->pluginUrl('appui-usergroup');
+$insertPerm = $ctrl->inc->perm->has($ctrl->inc->perm->fromPath($pluginUrl . '/actions/groups/insert'));
+$updatePerm = $ctrl->inc->perm->has($ctrl->inc->perm->fromPath($pluginUrl . '/actions/groups/update'));
 $ctrl->combo(_("User Groups"), [
   'root' => APPUI_USERGROUP_ROOT,
   'groups' => $groups,
@@ -39,6 +42,15 @@ $ctrl->combo(_("User Groups"), [
   'is_dev' => $ctrl->inc->user->isDev(),
   'is_admin' => $ctrl->inc->user->isAdmin(),
   'perm_root' => $ctrl->inc->perm->getOptionRoot(),
+  'permissions' => [
+    'insert' => $insertPerm,
+    'update' => $updatePerm,
+    'delete' => $ctrl->inc->perm->has($ctrl->inc->perm->fromPath($pluginUrl . '/actions/groups/delete')),
+    'permissions' => !empty($insertPerm) || !empty($updatePerm)
+  ],
+  'permissionsSources' => $ctrl->inc->perm->getSources(false),
+  'permissionsAccess' => $ctrl->inc->options->fromCode('access', 'permissions', 'appui'),
+  'permissionsOptions' => $ctrl->inc->options->fromCode('options', 'permissions', 'appui'),
   'opt_url' => $ctrl->pluginUrl('appui-option'),
   'menus' => !empty($hasMenu) ? $ctrl->db->selectAll($prefCfg['table'], [
     'text' => $prefCfg['arch']['user_options']['text'],
