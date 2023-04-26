@@ -35,6 +35,9 @@ if ( !empty($arch) ){
       $activity = new DateTime($user['last_activity']);
     }
   }
+  $pluginUrl = $ctrl->pluginUrl('appui-usergroup');
+  $insertPerm = $ctrl->inc->perm->has($ctrl->inc->perm->fromPath($pluginUrl . '/actions/users/insert'));
+  $updatePerm = $ctrl->inc->perm->has($ctrl->inc->perm->fromPath($pluginUrl . '/actions/users/update'));
   $ctrl
     ->setIcon('nf nf-fa-user')
     ->setUrl(APPUI_USERGROUP_ROOT.'users')
@@ -50,6 +53,16 @@ if ( !empty($arch) ){
       'arch' => $arch,
       'arch_group' => $archGroups,
       'list' => $mgr->getListFields(),
-      'perm_root' => $ctrl->inc->perm->getOptionRoot()
+      'perm_root' => $ctrl->inc->perm->getOptionRoot(),
+      'permissionsSources' => $ctrl->inc->perm->getSources(false),
+      'permissionsAccess' => $ctrl->inc->options->fromCode('access', 'permissions', 'appui'),
+      'permissionsOptions' => $ctrl->inc->options->fromCode('options', 'permissions', 'appui'),
+      'permissions' => [
+        'insert' => $insertPerm,
+        'update' => $updatePerm,
+        'delete' => $ctrl->inc->perm->has($ctrl->inc->perm->fromPath($pluginUrl . '/actions/users/delete')),
+        'init' => $ctrl->inc->perm->has($ctrl->inc->perm->fromPath($pluginUrl . '/actions/users/init')),
+        'permissions' => !empty($insertPerm) || !empty($updatePerm)
+      ]
     ]);
 }

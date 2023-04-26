@@ -14,54 +14,46 @@
              value: 1
            }]"
            :tr-class="trClass"
-           :showable="true"
->
+           :showable="true">
   <bbns-column title="<?=_("ID")?>"
                :field="source.arch.id"
                :hidden="true"
                :editable="false"
                :width="40"
-               :filterable="false"
-  ></bbns-column>
+               :filterable="false"/>
   <bbns-column title="<i class='nf nf-fa-user bbn-large'></i>"
                ftitle="<?=_("Name")?>"
                :field="source.arch.username"
                :width="250"
                :fixed="true"
-               :render="renderUsername"
-  ></bbns-column>
+               :render="renderUsername"/>
   <bbns-column title="<i class='nf nf-fa-link bbn-large'></i>"
                ftitle="<?=_("Session")?>"
                :source="connection"
                field="session"
                :render="renderSession"
                :width="120"
-               cls="bbn-c"
-  ></bbns-column>
+               cls="bbn-c"/>
   <bbns-column title="<i class='nf nf-fa-users bbn-large'></i>"
                ftitle="<?=_("Group")?>"
                :field="source.arch.id_group"
                :source="source.groups"
-               :width="200"
-  ></bbns-column>
+               :width="200"/>
   <bbns-column title="<i class='nf nf-fa-cogs bbn-large'></i>"
                ftitle="<?=_("Function")?>"
                :field="source.arch.fonction"
                :render="renderFonction"
-               :width="200"
-  ></bbns-column>
+               :width="200"/>
   <bbns-column title="<i class='nf nf-fa-sign_in bbn-large'></i>"
                ftitle="<?=_("Login")?>"
                :field="source.arch.login"
                :width="250"
-               v-if="source.arch.login !== source.arch.email"
-  ></bbns-column>
+               v-if="source.arch.login !== source.arch.email"/>
   <bbns-column title="<i class='nf nf-fa-at bbn-large'></i>"
                ftitle="<?=_("eMail")?>"
                :field="source.arch.email"
                type="email"
-               :width="250"
-  ></bbns-column>
+               :width="250"/>
   <bbns-column title="<i class='nf nf-fa-calendar bbn-xl'></i>"
                ftitle="<?=_("Last activity of the user")?>"
                field="last_activity"
@@ -70,31 +62,26 @@
                :width="130"
                type="datetime"
                cls="bbn-c"
-               :render="renderLastActivity"
-  ></bbns-column>
+               :render="renderLastActivity"/>
   <bbns-column title="<i class='nf nf-fa-phone bbn-large'></i>"
                ftitle="<?=_("Phone")?>"
                :field="source.arch.phone"
                :width="120"
-               :render="renderTel"
-  ></bbns-column>
+               :render="renderTel"/>
   <bbns-column title="<i class='nf nf-fae-palette_color bbn-large'></i>"
                ftitle="<?=_("Theme")?>"
                :field="source.arch.theme"
                default="default"
                :width="120"
-               :source="themes"
-  ></bbns-column>
+               :source="themes"/>
   <bbns-column title="<?=_("Developer")?>"
                :field="source.arch.dev"
                :hidden="true"
-               type="boolean"
-  ></bbns-column>
+               type="boolean"/>
   <bbns-column title="<?=_("Administrator")?>"
                :field="source.arch.admin"
                :hidden="true"
-               type="boolean"
-  ></bbns-column>
+               type="boolean"/>
   <bbns-column title="<?=_("Active")?>"
                :field="source.arch.active"
                type="boolean"
@@ -102,16 +89,14 @@
                :hidden="true"
                :showable="false"
                :filterable="false"
-               :width="80"
-  ></bbns-column>
+               :width="80"/>
   <bbns-column ftitle="<?=_("Actions")?>"
                :editable="false"
                :sortable="false"
                :width="180"
                :buttons="getButtons"
                fixed="right"
-               cls="bbn-c"
-  ></bbns-column>
+               cls="bbn-c"/>
 </bbn-table>
 
 <script type="text/x-template" id="appui-usergroup-user-edit-form">

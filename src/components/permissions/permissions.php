@@ -1,14 +1,26 @@
-<div class="bbn-overlay appui-usergroup-permissions bbn-padded">
-  <bbn-tree :source="opt_root + '/permissions/tree'"
-            uid="id"
-            :data="{id: source.id_group, mode: source.mode || 'access'}"
-            :root="source.perm_root"
-            :map="treeMapper"
-            ref="permsList"
-            class="appui-usergroup-permissions-list"
-            :selection="true"
-            @check="setPerm"
-            @uncheck="unsetPerm"
-            @beforeLoad="getPerms"
-  ></bbn-tree>
+<div class="bbn-overlay appui-usergroup-permissions bbn-flex-height bbn-padded">
+  <div v-if="!source.mode"
+       class="bbn-vmiddle bbn-bottom-space bbn-flex-width">
+    <bbn-dropdown :source="source.sources"
+                  source-text="text"
+                  :source-value="mode === 'access' ? 'rootAccess' : 'rootOptions'"
+                  v-model="currentSource"
+                  class="bbn-flex-fill bbn-right-space"/>
+    <bbn-dropdown :source="modes"
+                  class="bbn-narrow"
+                  v-model="mode"/>
+  </div>
+  <div class="bbn-flex-fill">
+    <bbn-tree :source="opt_root + '/permissions/tree'"
+              uid="id"
+              :data="{mode: mode}"
+              :root="currentSource"
+              :map="treeMapper"
+              ref="permsList"
+              class="appui-usergroup-permissions-list"
+              :selection="true"
+              @check="setPerm"
+              @uncheck="unsetPerm"
+              @beforeload="getPerms"/>
+  </div>
 </div>

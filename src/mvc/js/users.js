@@ -71,34 +71,34 @@
           notext: true,
           action: this.edit,
           icon: 'nf nf-fa-edit',
-          disabled: !!(((row[this.source.arch.admin] || row[this.source.arch.dev]) && !this.user.isAdmin) || (this.user.isDev && !this.user.isAdmin))
+          disabled: !this.source.permissions.update
         }, {
           text: bbn._('Delete'),
           notext: true,
           action: this.remove,
           icon: 'nf nf-fa-trash',
-          disabled: !!(row[this.source.arch.admin] || (row[this.source.arch.dev] && !this.user.isAdmin) || (this.user.isDev && !this.user.isAdmin))
+          disabled: !this.source.permissions.delete
         }];
-        /* if ( this.source.perm_root ){
+        if ( this.source.perm_root ){
           btn.push({
             text: bbn._('Permissions'),
             notext: true,
             action: this.permissions,
             icon: 'nf nf-fa-key',
-            disabled: !!((this.user.isDev && !this.user.isAdmin) || row[this.source.arch.admin])
+            disabled: !this.source.permissions.permissions
           });
-        } */
+        }
         btn.push({
           text: bbn._('Re-initialize'),
           notext: true,
           action: this.init,
           icon: 'nf nf-fa-envelope',
-          disabled: !!((this.user.isDev && !this.user.isAdmin) || row[this.source.arch.admin])
+          disabled: !this.source.permissions.init
         });
         return btn;
       },
       insert(){
-        if ( !this.user.isDev || this.user.isAdmin ){
+        if (!!this.source.permissions.insert) {
           this.$refs.table.insert({}, {
             title: bbn._("New user"),
             width: 450,
@@ -107,7 +107,9 @@
         }
       },
       edit(row){
-        if ( (!this.user.isDev || this.user.isAdmin) && (!row[this.source.arch.dev] || this.user.isAdmin) ){
+        if (!!this.source.permissions.update
+          && (!row[this.source.arch.dev] || this.user.isAdmin)
+        ) {
           this.$refs.table.edit(row, {
             title: bbn._("User edit"),
             width: 450,
@@ -116,10 +118,10 @@
         }
       },
       remove(row){
-        if ( row[this.source.arch.id] &&
-          !row[this.source.arch.admin] &&
-          (!this.user.isDev || this.user.isAdmin) &&
-          (!row[this.source.arch.dev] || this.user.isAdmin)
+        if (row[this.source.arch.id]
+          && !row[this.source.arch.admin]
+          && (!row[this.source.arch.dev] || this.user.isAdmin)
+          && !!this.source.permissions.delete
         ){
           this.confirm(bbn._("Are you sure you want to delete this user?"), () => {
             this.post(this.root + "actions/users/delete", {id: row[this.source.arch.id]}, (d) => {
@@ -141,19 +143,22 @@
       permissions(row){
         if ( this.source.perm_root && row.id ){
           this.getPopup().open({
-            title: bbn._('Permissions'),
+            title: row[this.source.arch.username] + ' - ' + bbn._('Permissions'),
             height: '90%',
             width: 500,
             component: 'appui-usergroup-permissions',
             source: {
               perm_root: this.source.perm_root,
-              id_user: row.id
+              id_user: row.id,
+              sources: this.source.permissionsSources,
+              rootAccess: this.source.permissionsAccess,
+              rootOptions: this.source.permissionsOptions
             }
           });
         }
       },
       init(row){
-        if ( row.id ){
+        if (row.id && !!this.source.permissions.init) {
           this.confirm(bbn._("Are you sure you want to re-initialize this user's password?"), () => {
             this.post(appui.plugins['appui-usergroup'] + '/actions/users/init', {
               [this.source.arch['id']]: row[this.source.arch['id']]
@@ -237,7 +242,7 @@
         computed: {
           isDisabled() {
             if (this.cp) {
-              return !!(this.cp.user.isDev && !this.cp.user.isAdmin)
+              return !this.cp.source.permissions.insert
             }
             return true;
           }
