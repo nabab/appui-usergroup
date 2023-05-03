@@ -59,6 +59,7 @@
                   a.href
                 );
                 this.theme = this.$refs.form.source[this.source.schema.theme];
+                appui.theme = this.theme;
                 return false;
               }
             })
