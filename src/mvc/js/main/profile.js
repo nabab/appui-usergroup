@@ -27,7 +27,7 @@
       return {
         theme: this.source.data[this.source.schema.theme],
         data: this.source.data,
-        themes: appui.themes,
+        themes: this.source.themes,
         originalLanguage: this.source.schema && this.source.schema.language ? this.source.schema.language : 'en',
         ready: false
       }

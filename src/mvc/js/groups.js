@@ -22,6 +22,7 @@
         return 'valignm';
       },
       getButtons(row){
+        const table = this;
         return [{
           text: bbn._('Edit'),
           notext: true,
@@ -37,13 +38,13 @@
         }, {
           text: bbn._('Permissions'),
           notext: true,
-          action: this.openPermissions,
+          action: row => table.openPermissions(row),
           icon: 'nf nf-fa-key',
           disabled: !this.source.permissions.permissions
         }, {
           text: bbn._('Duplicate'),
           notext: true,
-          action: this.duplicate,
+          action: row => table.duplicate(row),
           icon: 'nf nf-fa-copy',
           disabled: !this.source.permissions.insert
         }];
@@ -102,7 +103,8 @@
                             :source="groups.source.menus"/>
             </div> 
           </bbn-form>`,
-        props: {
+          mixins: [bbn.cp.mixins.basic],
+          props: {
           source: {
             type: Object
           }
@@ -130,6 +132,7 @@
       },
       'appui-usergroup-group-edit-form': {
         template: '#appui-usergroup-group-edit-form',
+        mixins: [bbn.cp.mixins.basic],
         props: ['source'],
         methods:{
           success(d, e){

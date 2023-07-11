@@ -24,6 +24,7 @@
         currentSource: this.source.rootAccess
       }
     },
+    mixins: [bbn.cp.mixins.basic],
     computed: {
       idType(){
         return 'id_' + (this.source.id_user !== undefined ? 'user' : 'group');

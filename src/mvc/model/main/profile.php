@@ -6,9 +6,11 @@
 
 /** @var $model \bbn\Mvc\Model*/
 
+$idTheme = $model->inc->options->fromCode('themes', 'core', 'appui');
 $data = [
   'data' => $model->inc->user->getSession(),
   'root' => APPUI_USERGROUP_ROOT,
+  'themes' => $model->inc->options->textValueOptions($idTheme),
   'schema' => $model->inc->user->getClassCfg()['arch']['users']
 ];
 if (defined('BBN_PROJECT')) {

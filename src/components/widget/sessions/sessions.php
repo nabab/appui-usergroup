@@ -1,5 +1,5 @@
 <div class="bbn-w-100 bbn-hpadded bbn-top-padded">
-  <div class="bbn-rel bbn-w-100">
+  <div class="bbn-rel bbn-w-100" v-if="source && source.opened">
     <div class="bbn-w-100 bbn-header bbn-b bbn-spadded bbn-no-border-bottom"><?=_('OPENED')?></div>
     <bbn-table class="bbn-w-100"
                 :source="source.opened"

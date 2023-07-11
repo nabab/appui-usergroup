@@ -27,6 +27,7 @@
         <bbn-dropdown v-if="source.schema.theme !== undefined"
                       class="bbn-medium"
                       :source="themes"
+                      source-value="code"
                       v-model="data[source.schema.theme]"/>
 
         <label v-if="source.languages && source.languages.length > 1">
