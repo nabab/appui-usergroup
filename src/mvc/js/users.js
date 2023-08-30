@@ -5,7 +5,6 @@
       return {
         root: appui.plugins['appui-usergroup'] + '/',
         user: appui.app.user,
-        themes: appui.themes,
         connection:[{
           text: bbn._('Connected'),
           value: true
@@ -13,6 +12,11 @@
           text: bbn._('Disconnected'),
           value: false
         }]
+      }
+    },
+    computed: {
+      themes() {
+        return this.source.themes;
       }
     },
     methods: {
