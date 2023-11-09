@@ -41,7 +41,7 @@
       }
     },
     mounted() {
-      bbn.fn.log(["USER APP-UI", this.source, data]);
+      //bbn.fn.log(["USER APP-UI", this.source, data]);
     },
     watch: {
     }
