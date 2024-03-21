@@ -11,7 +11,7 @@
     >
       <div class="">
         <div class="bbn-grid-fields bbn-padded bbn-c">
-          <label><?=_('Current password')?></label>
+          <label><?= _('Current password') ?></label>
           <div>
             <bbn-input maxlength="35"
                        type="password"
@@ -19,7 +19,7 @@
             ></bbn-input>
           </div>
 
-          <label><?=_('New password')?></label>
+          <label><?= _('New password') ?></label>
           <div>
             <bbn-input v-model="data.pass1"
                        maxlength="35"
@@ -27,7 +27,7 @@
             ></bbn-input>
           </div>
 
-          <label><?=_('Confirm password')?></label>
+          <label><?= _('Confirm password') ?></label>
           <div>
             <bbn-input v-model="data.pass2"
                        maxlength="35"

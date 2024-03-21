@@ -3,16 +3,16 @@
             :autoload="false"
             :nav="true">
   <bbns-container url="profile"
-           title="<?=_("Informations")?>"
+           title="<?= _("Informations") ?>"
            :static="true"
            :load="true"/>
   <bbns-container url="password"
-           title="<?=_("Password")?>"
+           title="<?= _("Password") ?>"
            :static="true"
            :load="true"/>
   <bbns-container v-if="hasNotifications"
                   url="notifications"
-                  title="<?=_("Notifications")?>"
+                  title="<?= _("Notifications") ?>"
                   :static="true"
                   :load="true"
                   component="appui-notification-settings"/>
