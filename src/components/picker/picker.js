@@ -11,11 +11,11 @@
         type: Array,
         default(){
           let def = [];
-          if ( appui.app.groups && appui.app.users ){
-            appui.app.groups.forEach(group => {
-              let users = appui.app.users.filter(u => {
+          if ( appui.groups && appui.users ){
+            appui.groups.forEach(group => {
+              let users = appui.users.filter(u => {
                 if ( this.$options.propsData.selfExcluded ){
-                  return ((u.id_group === group.id) && (u.value !== appui.app.user.id));
+                  return ((u.id_group === group.id) && (u.value !== appui.user.id));
                 }
                 return u.id_group === group.id;
               });
@@ -86,7 +86,7 @@
       }
     },
     methods: {
-      getUserName: appui.app.getUserName,
+      getUserName: appui.getUserName,
       add(id, check){
         if ( !this.$refs.tree.checked.includes(id) ){
           this.$refs.tree.checked.push(id);

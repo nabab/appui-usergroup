@@ -4,7 +4,7 @@
     data(){
       return {
         root: appui.plugins['appui-usergroup'] + '/',
-        user: appui.app.user,
+        user: appui.user,
         connection:[{
           text: bbn._('Connected'),
           value: true
