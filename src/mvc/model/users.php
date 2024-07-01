@@ -52,10 +52,10 @@ if ($usr->check() && !empty($arch)) {
     'arch' => $arch,
     'arch_group' => $archGroups,
     'list' => $mgr->getListFields(),
-    'perm_root' => $model->inc->perm->getOptionRoot(),
+    'perm_root' => $model->inc->options->fromCode('permissions'),
     'permissionsSources' => $model->inc->perm->getSources(false),
-    'permissionsAccess' => $model->inc->options->fromCode('access', 'permissions', 'appui'),
-    'permissionsOptions' => $model->inc->options->fromCode('options', 'permissions', 'appui'),
+    'permissionsAccess' => $model->inc->options->fromCode('access', 'permissions'),
+    'permissionsOptions' => $model->inc->options->fromCode('options', 'permissions'),
     'permissions' => [
       'insert' => $insertPerm,
       'update' => $updatePerm,
