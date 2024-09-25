@@ -67,7 +67,8 @@
                ftitle="<?= _("Phone") ?>"
                :field="source.arch.phone"
                :width="120"
-               :render="renderTel"/>
+               :render="renderTel"
+               type="tel"/>
   <bbns-column title="<i class='nf nf-fae-palette_color bbn-large'></i>"
                ftitle="<?= _("Theme") ?>"
                :field="source.arch.theme"
@@ -99,63 +100,55 @@
                cls="bbn-c"/>
 </bbn-table>
 
-<script type="text/x-template" id="appui-usergroup-user-edit-form">
+<script type="text/x-template"
+        id="appui-usergroup-user-edit-form">
   <bbn-form :action="cp.root + 'actions/users/' + (source.row[cp.source.arch.id] ? 'update' : 'insert')"
             :source="source.row"
             @success="success"
-            ref="form"
-  >
+            ref="form">
     <div class="bbn-padded bbn-grid-fields">
 
       <label><?= _('Name') ?></label>
-      <bbn-input v-model="source.row[cp.source.arch.username]"
-                 required="required"
-      ></bbn-input>
+      <bbn-input bbn-model="source.row[cp.source.arch.username]"
+                 required="required"/>
 
       <label><?= _('Group') ?></label>
       <bbn-dropdown :source="cp.source.groups"
-                    v-model="source.row[cp.source.arch.id_group]"
-      ></bbn-dropdown>
-      <label><?= _('Function') ?></label>
-      <bbn-input v-model="source.row[cp.source.arch.fonction]"></bbn-input>
+                    bbn-model="source.row[cp.source.arch.id_group]"/>
 
-      <label v-if="cp.source.arch.login !== cp.source.arch.email"><?= _('Login') ?></label>
-      <bbn-input v-model="source.row[cp.source.arch.login]"
-                 required="required"
-                 v-if="cp.source.arch.login !== cp.source.arch.email"
-      ></bbn-input>
+      <label><?= _('Function') ?></label>
+      <bbn-input bbn-model="source.row[cp.source.arch.fonction]"/>
+
+      <label bbn-if="cp.source.arch.login !== cp.source.arch.email"><?= _('Login') ?></label>
+      <bbn-input bbn-if="cp.source.arch.login !== cp.source.arch.email"
+                 bbn-model="source.row[cp.source.arch.login]"
+                 required="required"/>
 
       <label><?= _('eMail') ?></label>
-      <bbn-input v-model="source.row[cp.source.arch.email]"
+      <bbn-input bbn-model="source.row[cp.source.arch.email]"
                  type="email"
-                 :required="isGroupReal"
-      ></bbn-input>
+                 :required="isGroupReal"/>
 
       <label><?= _('Phone') ?></label>
-      <bbn-input v-model="source.row[cp.source.arch.phone]"
-                 maxlength="10"
-      ></bbn-input>
+      <bbn-phone bbn-model="source.row[cp.source.arch.phone]"/>
 
       <label><?= _('Theme') ?></label>
       <bbn-dropdown :source="cp.themes"
-                    v-model="source.row[cp.source.arch.theme]"
-                    required="required"
-      ></bbn-dropdown>
+                    bbn-model="source.row[cp.source.arch.theme]"
+                    required="required"/>
 
-      <label v-if="cp.user.isAdmin"><?= _('Developer') ?></label>
-      <bbn-checkbox v-if="cp.user.isAdmin"
+      <label bbn-if="cp.user.isAdmin"><?= _('Developer') ?></label>
+      <bbn-checkbox bbn-if="cp.user.isAdmin"
                     :novalue="0"
                     :value="1"
-                    v-model="source.row[cp.source.arch.dev]"
-      ></bbn-checkbox>
+                    bbn-model="source.row[cp.source.arch.dev]"/>
 
-      <label v-if="cp.user.isAdmin"><?= _('Administrator') ?></label>
-      <bbn-checkbox v-if="cp.user.isAdmin"
+      <label bbn-if="cp.user.isAdmin"><?= _('Administrator') ?></label>
+      <bbn-checkbox bbn-if="cp.user.isAdmin"
                     :novalue="0"
                     :value="1"
-                    v-model="source.row[cp.source.arch.admin]"
-                    :disabled="adminDisabled"
-      ></bbn-checkbox>
+                    bbn-model="source.row[cp.source.arch.admin]"
+                    :disabled="adminDisabled"/>
     </div>
   </bbn-form>
 </script>
