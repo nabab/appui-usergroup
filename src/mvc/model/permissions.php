@@ -11,6 +11,7 @@ if ( !empty($model->data['id_user']) ){
 else if ( !empty($model->data['id_group']) ){
   $id_group = $model->data['id_group'];
 }
+
 if ( $id_user || $id_group ){
   $perm = $model->inc->perm;
   $manager = $model->inc->user->getManager();
