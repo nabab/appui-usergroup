@@ -4,7 +4,7 @@
  *
  **/
 
-/** @var $ctrl \bbn\Mvc\Controller */
+/** @var bbn\Mvc\Controller $ctrl */
 $ctrl->addData([
   'schema' => $ctrl->inc->user->getClassCfg()['arch']['passwords']
 ]);

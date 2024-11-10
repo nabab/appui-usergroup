@@ -4,7 +4,7 @@
  *
  **/
 
-/** @var $model \bbn\Mvc\Model*/
+/** @var bbn\Mvc\Model $model */
 
 $idTheme = $model->inc->options->fromCode('themes', 'core', 'appui');
 $data = [

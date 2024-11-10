@@ -9,7 +9,7 @@ use bbn\Str;
 use bbn\Cache;
 use bbn\File\System;
 
-/** @var $model \bbn\Mvc\Model*/
+/** @var bbn\Mvc\Model $model */
 
 
 if ($model->hasData('launch')) {

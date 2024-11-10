@@ -3,7 +3,7 @@
  * Removes old sessions
  *
  **/
-/** @var $ctrl \bbn\Mvc\Controller */
+/** @var bbn\Mvc\Controller $ctrl */
 
 $cfg = $ctrl->inc->user->getClassCfg();
 $t   = &$cfg['tables']['sessions'];

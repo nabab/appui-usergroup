@@ -7,7 +7,7 @@ use bbn\X;
  /** @var int $delay 15 days */
 $delay = 15*3600*24;
 
-/** @var $ctrl \bbn\Mvc\Controller */
+/** @var bbn\Mvc\Controller $ctrl */
 echo (int)$ctrl->db->delete('bbn_users_sessions', [
   'id_user' => null,
   [['last_activity', '<', date('Y-m-d H:i:s', time() - $delay)]]
