@@ -106,7 +106,7 @@
             :source="source.row"
             @success="success"
             ref="form">
-    <div class="bbn-padded bbn-grid-fields">
+    <div class="bbn-padding bbn-grid-fields">
 
       <label><?= _('Name') ?></label>
       <bbn-input bbn-model="source.row[cp.source.arch.username]"

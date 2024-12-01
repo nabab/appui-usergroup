@@ -10,7 +10,7 @@
               :scrollable="false"
     >
       <div class="">
-        <div class="bbn-grid-fields bbn-padded bbn-c">
+        <div class="bbn-grid-fields bbn-padding bbn-c">
           <label><?= _('Current password') ?></label>
           <div>
             <bbn-input maxlength="35"

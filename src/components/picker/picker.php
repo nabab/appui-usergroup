@@ -1,12 +1,12 @@
 <div :class="['appui-usergroup-picker', 'bbn-w-100', {'bbn-flex-height': scrollable}]">
   <div v-if="selectedPanel"
-       class="bbn-hspadded bbn-top-spadded bbn-alt-background bbn-radius bbn-bottom-sspace">
+       class="bbn-hspadding bbn-top-spadding bbn-alt-background bbn-radius bbn-bottom-sspace">
     <div class="bbn-radius bbn-background bbn-s bbn-upper bbn-c bbn-secondary-text-alt bbn-b bbn-bottom-sspace"
          v-text="_('Current selected')"/>
     <div class="bbn-radius bbn-flex"
          style="flex-wrap: wrap !important">
       <span v-for="(v, i) in currentSelected"
-            :class="['bbn-vmiddle', 'bbn-right-spadded', 'bbn-radius', 'bbn-background', 'bbn-bottom-sspace', {'bbn-right-space': !!currentSelected[i+1]}]">
+            :class="['bbn-vmiddle', 'bbn-right-spadding', 'bbn-radius', 'bbn-background', 'bbn-bottom-sspace', {'bbn-right-space': !!currentSelected[i+1]}]">
         <bbn-initial :user-name="getUserName(v)"
                       width="1.2rem"
                       height="1.2rem"

@@ -1,4 +1,4 @@
-<div class="bbn-overlay appui-usergroup-permissions bbn-flex-height bbn-padded">
+<div class="bbn-overlay appui-usergroup-permissions bbn-flex-height bbn-padding">
   <div v-if="!source.mode"
        class="bbn-vmiddle bbn-bottom-space bbn-flex-width">
     <bbn-dropdown :source="source.sources"

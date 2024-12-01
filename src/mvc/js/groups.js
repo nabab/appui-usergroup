@@ -88,7 +88,7 @@
                     v-if="groups"
                     @success="afterSubmit"
           >
-            <div class="bbn-grid-fields bbn-padded">
+            <div class="bbn-grid-fields bbn-padding">
               <label>` + bbn._('Name') + `</label>
               <bbn-input v-model="source.row[groups.source.arch.groups.group]"/>
               <label>` + bbn._('Code') + `</label>

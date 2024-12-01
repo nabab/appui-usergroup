@@ -215,7 +215,7 @@
       },
       toolbar: {
         template: `
-<div class="bbn-w-100 bbn-header bbn-spadded">
+<div class="bbn-w-100 bbn-header bbn-spadding">
 	<bbn-button :text="_('New user')"
               icon="nf nf-fa-user_plus"
               @click="insert"
