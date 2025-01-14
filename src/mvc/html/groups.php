@@ -24,11 +24,11 @@
   ></bbns-column>
   <bbns-column field="default_menu"
                v-if="hasMenu"
-               :hidden="true"
+               :invisible="true"
   ></bbns-column>
   <bbns-column field="default_dashboard"
                v-if="hasDashboard"
-               :hidden="true"
+               :invisible="true"
   ></bbns-column>
   <bbns-column label="<i class='nf nf-fa-users bbn-large'></i> <?= _('Name') ?>"
                :field="source.arch.groups.group"
@@ -49,7 +49,7 @@
   ></bbns-column>
   <bbns-column field="source_id"
                :editable="false"
-               :hidden="true"
+               :invisible="true"
   ></bbns-column>
   <bbns-column :sortable="false"
                :buttons="getButtons"
