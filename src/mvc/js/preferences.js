@@ -28,7 +28,7 @@
               source: d.data,
               width: 500,
               height: 500,
-              title: bbn._("Setting preferences")
+              label: bbn._("Setting preferences")
             });
           }
         })

@@ -104,7 +104,7 @@
       insert(){
         if (!!this.source.permissions.insert) {
           this.$refs.table.insert({}, {
-            title: bbn._("New user"),
+            label: bbn._("New user"),
             width: 450,
             height: 400
           });
@@ -115,7 +115,7 @@
           && (!row[this.source.arch.dev] || this.user.isAdmin)
         ) {
           this.$refs.table.edit(row, {
-            title: bbn._("User edit"),
+            label: bbn._("User edit"),
             width: 450,
             height: 400
           });
@@ -146,8 +146,8 @@
       },
       permissions(row){
         if ( this.source.perm_root && row.id ){
-          this.getPopup().open({
-            title: row[this.source.arch.username] + ' - ' + bbn._('Permissions'),
+          this.getPopup({
+            label: row[this.source.arch.username] + ' - ' + bbn._('Permissions'),
             height: '90%',
             width: 500,
             component: 'appui-usergroup-permissions',
@@ -216,7 +216,7 @@
       toolbar: {
         template: `
 <div class="bbn-w-100 bbn-header bbn-spadding">
-	<bbn-button :text="_('New user')"
+	<bbn-button :label="_('New user')"
               icon="nf nf-fa-user_plus"
               @click="insert"
               :disabled="isDisabled">

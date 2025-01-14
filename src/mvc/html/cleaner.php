@@ -11,22 +11,22 @@
     <bbn-table bbn-if="results?.length"
                :source="results">
       <bbns-column field="publicPath"
-                   :title="_('Public path')"/>
+                   :label="_('Public path')"/>
       <bbns-column field="numPermissions"
-                   :title="_('#Perm')"
+                   :label="_('#Perm')"
                    :width="60"
                    type="number"
-                   :ftitle="_('Number of active permissions')"/>
+                   :flabel="_('Number of active permissions')"/>
       <bbns-column field="numReferences"
-                   :title="_('#Refs')"
+                   :label="_('#Refs')"
                    :width="60"
                    type="number"
-                   :ftitle="_('Number of references in the project')"/>
+                   :flabel="_('Number of references in the project')"/>
       <bbns-column field="numPermissions"
-                   :title="_('Exists')"
+                   :label="_('Exists')"
                    :width="60"
                    type="boolean"
-                   :ftitle="_('Whether or not a corresponding file exists')"/>
+                   :flabel="_('Whether or not a corresponding file exists')"/>
     </bbn-table>
   </div>
 </div>

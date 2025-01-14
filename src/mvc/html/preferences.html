@@ -10,40 +10,40 @@
            ref="table"
            >
   <bbns-column field="id"
-              :title="_('UUID')"
+              :label="_('UUID')"
               :hidden="true">
   </bbns-column>
   <bbns-column field="public"
               type="boolean"
               :width="60"
-              :title="_('Pub')"
-              :ftitle="_('Public')"
+              :label="_('Pub')"
+              :flabel="_('Public')"
               >
   </bbns-column>
   <bbns-column field="permission"
               type="boolean"
               :width="60"
-              :title="_('Perm')"
-              :ftitle="_('Permission')"
+              :label="_('Perm')"
+              :flabel="_('Permission')"
               >
   </bbns-column>
   <bbns-column field="id_option"
                :hidden="true"
-               :title="_('ID Option')">
+               :label="_('ID Option')">
   </bbns-column>
   <bbns-column field="option"
-              :title="_('Option')"
+              :label="_('Option')"
               :render="showOption">
   </bbns-column>
   <bbns-column field="text"
-              :title="_('Title')"
+              :label="_('Title')"
               :render="showText">
   </bbns-column>
   <bbns-column field="link"
-              :title="_('Link')"
+              :label="_('Link')"
               :render="showLink">
   </bbns-column>
-  <bbns-column :title="_('Actions')"
+  <bbns-column :label="_('Actions')"
               :width="120"
               :buttons="[
                 {text: _('View'), action: view, icon: 'nf nf-fa-eye', notext: true},

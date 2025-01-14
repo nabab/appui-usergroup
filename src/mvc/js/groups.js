@@ -51,8 +51,8 @@
       },
       openPermissions(row){
         if ( this.source.perm_root && row.id ){
-          this.getPopup().open({
-            title: row[this.source.arch.groups.group] + ' - ' + bbn._('Permissions'),
+          this.getPopup({
+            label: row[this.source.arch.groups.group] + ' - ' + bbn._('Permissions'),
             height: '90%',
             width: 500,
             component: 'appui-usergroup-permissions',

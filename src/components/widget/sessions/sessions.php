@@ -5,12 +5,12 @@
                 :source="source.opened"
                 :scrollable="false"
     >
-      <bbns-column title="<?= _('Created') ?>"
+      <bbns-column label="<?= _('Created') ?>"
                     field="creation"
                     type="datetime"
                     cls="bbn-c"
       ></bbns-column>
-      <bbns-column title="<?= _('Last activity') ?>"
+      <bbns-column label="<?= _('Last activity') ?>"
                     field="last_activity"
                     type="datetime"
                     cls="bbn-c"
@@ -21,12 +21,12 @@
                 :source="source.closed"
                 :scrollable="false"
     >
-      <bbns-column title="<?= _('Created') ?>"
+      <bbns-column label="<?= _('Created') ?>"
                     field="creation"
                     type="datetime"
                     cls="bbn-c"
       ></bbns-column>
-      <bbns-column title="<?= _('Last activity') ?>"
+      <bbns-column label="<?= _('Last activity') ?>"
                     field="last_activity"
                     type="datetime"
                     cls="bbn-c"

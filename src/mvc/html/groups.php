@@ -17,7 +17,7 @@
            :url="source.root + 'actions/groups'"
            :order="[{field: source.arch.groups.group, dir: 'ASC'}]"
 >
-  <bbns-column title="<?= _('ID') ?>"
+  <bbns-column label="<?= _('ID') ?>"
                :field="source.arch.groups.id"
                :hidden="true"
                :editable="false"
@@ -30,18 +30,18 @@
                v-if="hasDashboard"
                :hidden="true"
   ></bbns-column>
-  <bbns-column title="<i class='nf nf-fa-users bbn-large'></i> <?= _('Name') ?>"
+  <bbns-column label="<i class='nf nf-fa-users bbn-large'></i> <?= _('Name') ?>"
                :field="source.arch.groups.group"
                :required="true"
   ></bbns-column>
-  <bbns-column title="<?= _('Unique code') ?>"
+  <bbns-column label="<?= _('Unique code') ?>"
                :width="150"
                max-width="40%"
                :field="source.arch.groups.code"
                :required="true"
   ></bbns-column>
-  <bbns-column title="#"
-               ftitle="<?= _('Users') ?>"
+  <bbns-column label="#"
+               flabel="<?= _('Users') ?>"
                field="num"
                :width="50"
                :editable="false"
