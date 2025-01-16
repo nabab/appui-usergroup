@@ -19,7 +19,7 @@
             });
           },
           text: bbn._("Help"),
-          icon: 'nf nf-mdi-help_circle_outline'
+          icon: 'nf nf-md-help_circle_outline'
         }, {
           url: appui.plugins['appui-usergroup'] + '/main',
           text: bbn._("My profile"),
