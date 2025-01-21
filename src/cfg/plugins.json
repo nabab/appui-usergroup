@@ -1,0 +1,35 @@
+[
+    {
+        "text": "Dashboard",
+        "code": "dashboard",
+        "items": [
+            {
+                "text": "Widgets",
+                "code": "widgets",
+                "id_alias": [
+                    "widgets",
+                    "dashboard",
+                    "appui"
+                ],
+                "icon": "nf nf-mdi-widgets",
+                "items": [
+                    {
+                        "text": "Application's users",
+                        "code": "users",
+                        "limit": 5,
+                        "observe": false,
+                        "closable": true,
+                        "itemComponent": "appui-usergroup-widget-users"
+                    },
+                    {
+                        "text": "My last sessions",
+                        "code": "sessions",
+                        "observe": false,
+                        "closable": true,
+                        "component": "appui-usergroup-widget-sessions"
+                    }
+                ]
+            }
+        ]
+    }
+]
