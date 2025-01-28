@@ -19,7 +19,7 @@
 >
   <bbns-column label="<?= _('ID') ?>"
                :field="source.arch.groups.id"
-               :hidden="true"
+               :invisible="true"
                :editable="false"
   ></bbns-column>
   <bbns-column field="default_menu"

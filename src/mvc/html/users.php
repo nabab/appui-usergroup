@@ -17,7 +17,7 @@
            :showable="true">
   <bbns-column label="<?= _("ID") ?>"
                :field="source.arch.id"
-               :hidden="true"
+               :invisible="true"
                :editable="false"
                :width="40"
                :filterable="false"/>
@@ -77,17 +77,17 @@
                :source="themes"/>
   <bbns-column label="<?= _("Developer") ?>"
                :field="source.arch.dev"
-               :hidden="true"
+               :invisible="true"
                type="boolean"/>
   <bbns-column label="<?= _("Administrator") ?>"
                :field="source.arch.admin"
-               :hidden="true"
+               :invisible="true"
                type="boolean"/>
   <bbns-column label="<?= _("Active") ?>"
                :field="source.arch.active"
                type="boolean"
                :editable="false"
-               :hidden="true"
+               :invisible="true"
                :showable="false"
                :filterable="false"
                :width="80"/>
