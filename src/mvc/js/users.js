@@ -79,7 +79,7 @@
         }, {
           text: bbn._('Delete'),
           notext: true,
-          action: this.remove,
+          action: this.removeItem,
           icon: 'nf nf-fa-trash',
           disabled: !this.source.permissions.delete
         }];
@@ -121,7 +121,7 @@
           });
         }
       },
-      remove(row){
+      removeItem(row){
         if (row[this.source.arch.id]
           && !row[this.source.arch.admin]
           && (!row[this.source.arch.dev] || this.user.isAdmin)
