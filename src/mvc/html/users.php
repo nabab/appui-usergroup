@@ -135,6 +135,7 @@
       <label><?= _('Theme') ?></label>
       <bbn-dropdown :source="cp.themes"
                     bbn-model="source.row[cp.source.arch.theme]"
+                    source-value="code"
                     required="required"/>
 
       <label bbn-if="cp.user.isAdmin"><?= _('Developer') ?></label>
