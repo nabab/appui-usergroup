@@ -2,6 +2,8 @@
   return {
     data() {
       return {
+        isMobile: bbn.fn.isMobileDevice(),
+        isTablet: bbn.fn.isTabletDevice(),
         root: appui.plugins['appui-usergroup'] + '/',
         userMenu: [{
           action(){
