@@ -21,7 +21,7 @@ if ($usr->check() && !empty($arch)) {
     if ($model->inc->user->isAdmin() || $model->inc->user->isDev()) {
       return true;
     }
-    return (\bbn\X::find($groups, [$archGroups['id'] => $a['id_group']]) !== null)
+    return (\bbn\X::search($groups, [$archGroups['id'] => $a['id_group']]) !== null)
       && (!defined('BBN_ADMIN_GROUP') || ($a['id_group'] !== BBN_ADMIN_GROUP))
       && (!defined('BBN_DEV_GROUP') || ($a['id_group'] !== BBN_DEV_GROUP));
   });
