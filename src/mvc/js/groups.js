@@ -86,8 +86,7 @@
                     :source="source.row"
                     :data="extend({action: !!source.row.id ? 'update' : 'insert'}, source.data)"
                     v-if="groups"
-                    @success="afterSubmit"
-          >
+                    @success="afterSubmit">
             <div class="bbn-grid-fields bbn-padding">
               <label>` + bbn._('Name') + `</label>
               <bbn-input v-model="source.row[groups.source.arch.groups.group]"/>
