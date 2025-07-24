@@ -6,7 +6,6 @@
 $mgr = $ctrl->inc->user->getManager();
 $groups = $mgr->groups();
 $groupArch = $ctrl->inc->user->getClassCfg()['arch']['groups'];
-//$ctrl->data['permissions_groups'] = json_encode(\apst\manager::get_all_permissions());
 //$user_perm = array_keys($ctrl->inc->user->get_permissions());
 if ($ctrl->hasPlugin('appui-dashboard')) {
   $hasDash = true;
