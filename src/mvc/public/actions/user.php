@@ -4,7 +4,7 @@
  *
  **/
 
-/** @var $this \bbn\Mvc\Controller */
+/** @var bbn\Mvc\Controller $ctrl */
 if ( isset($ctrl->post['current_pass'], $ctrl->post['pass1'], $ctrl->post['pass2']) ){
   if ( $ctrl->post['pass1'] !== $ctrl->post['pass2'] ){
     $ctrl->obj->success = false;

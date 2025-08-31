@@ -1,6 +1,6 @@
 <?php
 /**
- * @var \bbn\Mvc\Controller $ctrl
+ * @var bbn\Mvc\Controller $ctrl
  * @var \bbn\User\Manager $mgr
  */
 $mgr = $ctrl->inc->user->getManager();

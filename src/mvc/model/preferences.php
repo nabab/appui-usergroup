@@ -4,7 +4,7 @@
  *
  **/
 
-/** @var $this \bbn\Mvc\Model*/
+/** @var bbn\Mvc\Model $model */
 if ( isset($model->data['limit']) ){
   $grid = new \bbn\Appui\Grid($model->db, $model->data, [
 /*    'count' => <<< MYSQL

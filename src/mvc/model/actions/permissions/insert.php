@@ -1,5 +1,5 @@
 <?php
-/** @var \bbn\Mvc\Model $model */
+/** @var bbn\Mvc\Model $model */
 /** @var array $d Reference to the model's data */
 $d =& $model->data;
 /** @var array $r The result*/

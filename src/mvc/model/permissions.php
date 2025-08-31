@@ -1,5 +1,5 @@
 <?php
-/** @var \bbn\Mvc\Model $model */
+/** @var bbn\Mvc\Model $model */
 /** @var int $id_perm The option root's ID of the permissions */
 
 $id_user = false;

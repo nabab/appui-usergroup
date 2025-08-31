@@ -1,6 +1,6 @@
 <?php
 /**
- * @var \bbn\Mvc\Model $model
+ * @var bbn\Mvc\Model $model
  * @var \bbn\User\Preferences $pref
  * @var \bbn\User\Permissions $perm
  * @var \bbn\User $user

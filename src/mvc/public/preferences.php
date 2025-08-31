@@ -16,7 +16,7 @@ die(var_dump(
   $ctrl->inc->pref->getCfg($tbs),
   $ctrl->inc->pref->get($tbs)
 ));
-/** @var $this \bbn\Mvc\Controller */
+/** @var bbn\Mvc\Controller $ctrl */
 if ( isset($ctrl->post['limit']) ){
   $ctrl->obj = $ctrl->getObjectModel('', $ctrl->post);
 }

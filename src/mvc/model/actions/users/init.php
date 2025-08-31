@@ -1,5 +1,5 @@
 <?php
-/** @var \bbn\Mvc\Model $model */
+/** @var bbn\Mvc\Model $model */
 /** @var \bbn\User\Manager $mgr */
 $r = [
   'success' => false

@@ -1,5 +1,5 @@
 <?php
-/** @var \bbn\Mvc\Controller %ctrl */
+/** @var bbn\Mvc\Controller %ctrl */
 $ctrl->obj->success = false;
 $mgr = $ctrl->inc->user->getManager();
 if ( isset($ctrl->post['action'], $ctrl->post['id_option']) ){
