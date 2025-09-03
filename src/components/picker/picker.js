@@ -170,7 +170,7 @@
       currentSearch(newVal){
         return
         let tree = this.getRef('tree');
-        if (bbn.fn.isVue(tree)) {
+        if (bbn.cp.isComponent(tree)) {
           let idx = bbn.fn.search(tree.filters.conditions, 'field', 'text');
           if (!!newVal && newVal.length) {
             let obj = {

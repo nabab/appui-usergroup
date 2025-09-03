@@ -187,7 +187,7 @@
         },
         computed: {
           isGroupReal(){
-            return bbn.fn.isVue(this.cp)
+            return bbn.cp.isComponent(this.cp)
               ? (bbn.fn.getField(this.cp.source.groups, 'type', {value: this.source.row[this.cp.source.arch.id_group]}) === 'real')
               : false;
           }
