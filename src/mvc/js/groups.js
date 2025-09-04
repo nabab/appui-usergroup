@@ -24,25 +24,25 @@
       getButtons(row){
         const table = this;
         return [{
-          text: bbn._('Edit'),
+          label: bbn._('Edit'),
           notext: true,
           action: 'edit',
           icon: 'nf nf-fa-edit',
           disabled: !this.source.permissions.update
         }, {
-          text: bbn._('Delete'),
+          label: bbn._('Delete'),
           notext: true,
           action: 'delete',
           icon: 'nf nf-fa-trash',
           disabled: !!(row.num || !this.source.permissions.delete)
         }, {
-          text: bbn._('Permissions'),
+          label: bbn._('Permissions'),
           notext: true,
           action: row => table.openPermissions(row),
           icon: 'nf nf-fa-key',
           disabled: !this.source.permissions.permissions
         }, {
-          text: bbn._('Duplicate'),
+          label: bbn._('Duplicate'),
           notext: true,
           action: row => table.duplicate(row),
           icon: 'nf nf-fa-copy',
@@ -82,28 +82,28 @@
     components: {
       form: {
         template: `
-          <bbn-form :action="root + 'actions/groups'"
+          <bbn-form bbn-if="groups"
+                    :action="root + 'actions/groups'"
                     :source="source.row"
-                    :data="extend({action: !!source.row.id ? 'update' : 'insert'}, source.data)"
-                    v-if="groups"
+                    :data="formData"
                     @success="afterSubmit">
             <div class="bbn-grid-fields bbn-padding">
               <label>` + bbn._('Name') + `</label>
-              <bbn-input v-model="source.row[groups.source.arch.groups.group]"/>
+              <bbn-input bbn-model="source.row[groups.source.arch.groups.group]"/>
               <label>` + bbn._('Code') + `</label>
-              <bbn-input v-model="source.row[groups.source.arch.groups.code]"/>
-              <label v-if="groups.hasDashboard">` + bbn._('Default dashboard') + `</label>
-              <bbn-dropdown v-if="groups.hasDashboard"
-                            v-model="source.row.default_dashboard"
+              <bbn-input bbn-model="source.row[groups.source.arch.groups.code]"/>
+              <label bbn-if="groups.hasDashboard">` + bbn._('Default dashboard') + `</label>
+              <bbn-dropdown bbn-if="groups.hasDashboard"
+                            bbn-model="source.row.default_dashboard"
                             :source="groups.source.dashboards"/>
-              <label v-if="groups.hasMenu">` + bbn._('Default menu') + `</label>
-              <bbn-dropdown v-if="groups.hasMenu"
-                            v-model="source.row.default_menu"
+              <label bbn-if="groups.hasMenu">` + bbn._('Default menu') + `</label>
+              <bbn-dropdown bbn-if="groups.hasMenu"
+                            bbn-model="source.row.default_menu"
                             :source="groups.source.menus"/>
-            </div> 
+            </div>
           </bbn-form>`,
-          mixins: [bbn.cp.mixins.basic],
-          props: {
+        mixins: [bbn.cp.mixins.basic],
+        props: {
           source: {
             type: Object
           }
@@ -111,7 +111,8 @@
         data(){
           return {
             root: appui.plugins['appui-usergroup'] + '/',
-            groups: false
+            groups: appui.getRegistered('appui-usergroup-groups'),
+            formData: bbn.fn.extend({action: this.source.row.id ? 'update' : 'insert'}, this.source.data)
           }
         },
         methods: {
@@ -122,39 +123,6 @@
             }
             else {
               appui.error();
-            }
-          }
-        },
-        mounted(){
-          this.groups = appui.getRegistered('appui-usergroup-groups');
-        }
-      },
-      'appui-usergroup-group-edit-form': {
-        template: '#appui-usergroup-group-edit-form',
-        mixins: [bbn.cp.mixins.basic],
-        props: ['source'],
-        methods:{
-          success(d, e){
-            if ( d.success && d.data && d.data.id ){
-              let tab = this.closest('bbn-container').getComponent(),
-                  idx = bbn.fn.search(tab.source.groups, 'id', d.data.id);
-              if ( idx > -1 ){
-                tab.source.groups[idx] = d.data;
-              }
-              else {
-                tab.source.groups.push(d.data);
-              }
-              tab.$refs.table.updateData();
-              appui.success(bbn._('Save'));
-            }
-            else {
-              let table = this.closest('bbn-container').getComponent().$refs.table;
-              this.$refs.form.originalData = bbn.fn.extend({}, table.originalRow);
-              bbn.fn.each(bbn.fn.extend({}, table.originalRow), (v, i) => {
-                table.editedRow[i] = v;
-              });
-              e.preventDefault();
-              appui.error(bbn._('Error!'));
             }
           }
         }
