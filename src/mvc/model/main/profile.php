@@ -14,7 +14,7 @@ $data = [
   'schema' => $model->inc->user->getClassCfg()['arch']['users']
 ];
 if (defined('BBN_PROJECT')) {
-  $proj = new bbn\Appui\Project($model->db, BBN_PROJECT);
+  $proj = new bbn\Appui\Project($model->db, constant('BBN_PROJECT'));
   $data['languages'] = array_map(function($a) use (&$model) {
     return $model->inc->options->option($a);
   }, $proj->getLangsIds());
