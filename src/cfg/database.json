@@ -751,12 +751,9 @@
             },
             "dt_creation": {
                 "type": "datetime",
-                "null": 1,
                 "extra": "VIRTUAL GENERATED",
                 "virtual": true,
-                "generation": "from_unixtime(`creation`)",
-                "default": "NULL",
-                "defaultExpression": 1
+                "generation": "from_unixtime(`creation`)"
             },
             "last": {
                 "type": "decimal",
@@ -766,12 +763,9 @@
             },
             "dt_last": {
                 "type": "datetime",
-                "null": 1,
                 "extra": "VIRTUAL GENERATED",
                 "virtual": true,
-                "generation": "from_unixtime(`last`)",
-                "default": "NULL",
-                "defaultExpression": 1
+                "generation": "from_unixtime(`last`)"
             }
         }
     },
