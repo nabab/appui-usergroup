@@ -79,6 +79,9 @@
     mounted(){
       appui.register('appui-usergroup-groups', this);
     },
+    beforeDestroy(){
+      appui.unregister('appui-usergroup-groups', this);
+    },
     components: {
       form: {
         template: `
