@@ -79,7 +79,7 @@ MYSQL
       ], [
         'field' => 'bbn_users_options.id_group',
         'operator' => 'eq',
-        'value' => $model->inc->user->getGroup()
+        'value' => $model->inc->user->getIdGroup()
       ], [
         'field' => 'bbn_users_options.public',
         'operator' => 'eq',

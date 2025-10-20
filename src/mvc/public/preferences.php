@@ -12,7 +12,7 @@ die(var_dump(
   //$ctrl->inc->options->option($cur),
   $ctrl->inc->pref->has($tbs),
   $ctrl->inc->pref->has($cur),
-  $ctrl->inc->pref->getGroup(),
+  $ctrl->inc->pref->getIdGroup(),
   $ctrl->inc->pref->getCfg($tbs),
   $ctrl->inc->pref->get($tbs)
 ));

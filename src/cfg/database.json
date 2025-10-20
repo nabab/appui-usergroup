@@ -236,7 +236,7 @@
                 "key": "PRI",
                 "maxlength": 16
             },
-            "hash": {
+            "magic": {
                 "type": "varchar",
                 "null": 0,
                 "maxlength": 64

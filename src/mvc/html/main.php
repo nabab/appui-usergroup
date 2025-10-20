@@ -1,7 +1,7 @@
 <!-- HTML Document -->
 <bbn-router class="bbn-overlay bbn-user-profile"
             :autoload="false"
-            :nav="true">
+            mode="tabs">
   <bbns-container url="profile"
            label="<?= _("Informations") ?>"
            :fixed="true"

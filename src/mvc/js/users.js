@@ -57,6 +57,19 @@
           }
         })
       },
+      getMagicLink(row) {
+        this.post(this.root + 'actions/user/magic-link', {
+          id: row.id
+        }, d => {
+          if (d.success) {
+            this.alert(bbn._('Magic link'), `<div class="bbn-padded bbn-w-100 bbn-c bbn-middle">
+              <p>${bbn._('Here is the magic link for user')} <b>${row[this.source.arch.username]}</b>:</p>
+              <p><a href="${d.link}" target="_blank">${d.link}</a></p>
+              <p>${bbn._('You can copy it or send it by email using the button below.')}</p>
+            </div>`);
+          }
+        })
+      },
       getButtons(row){
         let btn = [{
           text: bbn._('Disconnect'),
@@ -99,6 +112,15 @@
           icon: 'nf nf-fa-envelope',
           disabled: !this.source.permissions.init
         });
+        if (appui.user.isAdmin) {
+          btn.push({
+            text: bbn._('Get a `magic` link'),
+            notext: true,
+            action: this.getMagicLink,
+            icon: 'nf nf-cod-wand'
+          });
+        }
+
         return btn;
       },
       insert(){
