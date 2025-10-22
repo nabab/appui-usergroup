@@ -43,7 +43,7 @@
             return;
           }
 
-          const st = '.less,nerd-fonts.css,01-basic.less,02-background.less';
+          const st = 'dist/css/dist-css-bbn-css-';
           if ( this.theme !== this.$refs.form.source[this.source.schema.theme] ){
             let lnks = document.head.getElementsByTagName('link');
             let url = false;
@@ -51,11 +51,11 @@
               if (
                 (a.rel === 'stylesheet')
                 && a.href
-                && a.href.match(this.theme + st)
+                && a.href.match(st + this.theme)
               ){
                 a.href = bbn.fn.replaceAll(
-                  this.theme + st,
-                  this.$refs.form.source[this.source.schema.theme] + st,
+                  st + this.theme,
+                  st + this.$refs.form.source[this.source.schema.theme],
                   a.href
                 );
                 this.theme = this.$refs.form.source[this.source.schema.theme];

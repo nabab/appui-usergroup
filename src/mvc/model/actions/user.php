@@ -38,13 +38,21 @@ elseif ($model->hasData(['action', $cfg['arch']['users']['id']], true) && ($mode
 }
 elseif (isset($model->data[$cfg['arch']['users']['email']], $model->data[$cfg['arch']['users']['username']]) && \bbn\Str::isEmail($model->data[$cfg['arch']['users']['email']])) {
   $change_theme = $model->data[$cfg['arch']['users']['theme']] !== $model->inc->session->get('theme');
-  if ( $model->obj->success = $model->inc->user->updateInfo($model->data) ){
-    if ( $change_theme ){
+  if ($model->inc->user->updateInfo($model->data) ){
+    if ($change_theme) {
       $model->inc->session->set($model->data[$cfg['arch']['users']['theme']], 'theme');
     }
-    else {
-      $model->obj->error = _("Successful modification");
-      $model->obj->errorTitle = _("Success!");
-    }
+
+    return [
+      'success' => true,
+      'error' => _("Successful modification"),
+      'errorTitle' => _("Success!")
+    ];
   }
+
+  return [
+    'success' => false,
+    'error' => _("An error occurred during the update."),
+    'errorTitle' => _("Error!")
+  ];
 }
