@@ -40,7 +40,7 @@ elseif (isset($model->data[$cfg['arch']['users']['email']], $model->data[$cfg['a
   $change_theme = $model->data[$cfg['arch']['users']['theme']] !== $model->inc->session->get('theme');
   if ($model->inc->user->updateInfo($model->data) ){
     if ($change_theme) {
-      $model->inc->session->set($model->data[$cfg['arch']['users']['theme']], 'theme');
+      $model->inc->user->setSession('theme', $model->data[$cfg['arch']['users']['theme']]);
     }
 
     return [
