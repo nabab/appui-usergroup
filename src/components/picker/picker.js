@@ -6,6 +6,10 @@
  */
 (() => {
   return {
+    model: {
+      prop: 'value',
+      event: 'input'
+    },
     props: {
       source: {
         type: Array,
