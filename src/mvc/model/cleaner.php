@@ -27,7 +27,7 @@ if ($model->hasData('launch')) {
         // Does it have children?
         $opts = $o->fullOptions($a['id']);
         if (!empty($opts)) {
-          if (substr($npath, -1) !== '/') {
+          if (Str::sub($npath, -1) !== '/') {
             $npath .= '/';
           }
   

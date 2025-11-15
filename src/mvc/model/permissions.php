@@ -1,4 +1,5 @@
 <?php
+use bbn\Str;
 /** @var bbn\Mvc\Model $model */
 /** @var int $id_perm The option root's ID of the permissions */
 
@@ -36,7 +37,7 @@ if ( $id_user || $id_group ){
         return false;
       }
       if ( empty($r['icon']) ){
-        if ( substr($r['code'], -1) === '/' ){
+        if ( Str::sub($r['code'], -1) === '/' ){
           $r['icon'] = 'folder';
         }
         else {

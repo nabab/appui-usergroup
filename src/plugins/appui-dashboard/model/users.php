@@ -1,4 +1,5 @@
 <?php
+use bbn\Str;
 /** @var bbn\Mvc\Model $model */
 
 $model->data['limit'] = isset($model->data['limit']) && is_int($model->data['limit']) ? $model->data['limit'] : 5;
@@ -44,12 +45,12 @@ $grid = new \bbn\Appui\Grid($model->db, $model->data, [
 if ($grid->check()) {
   $res = $grid->getDatatable();
   $res['data'] = array_map(function($a){
-    if ( substr($a['last_connection'], 0, 10) === strftime('%Y-%m-%d') ){
+    if ( Str::sub($a['last_connection'], 0, 10) === strftime('%Y-%m-%d') ){
       if ( ( time() - strtotime($a['last_connection']) ) < 1200 ){
         $a['last_connection'] = _('Online');
       }
       else{
-        $a['last_connection'] = substr($a['last_connection'], 11, 5);
+        $a['last_connection'] = Str::sub($a['last_connection'], 11, 5);
       }
     }
     else{
