@@ -3,8 +3,8 @@
     mixins: [bbn.cp.mixins.basic],
     data(){
       return {
-        currentStart: dayjs().format('YYYY') + '-01-01',
-        currentEnd: dayjs().format('YYYY-MM-DD'),
+        currentStart: bbn.date().format('YYYY') + '-01-01',
+        currentEnd: bbn.date().format('YYYY-MM-DD'),
         currentData: false,
         isLoading: false
       }
