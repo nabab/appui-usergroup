@@ -37,7 +37,7 @@
        return `<span class="${row.session ? 'bbn-green' : 'bbn-red'}">${row.session ? bbn._('Connected') : bbn._('Disconnected')}</span>`;
       },
       renderLastActivity(row){
-        return row.last_activity ? bbn.date(row.last_activity).format('DD/MM/YYYY HH:mm') : '';
+        return row.last_activity ? bbn.dt(row.last_activity).format('DD/MM/YYYY HH:mm') : '';
       },
       disconnectUser(row){
         let table = this.$refs.table;
