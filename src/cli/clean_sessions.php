@@ -1,10 +1,9 @@
 <?php
-/*
+/**
  * Removes old sessions
- *
- **/
-use bbn\X;
- /** @var int $delay 15 days */
+ */
+
+/** @var int $delay 15 days */
 $delay = 15*3600*24;
 
 /** @var bbn\Mvc\Controller $ctrl */
