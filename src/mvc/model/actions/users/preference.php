@@ -11,7 +11,7 @@ $user = $model->inc->user;
 
 $r = ['success' => false];
 if ( isset($model->data['url']) && ($id_option = $perm->is($model->data['url'])) ){
-  $pref->set($id_option, Json_decode($model->data['elements'], true), $user->getId());
+  $pref->set($id_option, json_decode($model->data['elements'], true), $user->getId());
   $r['success'] = true;
 }
 return $r;
